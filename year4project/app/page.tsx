@@ -1,13 +1,38 @@
+"use client";
 import backgroundImage from "@/images/background-top.svg"; // import the SVG file
 import { Button } from "@/components/ui/button";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 export default function Home() {
+  const [animalName, setAnimalName] = useState();
+  const [litterSize, setLitterSize] = useState();
+  var name = "bichon frise";
+  //
+  useEffect(() => {
+    async function fetchData() {
+      const response = await axios.get(
+        "https://api.api-ninjas.com/v1/animals?name=" + name,
+        {
+          headers: {
+            "X-Api-Key": "BLt0cxhoWxPWMg/NpDDegQ==LRM1c7qtCj8n1DUA",
+          },
+        }
+      );
+      console.log(response.data);
+      setAnimalName(response.data[0].name);
+      setLitterSize(response.data[0].characteristics.average_litter_size);
+    }
+    fetchData();
+  }, []);
+
   return (
     <main className="flex flex-col p-12 bg-[url('../images/background-top.svg')] bg-cover min-h-screen">
       <title>Pets</title>
       <div className="flex justify-center py-4">
         <h1 className=" backdrop-blur-md bg-white/10 drop-shadow-lg font-extrabold sm:text-[3rem] py-8 px-4 max-w-4xl text-white">
           Welcome to Pets App
+          {animalName},{litterSize}
         </h1>
       </div>
 
