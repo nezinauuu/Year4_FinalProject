@@ -25,7 +25,7 @@ export default function Home() {
       setAnimalName(response.data[0].name);
       setLitterSize(response.data[0].characteristics.average_litter_size);
     }
-    // fetchData();
+    fetchData();
   }, []);
 
 
