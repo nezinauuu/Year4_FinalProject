@@ -23,7 +23,7 @@ export default function Home() {
       setAnimalName(response.data[0].name);
       setLitterSize(response.data[0].characteristics.average_litter_size);
     }
-    fetchData();
+    // fetchData();
   }, []);
 
   return (
@@ -39,14 +39,14 @@ export default function Home() {
       <div className="flex justify-center flex-row py-9  gap-32  m-w-64">
         <div className="flex bg-[url('../images/lucky.jpg')] bg-cover box-border w-96 h-96 p-4 transition ease-in-out hover:-translate-y-1 hover:scale-105 duration-300 border-4 border-gray-900"></div>
         <div className="flex flex-col justify-center max-w-2xl gap-5">
-          <div className="backdrop-blur-md bg-white/10 border-4 ">
+          <div className="backdrop-blur-md bg-white/10 border-4 transition ease-in-out hover:-translate-y-0 hover:scale-95 duration-100">
             <h1 className="text-4xl font-bold text-white m-3">Your Pets</h1>
             <p className="text-white m-3">
               Review your pets and share your experience with others.
             </p>
           </div>
 
-          <div className="backdrop-blur-md bg-white/10 border-4 ">
+          <div className="backdrop-blur-md bg-white/10 border-4 transition ease-in-out hover:-translate-y-0 hover:scale-95 duration-100">
             <h1 className="text-4xl font-bold text-white m-3">
               Looking for a new animal?
             </h1>
