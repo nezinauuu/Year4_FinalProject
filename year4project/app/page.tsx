@@ -6,15 +6,19 @@ import { useEffect, useState } from "react";
 import { UserButton } from "@clerk/nextjs";
 import { User } from "lucide-react";
 import luckyImage from "@/images/lucky.jpg";
+import Bulldog from "@/images/Bulldog.jpg";
 export default function Home() {
   const [animalName, setAnimalName] = useState();
-  const [litterSize, setLitterSize] = useState();
-  var name = "bichon frise";
+  const [temperament, setTemperament] = useState();
+  // var name = "bichon frise";
+
+  var animalSelection = ["bichon frise", "beagle", "basset hound", "bulldog", "chihuahua", "dachshund", "dalmatian", "doberman", "french bulldog", "german shepherd", "golden retriever", "great dane", "greyhound", "husky", "labrador", "maltese", "mastiff", "pomeranian", "poodle", "pug", "rottweiler", "schnauzer", "shiba inu", "shih tzu", "yorkshire terrier"];
+  var animalSelected = animalSelection[Math.floor(Math.random() * animalSelection.length)];
   //
   useEffect(() => {
     async function fetchData() {
       const response = await axios.get(
-        "https://api.api-ninjas.com/v1/animals?name=" + name,
+        "https://api.api-ninjas.com/v1/animals?name=" + animalSelected,
         {
           headers: {
             "X-Api-Key": "BLt0cxhoWxPWMg/NpDDegQ==LRM1c7qtCj8n1DUA",
@@ -23,30 +27,27 @@ export default function Home() {
       );
       console.log(response.data);
       setAnimalName(response.data[0].name);
-      setLitterSize(response.data[0].characteristics.average_litter_size);
+      setTemperament(response.data[0].characteristics.temperament || "No temperament information available");
     }
     fetchData();
   }, []);
 
+  useEffect(() => {
+    const scrollButton = document.getElementById(
+      "scrollButton"
+    ) as HTMLButtonElement;
 
-    useEffect(() => {
-      const scrollButton = document.getElementById(
-        "scrollButton"
-      ) as HTMLButtonElement;
+    // 👇️ scroll to top on page load
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
 
-      // 👇️ scroll to top on page load
-      window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-
-      // window.addEventListener("scroll", () => {
-      //   if (window.scrollY > 900) {
-      //     scrollButton.style.display = "block";
-      //   } else {
-      //     scrollButton.style.display = "none";
-      //   }
-      // });
-    }, []);
-
-
+    // window.addEventListener("scroll", () => {
+    //   if (window.scrollY > 900) {
+    //     scrollButton.style.display = "block";
+    //   } else {
+    //     scrollButton.style.display = "none";
+    //   }
+    // });
+  }, []);
 
   return (
     <main>
@@ -59,7 +60,6 @@ export default function Home() {
         <div className="flex justify-center py-4">
           <h1 className=" backdrop-blur-md bg-white/10 drop-shadow-lg font-extrabold sm:text-[3rem] py-8 px-4 max-w-4xl text-white">
             Welcome to Pets App
-            {animalName},{litterSize}
           </h1>
         </div>
 
@@ -112,8 +112,19 @@ export default function Home() {
           Check out important information about the animal you want to adopt.
         </p>
 
-      
-  
+        <div className="flex justify-center flex-col gap-32">
+          <div className="backdrop-blur-md bg-white/10 border-4 transition ease-in-out hover:-translate-y-0 hover:scale-95 duration-100">
+            <h1 className="text-4xl font-bold text-white m-3">{animalName}</h1>
+            <p className="text-white m-3">{temperament}</p>
+          </div>
+
+          <div>
+            <img
+              src={Bulldog.src}
+              className="object-cover w-full h-full rounded-xl max-w-md min-w-[200px] border-red-300 border-4 "
+            ></img>
+          </div>
+        </div>
       </div>
     </main>
   );
