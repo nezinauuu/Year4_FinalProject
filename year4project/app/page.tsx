@@ -7,7 +7,28 @@ import { UserButton } from "@clerk/nextjs";
 import { User } from "lucide-react";
 import luckyImage from "@/images/lucky.jpg";
 import Bulldog from "@/images/Bulldog.jpg";
+
 export default function Home() {
+
+
+  useEffect(() => {
+    const scrollButton = document.getElementById(
+      "scrollButton"
+    ) as HTMLButtonElement;
+
+    // 👇️ scroll to top on page load
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 900) {
+        scrollButton.style.display = "block";
+      } else {
+        scrollButton.style.display = "none";
+      }
+    });
+  }, []);
+
+
   const [animalName, setAnimalName] = useState();
   const [temperament, setTemperament] = useState();
   // var name = "bichon frise";
@@ -32,22 +53,7 @@ export default function Home() {
     fetchData();
   }, []);
 
-  useEffect(() => {
-    const scrollButton = document.getElementById(
-      "scrollButton"
-    ) as HTMLButtonElement;
 
-    // 👇️ scroll to top on page load
-    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-
-    // window.addEventListener("scroll", () => {
-    //   if (window.scrollY > 900) {
-    //     scrollButton.style.display = "block";
-    //   } else {
-    //     scrollButton.style.display = "none";
-    //   }
-    // });
-  }, []);
 
   return (
     <main>
@@ -101,14 +107,25 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      <Button
+        id="scrollButton"
+        onClick={() => {
+          window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+        }}
+        className="fixed top-10 left-5 transition ease-in-out bg-amber-800 hover:-translate-y-1 hover:scale-110 hover:bg-peach duration-300 "
+      >
+        Back to top
+      </Button>
+
       <div
         id="new-animal-section"
         className="flex flex-col p-12 bg-[url('../images/background-bot.svg')] bg-cover min-h-screen "
       >
-        <h1 className="text-4xl font-bold text-white m-3">
+        <h1 className="text-4xl font-bold text-white m-3 flex justify-end">
           Looking for a new animal?
         </h1>
-        <p className="text-white m-3">
+        <p className="text-white m-3 flex justify-end">
           Check out important information about the animal you want to adopt.
         </p>
 
