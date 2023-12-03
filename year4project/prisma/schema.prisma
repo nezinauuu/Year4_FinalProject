@@ -9,29 +9,59 @@ generator client {
 }
 
 model Profile {
-  id String @id @default(uuid())
-  userId String @unique
-  name String
+  id       String @id @default(uuid())
+  userId   String @unique
+  name     String
   imageUrl String @db.Text
-  email String @db.Text
+  email    String @db.Text
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  animals Animal[]
+  pets          Pet[]
+  animalKeepers AnimalKeeper[]
 }
 
-model Animal {
-  id String @id @default(uuid())
-  name String
+model Pet {
+  id          String @id @default(uuid())
+  name        String
+  breed       String
   description String
-  imageUrl String @db.Text
+  imageUrl    String @db.Text
+  inviteCode  String @db.Text
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
   profileId String
-  profile Profile @relation(fields: [profileId], references: [id], onDelete: Cascade)
+  profile   Profile @relation(fields: [profileId], references: [id], onDelete: Cascade)
+
+  animalKeepers AnimalKeeper[]
 
   @@index([profileId])
 }
+
+enum AnimalKeeperRole {
+  ADMIN
+  GUEST
+}
+
+model AnimalKeeper {
+  id   String           @id @default(uuid())
+  role AnimalKeeperRole @default(GUEST)
+
+  profileId String
+  profile   Profile @relation(fields: [profileId], references: [id], onDelete: Cascade)
+
+  petId String
+  pet   Pet    @relation(fields: [petId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([petId])
+  @@index([profileId])
+}
+
+
+
