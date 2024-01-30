@@ -26,7 +26,7 @@ export async function POST(req: Request) {
           create: [
             {
               profileId: profile.id,
-              role: AnimalKeeperRole.GUEST,
+              role: AnimalKeeperRole.ADMIN,
             },
           ],
         },
