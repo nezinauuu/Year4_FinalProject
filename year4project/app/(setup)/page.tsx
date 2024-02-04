@@ -12,6 +12,12 @@ import Bulldog from "@/images/Bulldog.jpg";
 import { ScrollToTop } from "@/components/ui/ScrollToTop";
 import { SignIn, SignUp } from "@clerk/nextjs";
 import { AddPetForm } from "@/components/ui/modals/add-pet";
+
+import React, { PureComponent } from "react";
+
+
+
+
 const Home = async () => {
   const profile = await initialProfile();
   const pet = await db.pet.findFirst({
@@ -23,7 +29,8 @@ const Home = async () => {
       },
     },
   });
-
+  
+//Automatically redirect user to the pets page if they already have pets
   if (pet) {
     return redirect(`/pets/${pet.id}`);
   }
@@ -46,6 +53,9 @@ const Home = async () => {
             Welcome to Pets App
           </h1>
         </div>
+
+        
+        
         {/* <AddPet /> */}
 
         <div className="flex justify-center flex-row py-9 gap-16 m-w-64">
@@ -69,6 +79,8 @@ const Home = async () => {
           </div>
         </div>
       </div>
+
+      
 
       <div
         id="new-animal-section"

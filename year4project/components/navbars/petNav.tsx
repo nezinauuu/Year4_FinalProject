@@ -77,7 +77,7 @@ export const PetNav = async () => {
           <UserButton />
         </div>
       </div>
-      <AddPetForm />
+     
     </div>
   );
 };

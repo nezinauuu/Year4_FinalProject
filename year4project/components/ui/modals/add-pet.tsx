@@ -26,9 +26,9 @@ export const AddPetForm = () => {
   const form = useForm({
     resolver: joiResolver(schema),
     defaultValues: {
-      name: "daw",
-      breed: "awd",
-      description: "dw",
+      name: "",
+      breed: "",
+      description: "",
     },
   });
 

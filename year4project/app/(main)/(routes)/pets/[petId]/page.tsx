@@ -1,7 +1,11 @@
-const PetIdPage = () => {
-    return (
-        <div>PetId page</div>
-    );
-}
+import { AddPetForm } from "@/components/ui/modals/add-pet";
 
-export default PetIdPage
+const PetIdPage = () => {
+  return (
+    <div>
+      <AddPetForm />
+    </div>
+  );
+};
+
+export default PetIdPage;
