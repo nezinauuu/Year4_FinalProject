@@ -12,14 +12,13 @@ import Bulldog from "@/images/Bulldog.jpg";
 import { ScrollToTop } from "@/components/ui/ScrollToTop";
 import { SignIn, SignUp } from "@clerk/nextjs";
 import { AddPetForm } from "@/components/ui/modals/add-pet";
+import Link from "next/link";
 
 import React, { PureComponent } from "react";
 
-
-
-
 const Home = async () => {
   const profile = await initialProfile();
+
   const pet = await db.pet.findFirst({
     where: {
       animalKeepers: {
@@ -29,11 +28,11 @@ const Home = async () => {
       },
     },
   });
-  
-//Automatically redirect user to the pets page if they already have pets
-  if (pet) {
-    return redirect(`/pets/${pet.id}`);
-  }
+
+  //Automatically redirect user to the pets page if they already have pets
+  // if (pet) {
+  //   return redirect(`/pets/${pet.id}`);
+  // }
 
   return (
     <main>
@@ -54,8 +53,6 @@ const Home = async () => {
           </h1>
         </div>
 
-        
-        
         {/* <AddPet /> */}
 
         <div className="flex justify-center flex-row py-9 gap-16 m-w-64">
@@ -65,9 +62,17 @@ const Home = async () => {
             className="object-cover w-full h-full rounded-xl max-w-md min-w-[200px] border-red-300 border-4"
           />
 
-          <div className="flex flex-col justify-center max-w-2xl gap-5">
-            <AddPetForm />
+          <div className="flex justify-center flex-col">
+            <div className="transition ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-peach duration-300">
+              {pet && <Link href={`/pets/${pet.id}`}>Go to your pets.</Link>}
+            </div>
 
+            <div className="transition ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-peach duration-300">
+              <Link href={`/statistics`}>Investigate Pet Statistics.</Link>
+            </div>
+          </div>
+
+          <div className="flex flex-col justify-center max-w-2xl gap-5">
             <ScrollToTop />
             <h1 className="text-4xl font-bold text-white m-3">
               Looking for a new animal?
@@ -79,8 +84,6 @@ const Home = async () => {
           </div>
         </div>
       </div>
-
-      
 
       <div
         id="new-animal-section"
