@@ -40,21 +40,18 @@ const data = [
     Cats: 4300,
     Rabbits: 2100,
   },
-
   {
     name: "2022",
     Dogs: 3600,
     Cats: 4400,
     Rabbits: 2300,
   },
-
   {
     name: "2023",
     Dogs: 3990,
     Cats: 4600,
     Rabbits: 2400,
   },
-
   {
     name: "2024",
     Dogs: 4090,
@@ -66,7 +63,7 @@ const data = [
 export const StackedChart = () => {
   return (
     <AreaChart
-      className="bg-neutral px-3 py-3 rounded-md"
+      className="bg-black/40 px-3 py-3 rounded-md"
       width={1000}
       height={400}
       data={data}
