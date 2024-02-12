@@ -60,6 +60,7 @@ const data = [
   },
 ];
 
+
 export const StackedChart = () => {
   return (
     <AreaChart
@@ -79,6 +80,7 @@ export const StackedChart = () => {
       <YAxis />
       <Tooltip />
       <Area
+        animationDuration={2000} 
         type="monotone"
         dataKey="Dogs"
         stackId="1"
@@ -86,6 +88,7 @@ export const StackedChart = () => {
         fill="#8884d8"
       />
       <Area
+        animationDuration={4000}
         type="monotone"
         dataKey="Cats"
         stackId="1"
@@ -93,6 +96,7 @@ export const StackedChart = () => {
         fill="#82ca9d"
       />
       <Area
+        animationDuration={5500}
         type="monotone"
         dataKey="Rabbits"
         stackId="1"

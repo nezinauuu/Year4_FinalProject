@@ -9,7 +9,6 @@ import {
   Tooltip,
 } from "recharts";
 
-
 interface DataItem {
   name: string;
   value: number;
@@ -24,7 +23,7 @@ export const TwoPieChart = ({ data }: { data: DataItem[] }) => {
     "#a9ab67",
     "#68c953",
     "#eb4034",
-  ]; // Define your colors here
+  ]; 
   return (
     <PieChart
       className="bg-black/40 px-3 py-3 rounded-md"
@@ -40,21 +39,12 @@ export const TwoPieChart = ({ data }: { data: DataItem[] }) => {
         outerRadius={120}
         fill="#8884d8"
         label
+        animationDuration={3000}
       >
         {data.map((entry, index) => (
           <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
         ))}
       </Pie>
-      {/* <Pie
-          dataKey="value"
-          data={data02}
-          cx="50%" // Center horizontally
-          cy="50%" // Center vertically
-          innerRadius={60} // No inner radius, so it doesn't overlap with the first pie
-          outerRadius={90} // Same outer radius as the first pie
-          fill="#82ca9d"
-        /> */}
-
       <Tooltip />
     </PieChart>
   );
