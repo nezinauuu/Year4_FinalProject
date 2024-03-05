@@ -2,6 +2,18 @@
 module.exports = {
   daisyui: {
     themes: [
+      {
+        mytheme: {
+          "primary": "#ff0000",
+          "secondary": "#f6d860",
+          "accent": "#37cdbe",
+          "neutral": "#f7f7f7",
+          "base-100": "#fcfcfc",
+          "base-200": "#f7f7f7",
+          "base-300": "#f7f7f7",
+          "base-400": "#f7f7f7",
+        },
+      },
       "light",
       "dark",
       "cupcake",
@@ -36,7 +48,7 @@ module.exports = {
       "sunset",
     ],
   },
-  
+
   darkMode: ["class"],
   content: [
     "./pages/**/*.{ts,tsx}",

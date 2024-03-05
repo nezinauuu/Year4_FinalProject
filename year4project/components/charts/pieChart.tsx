@@ -23,7 +23,7 @@ export const TwoPieChart = ({ data }: { data: DataItem[] }) => {
     "#a9ab67",
     "#68c953",
     "#eb4034",
-  ]; 
+  ];
   return (
     <PieChart
       className="bg-black/40 px-3 py-3 rounded-md"

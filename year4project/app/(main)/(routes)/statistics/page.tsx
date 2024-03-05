@@ -87,61 +87,62 @@ const Statistics = () => {
   return (
     <main>
       <title>Animal Statistics</title>
-      <div
-        data-theme="dark"
-        className="flex justify-center min-h-screen flex-col"
-      >
+      <div className="flex min-h-screen  justify-center flex-col  bg-base-100">
         <div className="fixed top-10 left-10">
           <h1 className="text-8xl font-mono font-semibold">
             Animal Statistics
           </h1>
         </div>
-
-        <div className="flex justify-center">
-          <div className="px-10">
-            <h2 className="text-error py-2 flex px-10">
-              Dog, Cat & Rabbit Shelter Statistics.
-            </h2>
-            <StackedChart />
-          </div>
-          <div className="px-10 bg-red-900 max-w-sm">
-            <h2 className="text-error py-2 flex items-center">
-              Last 50 Shelter Animal Outcomes in Long Beach California
-            </h2>
-            <TwoPieChart data={data02} />
-            <div>
-              <div className="py-5">
-                <h1>
-                  Transfer:{" "}
-                  {data02.find((item) => item.name === "TRANSFER")?.value || 0}
-                </h1>
-                <h1>
-                  Euthanasia:{" "}
-                  {data02.find((item) => item.name === "EUTHANASIA")?.value ||
-                    0}
-                </h1>
-                <h1>
-                  Rescue:{" "}
-                  {data02.find((item) => item.name === "RESCUE")?.value || 0}
-                </h1>
-                <h1>
-                  Return to owner:{" "}
-                  {data02.find((item) => item.name === "RETURN TO OWNER")
-                    ?.value || 0}
-                </h1>
-                <h1>
-                  Return to wild habitat:{" "}
-                  {data02.find((item) => item.name === "RETURN TO WILD HABITAT")
-                    ?.value || 0}
-                </h1>
-                <h1>
-                  Adoption:{" "}
-                  {data02.find((item) => item.name === "ADOPTION")?.value || 0}
-                </h1>
-                <h1>
-                  Died:{" "}
-                  {data02.find((item) => item.name === "DIED")?.value || 0}
-                </h1>
+        <div className="bg-red-100 dark:bg-red-800 px-10 py-10 flex justify-center items-center">
+          <div className="flex bg-base-300 px-10 py-10 rounded-md">
+            <div className="px-10">
+              <h2 className="text-base-400 py-2 flex px-10">
+                Dog, Cat & Rabbit Shelter Statistics.
+              </h2>
+              <StackedChart />
+            </div>
+            <div className="px-10 bg-base-200 max-w-sm rounded-md">
+              <h2 className="text-error py-2 flex items-center">
+                Last 50 Shelter Animal Outcomes in Long Beach California
+              </h2>
+              <TwoPieChart data={data02} />
+              <div>
+                <div className="py-5">
+                  <h1>
+                    Transfer:{" "}
+                    {data02.find((item) => item.name === "TRANSFER")?.value ||
+                      0}
+                  </h1>
+                  <h1>
+                    Euthanasia:{" "}
+                    {data02.find((item) => item.name === "EUTHANASIA")?.value ||
+                      0}
+                  </h1>
+                  <h1>
+                    Rescue:{" "}
+                    {data02.find((item) => item.name === "RESCUE")?.value || 0}
+                  </h1>
+                  <h1>
+                    Return to owner:{" "}
+                    {data02.find((item) => item.name === "RETURN TO OWNER")
+                      ?.value || 0}
+                  </h1>
+                  <h1>
+                    Return to wild habitat:{" "}
+                    {data02.find(
+                      (item) => item.name === "RETURN TO WILD HABITAT"
+                    )?.value || 0}
+                  </h1>
+                  <h1>
+                    Adoption:{" "}
+                    {data02.find((item) => item.name === "ADOPTION")?.value ||
+                      0}
+                  </h1>
+                  <h1>
+                    Died:{" "}
+                    {data02.find((item) => item.name === "DIED")?.value || 0}
+                  </h1>
+                </div>
               </div>
             </div>
           </div>
