@@ -1,5 +1,4 @@
-"use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   AreaChart,
   Area,
@@ -8,66 +7,84 @@ import {
   CartesianGrid,
   Tooltip,
 } from "recharts";
+import { csv } from "d3-fetch"; // Import the CSV parsing function from d3-fetch
+import { DSVRowArray } from "d3-dsv";
 
-const data = [
-  {
-    name: "2017",
-    Dogs: 2000,
-    Cats: 9800,
-    Rabbits: 2290,
-  },
-  {
-    name: "2018",
-    Dogs: 2780,
-    Cats: 3908,
-    Rabbits: 2000,
-  },
-  {
-    name: "2019",
-    Dogs: 1890,
-    Cats: 4800,
-    Rabbits: 2181,
-  },
-  {
-    name: "2020",
-    Dogs: 2390,
-    Cats: 3800,
-    Rabbits: 2500,
-  },
-  {
-    name: "2021",
-    Dogs: 3490,
-    Cats: 4300,
-    Rabbits: 2100,
-  },
-  {
-    name: "2022",
-    Dogs: 3600,
-    Cats: 4400,
-    Rabbits: 2300,
-  },
-  {
-    name: "2023",
-    Dogs: 3990,
-    Cats: 4600,
-    Rabbits: 2400,
-  },
-  {
-    name: "2024",
-    Dogs: 4090,
-    Cats: 4700,
-    Rabbits: 2300,
-  },
-];
+interface AnimalData {
+  "Intake Date": string;
+  "Animal Type": string;
+}
 
+interface ChartData {
+  name: string;
+  DOG: number;
+  CAT: number;
+  RABBIT: number;
+}
 
-export const StackedChart = () => {
+type CounterType = {
+  DOG: number;
+  CAT: number;
+  RABBIT: number;
+  [key: string]: number;
+};
+
+export const StackedChart: React.FC = () => {
+  const [chartData, setChartData] = useState<ChartData[]>([]);
+
+  useEffect(() => {
+    // Fetch and parse the CSV data
+    csv("/animals.csv").then((data: DSVRowArray<string>) => {
+      const animalData: AnimalData[] = data.map((row) => ({
+        "Intake Date": row["Intake Date"],
+        "Animal Type": row["Animal Type"],
+      }));
+
+      // Log the animalData to check if it's parsed correctly
+      console.log("Animal Data:", animalData);
+
+      // Initialize counters for each year
+      const counters: { [year: string]: CounterType } = {};
+      for (let year = 2017; year <= 2024; year++) {
+        counters[year.toString()] = { DOG: 0, CAT: 0, RABBIT: 0 };
+      }
+
+      animalData.forEach((item) => {
+        const intakeYear = new Date(item["Intake Date"]).getFullYear();
+        if (intakeYear >= 2017 && intakeYear <= 2024) {
+          const animalType = item["Animal Type"];
+          // Check if the animal type is one of "DOG", "CAT", or "RABBIT"
+          if (["DOG", "CAT", "RABBIT"].includes(animalType)) {
+            counters[intakeYear.toString()][animalType] += 1;
+          }
+        }
+      });
+
+      // Log the counters to check if the counting logic is correct
+      console.log("Counters:", counters);
+
+      // Convert counters object to an array of objects for the chart
+      const chartDataArray: ChartData[] = [];
+      for (const year in counters) {
+        chartDataArray.push({
+          name: year,
+          ...counters[year],
+        });
+      }
+
+      // Log the chartDataArray to check if it's formed correctly
+      console.log("Chart Data Array:", chartDataArray);
+
+      setChartData(chartDataArray);
+    });
+  }, []);
+
   return (
     <AreaChart
       className="bg-black/40 px-3 py-3 rounded-md"
       width={1000}
       height={400}
-      data={data}
+      data={chartData}
       margin={{
         top: 10,
         right: 30,
@@ -82,7 +99,7 @@ export const StackedChart = () => {
       <Area
         animationDuration={2000}
         type="monotone"
-        dataKey="Dogs"
+        dataKey="DOG"
         stackId="1"
         stroke="#8884d8"
         fill="#9bb9eb"
@@ -90,7 +107,7 @@ export const StackedChart = () => {
       <Area
         animationDuration={4000}
         type="monotone"
-        dataKey="Cats"
+        dataKey="CAT"
         stackId="1"
         stroke="#82ca9d"
         fill="#68c953"
@@ -98,7 +115,7 @@ export const StackedChart = () => {
       <Area
         animationDuration={5500}
         type="monotone"
-        dataKey="Rabbits"
+        dataKey="RABBIT"
         stackId="1"
         stroke="#ffc658"
         fill="#ffc658"

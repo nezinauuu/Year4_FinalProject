@@ -18,13 +18,11 @@
     "axios": "^1.6.2",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
+    "d3-dsv": "^3.0.1",
+    "d3-fetch": "^3.0.1",
     "joi": "^17.12.0",
     "lucide-react": "^0.292.0",
     "next": "^14.1.0",
-<<<<<<< Updated upstream
-=======
-    "npm": "^10.4.0",
->>>>>>> Stashed changes
     "react": "^18",
     "react-dom": "^18",
     "react-hook-form": "^7.48.2",
@@ -35,6 +33,7 @@
     "zod": "^3.22.4"
   },
   "devDependencies": {
+    "@types/d3-fetch": "^3.0.7",
     "@types/joi": "^17.2.3",
     "@types/node": "^20",
     "@types/react": "^18",
