@@ -20,11 +20,11 @@ export default function RootLayout({
       <html lang="en">
         <body className={inter.className}>
           {children}
-          <input
+          {/* <input
             type="checkbox"
             value="mytheme"
             className="toggle theme-controller"
-          />
+          /> */}
         </body>
       </html>
     </ClerkProvider>
