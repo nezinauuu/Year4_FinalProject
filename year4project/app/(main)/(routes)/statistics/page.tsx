@@ -101,10 +101,10 @@ const Statistics = () => {
   return (
     <main>
       <title>Animal Statistics</title>
-      <div className="flex min-h-screen justify-center flex-col bg-base-100">
+      <div className="flex min-h-screen justify-center flex-col bg-base-100 ">
         <div className="px-5">
           <h1 className="text-8xl font-mono font-semibold text-gray-600">
-            Animal Statistics
+            Shelter Statistics
           </h1>
         </div>
         <div className="bg-white dark:bg-red-800 px-10 py-10 flex justify-center items-center">
@@ -113,6 +113,7 @@ const Statistics = () => {
               <h2 className="text-base-400 py-2 flex px-10">
                 Dog, Cat & Rabbit Shelter Statistics.
               </h2>
+
               <StackedChart />
 
               {/* <div className="py-5 max-w-lg">{reason || 0}</div> */}
@@ -205,6 +206,15 @@ const Statistics = () => {
 
               <div className="text-gray-300">help</div>
             </div>
+          </div>
+        </div>
+      </div>
+      <div className="flex min-h-screen flex-col bg-base-100 ">
+        <div className="bg-white dark:bg-red-800 px-10 py-10 flex justify-center items-center m-2">
+          <div className="flex bg-gray-100 px-10 py-10 rounded-md w-full justify-center gap-40">
+            Looking at the graphs, it is great to see that there has actually been some decline in intakes in Animal Shelters, atleast in Long Beach California. However, it is nowhere near a healthy
+            number with 1542 Cats being brought in in 2023 alone. And this year, there have already been 152 cats, 252 dogs and 14 rabbits brought into the shelters of Long Beach California. This is data
+            from only one city in one state. The numbers for the rest of the world must be in the millions.
           </div>
         </div>
       </div>

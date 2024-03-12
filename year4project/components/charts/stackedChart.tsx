@@ -81,12 +81,12 @@ export const StackedChart: React.FC = () => {
 
   return (
     <AreaChart
-      className="bg-black/40 px-3 py-3 rounded-md"
+      className="bg-blue-200/40 px-3 py-3 rounded-md border-2 border-gray-300"
       width={1000}
       height={400}
       data={chartData}
       margin={{
-        top: 10,
+        top: 20,
         right: 30,
         left: 0,
         bottom: 0,
@@ -94,23 +94,28 @@ export const StackedChart: React.FC = () => {
     >
       <CartesianGrid strokeDasharray="3 3" />
       <XAxis dataKey="name" />
-      <YAxis />
+      <YAxis domain={[0, 3000]} />
       <Tooltip />
-      <Area
-        animationDuration={2000}
-        type="monotone"
-        dataKey="DOG"
-        stackId="1"
-        stroke="#8884d8"
-        fill="#9bb9eb"
-      />
+
       <Area
         animationDuration={4000}
         type="monotone"
         dataKey="CAT"
-        stackId="1"
+        stackId="2"
         stroke="#82ca9d"
-        fill="#68c953"
+        fill="#089BCC"
+        fillOpacity={"50%"}
+        name="Cats"
+      />
+      <Area
+        animationDuration={2000}
+        type="monotone"
+        dataKey="DOG"
+        stackId="3"
+        stroke="#8884d8"
+        fill="#9bb9eb"
+        fillOpacity={"50%"}
+        name="Dogs"
       />
       <Area
         animationDuration={5500}
@@ -118,7 +123,9 @@ export const StackedChart: React.FC = () => {
         dataKey="RABBIT"
         stackId="1"
         stroke="#ffc658"
-        fill="#ffc658"
+        fill="#FF0000"
+        name="Rabbits"
+        fillOpacity={"50%"}
       />
     </AreaChart>
   );
