@@ -41,7 +41,7 @@ export const StackedChart: React.FC = () => {
       }));
 
       // Log the animalData to check if it's parsed correctly
-      console.log("Animal Data:", animalData);
+      // console.log("Animal Data:", animalData);
 
       // Initialize counters for each year
       const counters: { [year: string]: CounterType } = {};
@@ -61,7 +61,7 @@ export const StackedChart: React.FC = () => {
       });
 
       // Log the counters to check if the counting logic is correct
-      console.log("Counters:", counters);
+      // console.log("Counters:", counters);
 
       // Convert counters object to an array of objects for the chart
       const chartDataArray: ChartData[] = [];
@@ -73,7 +73,7 @@ export const StackedChart: React.FC = () => {
       }
 
       // Log the chartDataArray to check if it's formed correctly
-      console.log("Chart Data Array:", chartDataArray);
+      // console.log("Chart Data Array:", chartDataArray);
 
       setChartData(chartDataArray);
     });
@@ -102,11 +102,12 @@ export const StackedChart: React.FC = () => {
         type="monotone"
         dataKey="CAT"
         stackId="2"
-        stroke="#82ca9d"
+        stroke="#089BCC"
         fill="#089BCC"
         fillOpacity={"50%"}
         name="Cats"
       />
+
       <Area
         animationDuration={2000}
         type="monotone"
@@ -122,7 +123,7 @@ export const StackedChart: React.FC = () => {
         type="monotone"
         dataKey="RABBIT"
         stackId="1"
-        stroke="#ffc658"
+        stroke="#FF0000"
         fill="#FF0000"
         name="Rabbits"
         fillOpacity={"50%"}

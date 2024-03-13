@@ -5,6 +5,8 @@ import { TwoPieChart } from "@/components/charts/pieChart";
 import { StackedChart } from "@/components/charts/stackedChart";
 import axios from "axios";
 import { nullable } from "zod";
+import { SlArrowDown } from "react-icons/sl";
+import { UserButton } from "@clerk/nextjs";
 
 interface AnimalDataEntry {
   animal_name: string;
@@ -103,6 +105,10 @@ const Statistics = () => {
       <title>Animal Statistics</title>
       <div className="flex min-h-screen justify-center flex-col bg-base-100 ">
         <div className="px-5">
+          <div className="absolute right-10 top-10 border-4 rounded-badge">
+            <UserButton />
+          </div>
+
           <h1 className="text-8xl font-mono font-semibold text-gray-600">
             Shelter Statistics
           </h1>
@@ -119,7 +125,7 @@ const Statistics = () => {
               {/* <div className="py-5 max-w-lg">{reason || 0}</div> */}
               <div>
                 <h2>
-                  Last 50 Shelter Animal Outcomes in Long Beach California
+                  Last 50 Shelter Animal Intake Reasons in Long Beach California
                 </h2>
 
                 <table className="flex flex-col gap-1 px- w-full">
@@ -208,13 +214,36 @@ const Statistics = () => {
             </div>
           </div>
         </div>
+        <div className="flex justify-center py-5 text-blue-100 opacity-50">
+          <SlArrowDown className="text-4xl" />
+        </div>
       </div>
+
       <div className="flex min-h-screen flex-col bg-base-100 ">
         <div className="bg-white dark:bg-red-800 px-10 py-10 flex justify-center items-center m-2">
-          <div className="flex bg-gray-100 px-10 py-10 rounded-md w-full justify-center gap-40">
-            Looking at the graphs, it is great to see that there has actually been some decline in intakes in Animal Shelters, atleast in Long Beach California. However, it is nowhere near a healthy
-            number with 1542 Cats being brought in in 2023 alone. And this year, there have already been 152 cats, 252 dogs and 14 rabbits brought into the shelters of Long Beach California. This is data
-            from only one city in one state. The numbers for the rest of the world must be in the millions.
+          <div className=" indicator">
+            <span className="indicator-item badge bg-cyan-500 text-gray-900 indicator-start">
+              Note:
+            </span>
+            <div className="flex flex-col bg-gray-100 px-10 py-10 rounded-md w-full justify-center gap-4">
+              <p>
+                {" "}
+                Looking at the graphs, it is great to see that there has
+                actually been some decline in intakes in Animal Shelters,
+                atleast in Long Beach California. However, it is nowhere near a
+                healthy number with 1542 Cats being brought in in 2023 alone.
+                And this year, there have already been 152 cats, 252 dogs and 14
+                rabbits brought into the shelters of Long Beach California. This
+                is data from only one city in one state. The numbers for the
+                rest of the world must be in the millions.
+              </p>
+              <p>
+                Whats more important to notice however, is that the majority of
+                animal intake reasons are No Time or Aggressive animal. Reasons
+                such as these could have been easily avoidable if proper
+                research was done before adopting.
+              </p>
+            </div>
           </div>
         </div>
       </div>

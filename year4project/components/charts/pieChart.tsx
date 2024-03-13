@@ -26,11 +26,12 @@ export const TwoPieChart = ({ data }: { data: DataItem[] }) => {
   ];
   return (
     <PieChart
-      className="bg-black/40 px-3 py-3 rounded-md"
+      className="bg-black/40 px-3 py-3 rounded-md border-4 border-gray-800"
       width={310}
       height={310}
     >
       <Pie
+        
         dataKey="value"
         isAnimationActive={true}
         data={data}
@@ -42,7 +43,7 @@ export const TwoPieChart = ({ data }: { data: DataItem[] }) => {
         animationDuration={3000}
       >
         {data.map((entry, index) => (
-          <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+          <Cell  key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
         ))}
       </Pie>
       <Tooltip />
