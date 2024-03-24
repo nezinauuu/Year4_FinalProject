@@ -15,6 +15,7 @@ import { AddPetForm } from "@/components/ui/modals/add-pet";
 import Link from "next/link";
 
 import React, { PureComponent } from "react";
+import DynamicCarousel from "@/components/ui/dynamicCarousel";
 
 const Home = async () => {
   const profile = await initialProfile();
@@ -36,74 +37,70 @@ const Home = async () => {
 
   return (
     <main>
-      <title>Pets</title>
-      <div className="flex flex-col p-12 bg-[url('../images/background-top.svg')] bg-cover min-h-screen">
-        <div className="fixed top-10 right-10 flex hover:-translate-y-0 hover:scale-90 duration-100"></div>
-        <div className="fixed top-10 right-10 flex hover:-translate-y-0 hover:scale-90 duration-100">
-          <UserButton />
-          <div className="fixed top-10 right-10 flex gap-4 hover:-translate-y-0 hover:scale-90 duration-100">
+      <div className="flex flex-col min-h-screen">
+        <div className="flex justify-between p-4 bg-[url('../images/background-top.svg')] bg-cover">
+          <div>
+            <h1 className="text-3xl font-bold text-white">
+              Pets App Dashboard
+            </h1>
+          </div>
+          <div>
+            <UserButton />
             <SignIn />
             <SignUp />
           </div>
         </div>
 
-        <div className="flex justify-center py-4">
-          <h1 className=" backdrop-blur-md bg-white/10 drop-shadow-lg font-extrabold sm:text-[3rem] py-8 px-4 max-w-4xl text-white">
-            Welcome to Pets App
+        <div className="flex flex-col items-center justify-center bg-orange-950 glass bg-blur flex-grow p-4">
+          <h1 className="text-4xl font-bold  my-8">
+            Welcome, {profile ? profile.name : "Guest"}
           </h1>
-        </div>
 
-        {/* <AddPet /> */}
-
-        <div className="flex justify-center flex-row py-9 gap-16 m-w-64">
-          <img
-            src={luckyImage.src}
-            alt="Lucky"
-            className="object-cover w-full h-full rounded-xl max-w-md min-w-[200px] border-red-300 border-4"
-          />
-
-          <div className="flex justify-center flex-col">
-            <div className="transition ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-peach duration-300">
-              {pet && <Link href={`/pets/${pet.id}`}>Go to your pets.</Link>}
+          <div className="flex flex-wrap justify-center gap-8">
+            <div className="w-64">
+              <img
+                src={luckyImage.src}
+                alt="Lucky"
+                className="w-full rounded-xl border-4 border-red-300"
+              />
+              {pet && (
+                <Link href={`/pets/${pet.id}`}>
+                  <button className="block mt-4 text-center text-white bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-lg">
+                    Your Pets
+                  </button>
+                </Link>
+              )}
             </div>
 
-            <div className="transition ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-peach duration-300">
-              <Link href={`/statistics`}>Investigate Pet Statistics.</Link>
+              <DynamicCarousel/>
+
+
+
+            <div className="w-64">
+              <img
+                src={Bulldog.src}
+                alt="Bulldog"
+                className="w-full rounded-xl border-4 border-red-300"
+              />
+              <Link href="/statistics">
+                <button className="block mt-4 text-center text-white bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-lg">
+                  Pet Statistics
+                </button>
+              </Link>
             </div>
           </div>
+        </div>
 
-          <div className="flex flex-col justify-center max-w-2xl gap-5">
-            <ScrollToTop />
-            <h1 className="text-4xl font-bold text-white m-3">
+        <div className="flex justify-center p-4 bg-[url('../images/background-bot.svg')] bg-cover">
+          <div className="max-w-2xl">
+            <h1 className="text-4xl font-bold text-white mb-4">
               Looking for a new animal?
             </h1>
-            <p className="text-white m-3">
+            <p className="text-white mb-8">
               Check out important information about the animal you want to
               adopt.
             </p>
-          </div>
-        </div>
-      </div>
-
-      <div
-        id="new-animal-section"
-        className="flex flex-col p-12 bg-[url('../images/background-bot.svg')] bg-cover min-h-screen "
-      >
-        <h1 className="text-4xl font-bold text-white m-3 flex justify-end">
-          Looking for a new animal?
-        </h1>
-        <p className="text-white m-3 flex justify-end">
-          Check out important information about the animal you want to adopt.
-        </p>
-
-        <div className="flex justify-center flex-col gap-32">
-          <div className="backdrop-blur-md bg-white/10 border-4 transition ease-in-out hover:-translate-y-0 hover:scale-95 duration-100"></div>
-
-          <div>
-            <img
-              src={Bulldog.src}
-              className="object-cover w-full h-full rounded-xl max-w-md min-w-[200px] border-red-300 border-4 "
-            ></img>
+            <ScrollToTop />
           </div>
         </div>
       </div>

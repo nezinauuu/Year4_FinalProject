@@ -8,6 +8,7 @@ import { nullable } from "zod";
 import { SlArrowDown } from "react-icons/sl";
 import { UserButton } from "@clerk/nextjs";
 
+
 interface AnimalDataEntry {
   animal_name: string;
   intake_date: string; // Adjust the type as necessary
@@ -160,7 +161,7 @@ const Statistics = () => {
               <h2 className="text-error py-2 flex items-center ">
                 Last 50 Shelter Animal Outcomes in Long Beach California
               </h2>
-
+                    
               <TwoPieChart data={outcomeData} />
               <div>
                 <div className="py-5 text-gray-300">
