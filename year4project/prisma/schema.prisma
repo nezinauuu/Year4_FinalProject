@@ -20,7 +20,8 @@ model Profile {
 
   pets          Pet[]
   animalKeepers AnimalKeeper[]
-  forums Forum[]
+  forums        Forum[]  // Relationship with Forum model
+
 }
 
 model Pet {
@@ -65,22 +66,19 @@ model AnimalKeeper {
   @@index([profileId])
 }
 
-model Forum {
-  id          String @id @default(uuid())
-  name        String
+model Forum { 
+  id        String   @id @default(uuid())
+  title     String
+  content   String
   description String
-  imageUrl    String @db.Text
+  creatorId String   // ID of the profile who created the forum
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  profileId String
-  author   Profile @relation(fields: [profileId], references: [id], onDelete: Cascade)
+  creator Profile @relation(fields: [creatorId], references: [id]) // Relationship with Profile model
 
-
-
-  @@index([profileId])
+  @@index([creatorId])
 }
-
 
 

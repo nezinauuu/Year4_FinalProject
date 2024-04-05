@@ -69,6 +69,16 @@ const Home = async () => {
               </div>
 
               <div className="w-full">
+                {pet && (
+                  <Link href={`/pets/${pet.id}`}>
+                    <button className="w-full h-32 text-3xl font-bold block mt-4 text-center text-white bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-lg">
+                      Looking for a pet?
+                    </button>
+                  </Link>
+                )}
+              </div>
+
+              <div className="w-full">
                 <Link href="/statistics">
                   <button className="w-full h-32 text-3xl font-bold block mt-4 text-center text-white bg-gray-900 hover:text-red-400 px-4 py-2 rounded-lg">
                     Pet Statistics
@@ -77,7 +87,7 @@ const Home = async () => {
               </div>
 
               <div className="w-full">
-                <Link href="/statistics">
+                <Link href="/forums">
                   <button className="w-full h-32 text-3xl font-bold block mt-4 text-center text-white bg-gray-900 hover:text-red-400 px-4 py-2 rounded-lg">
                     Pet Forums
                   </button>
@@ -91,14 +101,17 @@ const Home = async () => {
         </div>
 
         <div className="flex justify-center p-4 bg-gray-900 bg-cover">
-          <div className="max-w-2xl">
-            <h1 className="text-4xl font-bold text-white mb-4">
-              First time using Pet App?
-            </h1>
-            <p className="text-white mb-8">
-              Check out important information about the animal you want to
-              adopt.
-            </p>
+          <div className="max-w-2xl ">
+            <Link href={`/pets}`}>
+              <h1 className="text-4xl hover:text-red-400  font-bold justify-center flex text-white mb-4">
+                First time using Pet App?
+              </h1>
+            </Link>{" "}
+            <Link href={`/pets}`}>
+              <p className="text-white hover:text-red-400  mb-8 justify-center flex">
+                Click here to find out what you can do!
+              </p>{" "}
+            </Link>
             <ScrollToTop />
           </div>
         </div>
