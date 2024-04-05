@@ -9,7 +9,7 @@ import { FaDog } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa";
 export const Footer = async () => {
   return (
-    <footer className="footer footer-center p-10 bg-gray-900 text-primary-content text-red-400">
+    <footer className="footer footer-center p-10 bg-gray-900 text-red-400">
       <aside>
         <FaDog className="text-4xl" />
         <p className="font-bold">

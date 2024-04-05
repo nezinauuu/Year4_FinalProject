@@ -1,17 +1,11 @@
 import { useEffect, useState } from "react";
 
+
+
 const Carousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const carouselItems = [
-    "https://daisyui.com/images/stock/photo-1559703248-dcaaec9fab78.jpg",
-    "https://daisyui.com/images/stock/photo-1565098772267-60af42b81ef2.jpg",
-    "https://daisyui.com/images/stock/photo-1572635148818-ef6fd45eb394.jpg",
-    "https://daisyui.com/images/stock/photo-1494253109108-2e30c049369b.jpg",
-    "https://daisyui.com/images/stock/photo-1550258987-190a2d41a8ba.jpg",
-    "https://daisyui.com/images/stock/photo-1559181567-c3190ca9959b.jpg",
-    "https://daisyui.com/images/stock/photo-1601004890684-d8cbf643f5f2.jpg",
-  ];
+  const carouselItems = ["/dog1.png", "/dog2.png", "/dog3.png"];
 
   const nextSlide = () => {
     console.log("Current index before update:", currentIndex);
@@ -34,7 +28,7 @@ const Carousel = () => {
 
   return (
     <main>
-      <div className="w-64 carousel rounded-box">
+      <div className="carousel border-4 border-blue-950">
         {carouselItems.map((item, index) => (
           <div
             key={index}
