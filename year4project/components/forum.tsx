@@ -22,7 +22,7 @@ export const Forum = async () => {
       {forums &&
         forums.map((forum) => (
           <div className="px-2  py-2 min-w-screen" key={forum.id}>
-            <Link href={`/forums/${forum.title}`}>
+            <Link href={`/forums/${encodeURIComponent(forum.title)}`}>
               <div className=" bg-gray-900 px-3 py-3 ">
                 <div className="border-red-500 btn btn-ghost text-xl bg-gray-300 min-w-full h-64">
                   <div className="flex flex-col  justify-start items-start">

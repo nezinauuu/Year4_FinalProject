@@ -111,7 +111,7 @@ const Home = async () => {
               <p className="text-white hover:text-red-400  mb-8 justify-center flex">
                 Click here to find out what you can do!
               </p>{" "}
-            </Link>
+            </Link> 
             <ScrollToTop />
           </div>
         </div>
