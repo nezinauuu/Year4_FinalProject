@@ -5,10 +5,10 @@ import { format } from "date-fns"; // Import the format function from date-fns
 export default async function ForumTitle({
   params,
 }: {
-  params: { forumId: string };
+  params: { forumName: string };
 }) {
   const forum = await db.forum.findFirst({
-    where: { title: params.forumId },
+    where: { title: params.forumName.replace(/-/g, " ") },
     include: {
       chatLogs: {
         include: {
@@ -38,7 +38,7 @@ export default async function ForumTitle({
           <div className="py-2">
             <div className="border-red-500 text-xl rounded-md bg-gray-300 min-w-full h-64">
               <div className="flex flex-col text-left px-3 py-3">
-                <div className="flex-row flex gap-2 items-center">
+                <div className="flex-row flex gap-2 justify-center">
                   <div>{chatLog.sender.name}</div>
                   <p className="text-gray-500 text-sm">
                     {format(new Date(chatLog.sentAt), "yyyy-MM-dd HH:mm:ss")}
