@@ -1,43 +1,55 @@
-import { currentProfile } from "@/lib/current-profile";
 import { db } from "@/lib/db";
 import { UserButton } from "@clerk/nextjs";
-import { redirect } from "next/navigation";
-import Link from "next/link";
+import { format } from "date-fns"; // Import the format function from date-fns
 
-
-
-const ForumTitle = async () => {
-
-
-
-  const chatlog = await db.chatLog.findMany({
-    where: {
-      forum: {
-        title:"TitleTest"
+export default async function ForumTitle({
+  params,
+}: {
+  params: { forumId: string };
+}) {
+  const forum = await db.forum.findFirst({
+    where: { title: params.forumId },
+    include: {
+      chatLogs: {
+        include: {
+          sender: true,
+        },
       },
     },
   });
 
+  if (!forum) {
+    return null;
+  }
+
   return (
-    <div className="py-10 px-10">
-        EEEEE
-      {chatlog &&
-        chatlog.map((chatLog) => (
-          <div className="px-2  py-2 min-w-screen" key={chatLog.id}>
-            <Link href={`/forums/${chatLog.senderId}`}>
-              <div className=" bg-gray-900 px-3 py-3 ">
-                <div className="border-red-500 btn btn-ghost text-xl bg-gray-300 min-w-full h-64">
-                  <div className="flex flex-col  justify-start items-start">
-                    <h2 className="text-left  text-red-400">
-                      {chatLog.message}
-                    </h2>
-                  </div>
+    <div className="py-10 px-10 bg-gray-900 min-h-screen">
+      <div className="absolute right-10">
+        <UserButton />
+      </div>
+
+      <div className="justify-center flex">
+        <h2 className="text-left text-7xl font-extrabold text-red-400">
+          {forum.title}
+        </h2>
+      </div>
+      <div className=" bg-gray-800 rounded-md px-3 py-3  ">
+        {forum.chatLogs.map((chatLog) => (
+          <div className="py-2">
+            <div className="border-red-500 text-xl rounded-md bg-gray-300 min-w-full h-64">
+              <div className="flex flex-col text-left px-3 py-3">
+                <div className="flex-row flex gap-2 items-center">
+                  <div>{chatLog.sender.name}</div>
+                  <p className="text-gray-500 text-sm">
+                    {format(new Date(chatLog.sentAt), "yyyy-MM-dd HH:mm:ss")}
+                  </p>
                 </div>
+                <p className="text-gray-600">{chatLog.message}</p>
               </div>
-            </Link>
+            </div>
           </div>
         ))}
+      </div>
     </div>
   );
-};
-export default ForumTitle
+}

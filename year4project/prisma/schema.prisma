@@ -83,14 +83,16 @@ model Forum {
 }
 
 model ChatLog {
-  id        String   @id @default(uuid())
-  message   String
-  senderId  String
-  forumId   String
-  sentAt    DateTime @default(now())
+  id         String   @id @default(uuid())
+  message    String
+  senderId   String
+  sender     Profile  @relation(fields: [senderId], references: [id])
+  senderName String   @map("sender_name") // New field to store sender's name
 
-  sender    Profile  @relation(fields: [senderId], references: [id])
-  forum     Forum    @relation(fields: [forumId], references: [id])
+  forumId    String
+  sentAt     DateTime @default(now())
+
+  forum      Forum    @relation(fields: [forumId], references: [id])
 
   @@index([senderId])
   @@index([forumId])
