@@ -35,7 +35,7 @@ export default async function ForumTitle({
       </div>
       <div className=" bg-gray-800 rounded-md px-3 py-3  ">
         {forum.chatLogs.map((chatLog) => (
-          <div className="py-2">
+          <div className="py-2" key={chatLog.id}>
             <div className="border-red-500 text-xl rounded-md bg-gray-300 min-w-full h-64">
               <div className="flex flex-col text-left px-3 py-3">
                 <div className="flex-row flex gap-2 justify-center">
