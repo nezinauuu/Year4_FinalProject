@@ -13,7 +13,7 @@ import { ScrollToTop } from "@/components/ui/ScrollToTop";
 import { SignIn, SignUp } from "@clerk/nextjs";
 import { AddPetForm } from "@/components/ui/modals/add-pet";
 import Link from "next/link";
-
+import { useUser } from "@clerk/nextjs";
 import React, { PureComponent } from "react";
 import DynamicCarousel from "@/components/ui/dynamicCarousel";
 
@@ -53,7 +53,7 @@ const Home = async () => {
 
         <div className="flex flex-col items-center justify-center bg-gray-300 glass flex-grow p-4">
           <h1 className="text-4xl font-bold my-8">
-            Welcome, {profile ? profile.name : "Guest"}
+            Welcome, {profile.name.split(" ")[0]}
           </h1>
 
           <div className="flex items-center flex-wrap justify-center gap-8">
@@ -111,7 +111,7 @@ const Home = async () => {
               <p className="text-white hover:text-red-400  mb-8 justify-center flex">
                 Click here to find out what you can do!
               </p>{" "}
-            </Link> 
+            </Link>
             <ScrollToTop />
           </div>
         </div>

@@ -23,7 +23,7 @@ export default async function ForumTitle({
   }
 
   return (
-    <div className="py-10 px-10 bg-gray-900 min-h-screen">
+    <div className="py-10 px-10 bg-gray-900 ">
       <div className="absolute right-10">
         <UserButton />
       </div>
@@ -39,7 +39,7 @@ export default async function ForumTitle({
             <div className="border-red-500 text-xl rounded-md bg-gray-300 min-w-full h-64">
               <div className="flex flex-col text-left px-3 py-3">
                 <div className="flex-row flex gap-2 justify-center">
-                  <div>{chatLog.sender.name}</div>
+                  <div>{chatLog.sender.name.split(" ")[0]}</div>
                   <p className="text-gray-500 text-sm">
                     {format(new Date(chatLog.sentAt), "yyyy-MM-dd HH:mm:ss")}
                   </p>

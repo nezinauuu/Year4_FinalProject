@@ -1,4 +1,3 @@
-
 import { PetNav } from "@/components/navbars/petNav";
 import { AddPetForm } from "@/components/ui/modals/add-pet";
 import { UserButton } from "@clerk/nextjs";
@@ -15,10 +14,9 @@ const forums = () => {
           <UserButton />
         </div>
       </div>
-
-      <Forum/>
-
-  
+      <div className="overflow-y-auto h-80">
+        <Forum />
+      </div>
     </div>
   );
 };
