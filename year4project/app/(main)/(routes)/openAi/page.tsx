@@ -110,7 +110,7 @@ const PetCareAssistant = () => {
                     {...field}
                     type="text"
                     placeholder="Cats or dogs?"
-                    className="input border-red-400 w-full "
+                    className="input border-red-400 w-full text-gray-400"
                   />
                 )}
               />
