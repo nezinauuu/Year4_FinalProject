@@ -16,7 +16,7 @@ interface Message {
   content: string;
 }
 
-const AskQuestion = () => {
+const PetCareAssistant = () => {
   const router = useRouter();
   const [isMounted, setIsMounted] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
@@ -123,4 +123,4 @@ const AskQuestion = () => {
   );
 };
 
-export default AskQuestion;
+export default PetCareAssistant;

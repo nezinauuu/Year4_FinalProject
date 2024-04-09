@@ -1,19 +1,9 @@
 import { db } from "@/lib/db";
 import { initialProfile } from "@/lib/initial-profile";
-import { redirect } from "next/navigation";
-import backgroundImage from "@/images/background-top.svg"; // import the SVG file
-import { Button } from "@/components/ui/button";
-import axios from "axios";
-import { useEffect, useState } from "react";
 import { UserButton } from "@clerk/nextjs";
-import { User } from "lucide-react";
-import luckyImage from "@/images/lucky.jpg";
-import Bulldog from "@/images/Bulldog.jpg";
 import { ScrollToTop } from "@/components/ui/ScrollToTop";
 import { SignIn, SignUp } from "@clerk/nextjs";
-import { AddPetForm } from "@/components/ui/modals/add-pet";
 import Link from "next/link";
-import { useUser } from "@clerk/nextjs";
 import React, { PureComponent } from "react";
 import DynamicCarousel from "@/components/ui/dynamicCarousel";
 import Greeting from "@/components/ui/greeting";
