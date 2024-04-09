@@ -12,7 +12,7 @@ const Greeting = () => {
     greeting = "Good evening";
   }
 
-  return <div>{greeting}</div>;
+  return <div>{greeting}&nbsp;</div>;
 };
 
 export default Greeting;

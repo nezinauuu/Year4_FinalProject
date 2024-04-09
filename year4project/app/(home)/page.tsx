@@ -43,8 +43,8 @@ const Home = async () => {
         </div>
 
         <div className="flex flex-col items-center justify-center bg-gray-300 glass flex-grow p-4">
-          <h1 className="text-4xl font-bold my-8">
-            <Greeting /> {profile.name.split(" ")[0]}
+          <h1 className="text-4xl font-bold my-8 flex flex-row">
+            <Greeting />{profile.name.split(" ")[0]}!
           </h1>
 
           <div className="flex items-center flex-wrap justify-center gap-8">

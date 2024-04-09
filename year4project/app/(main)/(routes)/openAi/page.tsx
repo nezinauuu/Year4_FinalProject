@@ -91,7 +91,7 @@ const PetCareAssistant = () => {
                     </div>
                   ) : (
                     <div className="text-blue-200 flex flex-col justify-center items-center ">
-                      <p className="font-bold">PetLink:</p>{" "}
+                      <p className="font-bold ">PetLink:</p>{" "}
                       <p>{message.content}</p>
                     </div>
                   )}
