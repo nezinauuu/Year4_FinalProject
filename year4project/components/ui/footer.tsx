@@ -21,10 +21,10 @@ export const Footer = async () => {
       <nav>
         <div className="grid grid-flow-col gap-4">
           <Link href="https://github.com/nezinauuu">
-            <FaGithub className="text-2xl" />
+            <FaGithub className="text-2xl hover:text-slate-200" />
           </Link>
           <Link href="https://www.linkedin.com/in/benas-bubulas-6a7861208/">
-            <FaLinkedin className="text-2xl" />
+            <FaLinkedin className="text-2xl hover:text-blue-500" />
           </Link>
         </div>
       </nav>
