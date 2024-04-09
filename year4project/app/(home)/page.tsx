@@ -70,14 +70,12 @@ const Home = async () => {
               </div>
 
               <div className="w-full">
-                {pet && (
-                  <Link href={`/pets/${pet.id}`}>
-                    <button className="w-full h-32 font-bold block mt-4 text-center text-white bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-lg">
-                      <h1 className="text-3xl">Looking for a pet?</h1>
-                      <p className="text-md">Talk to our virtual ai assistant!</p>
-                    </button>
-                  </Link>
-                )}
+                <Link href={`/openAi`}>
+                  <button className="w-full h-32 font-bold block mt-4 text-center text-white bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-lg">
+                    <h1 className="text-3xl">Looking for a pet?</h1>
+                    <p className="text-md">Talk to our virtual ai assistant!</p>
+                  </button>
+                </Link>
               </div>
 
               <div className="w-full">
