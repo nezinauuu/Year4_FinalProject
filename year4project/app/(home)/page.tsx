@@ -32,7 +32,7 @@ const Home = async () => {
         <div className="flex justify-between p-4 bg-gray-900 bg-cover">
           <div>
             <h1 className="text-3xl font-bold bg-gray-900 text-red-400">
-              Pets App Dashboard
+              PetLink Dashboard
             </h1>
           </div>
           <div>
@@ -94,7 +94,7 @@ const Home = async () => {
           <div className="max-w-2xl ">
             <Link href={`/pets}`}>
               <h1 className="text-4xl hover:text-red-400  font-bold justify-center flex text-white mb-4">
-                First time using Pet App?
+                First time using PetLink?
               </h1>
             </Link>{" "}
             <Link href={`/pets}`}>

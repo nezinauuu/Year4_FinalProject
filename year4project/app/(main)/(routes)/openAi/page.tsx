@@ -71,9 +71,9 @@ const PetCareAssistant = () => {
 
   return (
     <div className="flex justify-center items-center  min-h-screen gap-10 flex-col">
-      <title>Pet Care Assistant</title>
+      <title>PetLink Assistant</title>
       <div className="text-red-400 text-5xl  px-10 py-10 font-extrabold top-10 absolute">
-        <h1>Pet Care Ai Assistant</h1>
+        <h1>PetLink Ai Assistant</h1>
       </div>
       <div className="bg-gray-800 rounded-lg m-5 border border-red-100  ">
         <div className="flex justify-center flex-col items-center gap-5 m-5">
