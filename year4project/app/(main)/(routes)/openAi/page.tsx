@@ -55,7 +55,7 @@ const PetCareAssistant = () => {
       setMessages((prevMessages) => [
         ...prevMessages,
         { role: "user", content: values.content },
-        { role: "AI", content: "PetCareAi: " + responseDataString }, // Use the stringified responseData
+        { role: "AI", content: responseDataString }, // Use the stringified responseData
       ]);
 
       form.reset();
@@ -70,29 +70,38 @@ const PetCareAssistant = () => {
   }
 
   return (
-    <div className="flex justify-center items-center min-h-screen gap-10 flex-col">
+    <div className="flex justify-center items-center  min-h-screen gap-10 flex-col">
       <title>Pet Care Assistant</title>
-      <div className="text-red-400 text-5xl px-10 py-10 font-extrabold top-10 absolute">
+      <div className="text-red-400 text-5xl  px-10 py-10 font-extrabold top-10 absolute">
         <h1>Pet Care Ai Assistant</h1>
       </div>
-      <div className="bg-gray-800 px-10 py-10 rounded min-w-screen">
-        <div className="card card-compact w-96 bg-gray-700 shadow-xl h-96">
-          <div className="h-96 py-3 px-3  text-red-400">
-            {messages.map((message, index) => (
-              <div className="py-2" key={index}>
-                {message.role === "user" ? (
-                  <p>
-                    {user.fullName}: {message.content}
-                  </p>
-                ) : (
-                  <p>{message.content}</p>
-                )}
-              </div>
-            ))}
+      <div className="bg-gray-800 rounded-lg m-5 border border-red-100  ">
+        <div className="flex justify-center flex-col items-center gap-5 m-5">
+          <div className="flex justify-center text-red-400 text-xl">
+            Hello, Start by asking a question!
+          </div>
+          <div className="card card-compact w-96 bg-gray-700  shadow-xl h-96 border-2 border-blue-200 ">
+            <div className="h-96 py-3 px-3  text-red-400 overflow-y-auto">
+              {messages.map((message, index) => (
+                <div className="py-2" key={index}>
+                  {message.role === "user" ? (
+                    <div className="flex flex-col justify-center items-center  ">
+                      <p className="font-bold">{user.firstName}: </p>{" "}
+                      <p>{message.content}</p>
+                    </div>
+                  ) : (
+                    <div className="text-blue-200 flex flex-col justify-center items-center ">
+                      <p className="font-bold">PetCareAi:</p>{" "}
+                      <p>{message.content}</p>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
           </div>
 
-          <div className="card-body flex-row">
-            <div className="gap-3 flex flex-col">
+          <div className="card-body flex-row border-t-2 border-t-red-400">
+            <div className="gap-3 flex flex-col ">
               <Controller
                 control={form.control}
                 name="content"
@@ -100,8 +109,8 @@ const PetCareAssistant = () => {
                   <input
                     {...field}
                     type="text"
-                    placeholder="Content"
-                    className="input input-bordered input-error w-full  bg-red-100"
+                    placeholder="Cats or dogs?"
+                    className="input border-red-400 w-full "
                   />
                 )}
               />
@@ -112,7 +121,7 @@ const PetCareAssistant = () => {
                 className="flex gap-2"
                 onSubmit={form.handleSubmit(onSubmit)}
               >
-                <button className="btn btn-primary">Send</button>
+                <button className="btn hover:bg-red-400">Send</button>
               </form>
             </div>
             <div className="card-actions justify-end"></div>
