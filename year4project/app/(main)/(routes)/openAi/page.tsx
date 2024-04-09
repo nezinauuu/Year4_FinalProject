@@ -1,25 +1,26 @@
 "use client";
-
 import axios from "axios";
 import { Controller, useForm } from "react-hook-form";
 import { joiResolver } from "@hookform/resolvers/joi";
 import Joi from "joi";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import { useUser } from "@clerk/nextjs";
 
 const schema = Joi.object({
   content: Joi.string(),
 });
 
-interface ResponseData {
+interface Message {
   role: string;
   content: string;
 }
 
-const askQuestion = () => {
+const AskQuestion = () => {
   const router = useRouter();
   const [isMounted, setIsMounted] = useState(false);
-  const [responseData, setResponseData] = useState<ResponseData | null>(null);   useEffect(() => {
+  const [messages, setMessages] = useState<Message[]>([]);
+  useEffect(() => {
     setIsMounted(true);
   }, []);
 
@@ -30,14 +31,32 @@ const askQuestion = () => {
     },
   });
 
+  const { isLoaded, user } = useUser();
+
+  if (!isLoaded) {
+    // Handle loading state however you like
+    return null;
+  }
+
+  if (!user) return null;
+
   const onSubmit = async (values: { content: string }) => {
     try {
       const response = await axios.post("/api/openAi", values);
-      setResponseData(response.data); // Update responseData using setState
+      const responseData = response.data;
 
-      console.log(values);
-      // Handle the response data here, you can log it or update the state as needed
-      console.log(response.data);
+      // Ensure responseData is a string
+      const responseDataString =
+        typeof responseData === "object"
+          ? JSON.stringify(responseData)
+          : responseData;
+
+      // Add user message and AI response to messages array
+      setMessages((prevMessages) => [
+        ...prevMessages,
+        { role: "user", content: values.content },
+        { role: "AI", content: "PetCareAi: " + responseDataString }, // Use the stringified responseData
+      ]);
 
       form.reset();
       router.refresh();
@@ -58,13 +77,18 @@ const askQuestion = () => {
       </div>
       <div className="bg-gray-800 px-10 py-10 rounded min-w-screen">
         <div className="card card-compact w-96 bg-gray-700 shadow-xl h-96">
-          <div className="h-96 py-3 px-3 text-red-400">
-            {responseData && (
-              <div>
-                <h2>{responseData.role}</h2>
-                <p>Content: {responseData.content}</p>
+          <div className="h-96 py-3 px-3  text-red-400">
+            {messages.map((message, index) => (
+              <div className="py-2" key={index}>
+                {message.role === "user" ? (
+                  <p>
+                    {user.fullName}: {message.content}
+                  </p>
+                ) : (
+                  <p>{message.content}</p>
+                )}
               </div>
-            )}
+            ))}
           </div>
 
           <div className="card-body flex-row">
@@ -76,7 +100,7 @@ const askQuestion = () => {
                   <input
                     {...field}
                     type="text"
-                    placeholder="Name"
+                    placeholder="Content"
                     className="input input-bordered input-error w-full  bg-red-100"
                   />
                 )}
@@ -88,7 +112,6 @@ const askQuestion = () => {
                 className="flex gap-2"
                 onSubmit={form.handleSubmit(onSubmit)}
               >
-                {/* if there is a button in form, it will close the modal */}
                 <button className="btn btn-primary">Send</button>
               </form>
             </div>
@@ -100,4 +123,4 @@ const askQuestion = () => {
   );
 };
 
-export default askQuestion;
+export default AskQuestion;

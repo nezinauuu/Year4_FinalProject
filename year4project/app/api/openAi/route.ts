@@ -17,7 +17,7 @@ export async function POST(req: Request) {
       model: "gpt-3.5-turbo",
     });
 
-    return NextResponse.json(completion.choices[0].message);
+    return NextResponse.json(completion.choices[0].message.content);
   } catch (error) {
     console.log("[SERVERS_POST]", error);
     return new NextResponse("Internal Error", { status: 500 });
