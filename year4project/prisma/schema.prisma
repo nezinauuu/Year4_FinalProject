@@ -1,9 +1,10 @@
+// prisma/schema.prisma
 datasource db {
-  provider     = "mysql"
-  url          = env("DATABASE_URL")
-  relationMode = "prisma"
+  provider  = "postgresql"
+  url  	    = env("DATABASE_URL")
+  // uncomment next line if you use Prisma <5.10
+  // directUrl = env("DATABASE_URL_UNPOOLED")
 }
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -83,16 +84,14 @@ model Forum {
 }
 
 model ChatLog {
-  id         String   @id @default(uuid())
-  message    String
-  senderId   String
-  sender     Profile  @relation(fields: [senderId], references: [id])
-  senderName String   @map("sender_name") // New field to store sender's name
+  id        String   @id @default(uuid())
+  message   String
+  senderId  String
+  forumId   String
+  sentAt    DateTime @default(now())
 
-  forumId    String
-  sentAt     DateTime @default(now())
-
-  forum      Forum    @relation(fields: [forumId], references: [id])
+  sender    Profile  @relation(fields: [senderId], references: [id])
+  forum     Forum    @relation(fields: [forumId], references: [id])
 
   @@index([senderId])
   @@index([forumId])

@@ -14,7 +14,7 @@ const forums = () => {
           <UserButton />
         </div>
       </div>
-      <div className="overflow-y-auto h-80">
+      <div className="overflow-y-auto  max-h-screen">
         <Forum />
       </div>
     </div>

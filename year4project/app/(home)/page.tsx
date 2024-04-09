@@ -16,6 +16,7 @@ import Link from "next/link";
 import { useUser } from "@clerk/nextjs";
 import React, { PureComponent } from "react";
 import DynamicCarousel from "@/components/ui/dynamicCarousel";
+import Greeting from "@/components/ui/greeting";
 
 const Home = async () => {
   const profile = await initialProfile();
@@ -53,7 +54,7 @@ const Home = async () => {
 
         <div className="flex flex-col items-center justify-center bg-gray-300 glass flex-grow p-4">
           <h1 className="text-4xl font-bold my-8">
-            Welcome, {profile.name.split(" ")[0]}
+            <Greeting /> {profile.name.split(" ")[0]}
           </h1>
 
           <div className="flex items-center flex-wrap justify-center gap-8">
@@ -71,8 +72,9 @@ const Home = async () => {
               <div className="w-full">
                 {pet && (
                   <Link href={`/pets/${pet.id}`}>
-                    <button className="w-full h-32 text-3xl font-bold block mt-4 text-center text-white bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-lg">
-                      Looking for a pet?
+                    <button className="w-full h-32 font-bold block mt-4 text-center text-white bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-lg">
+                      <h1 className="text-3xl">Looking for a pet?</h1>
+                      <p className="text-md">Talk to our virtual ai assistant!</p>
                     </button>
                   </Link>
                 )}
