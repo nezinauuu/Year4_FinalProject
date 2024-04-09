@@ -1,20 +1,21 @@
 // prisma/schema.prisma
 datasource db {
-  provider  = "postgresql"
-  url  	    = env("DATABASE_URL")
+  provider = "postgresql"
+  url       = env("DATABASE_URL")
   // uncomment next line if you use Prisma <5.10
-  directUrl = env("DATABASE_URL_UNPOOLED")
+
 }
+
 generator client {
   provider = "prisma-client-js"
 }
 
 model Profile {
-  id       String  @id @default(uuid())
-  userId   String  @unique
+  id       String @id @default(uuid())
+  userId   String @unique
   name     String
-  imageUrl String  @db.Text
-  email    String  @db.Text
+  imageUrl String @db.Text
+  email    String @db.Text
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -24,7 +25,6 @@ model Profile {
   forums        Forum[]
   sentMessages  ChatLog[] // Opposite relation to ChatLog's sender field
 }
-
 
 model Pet {
   id          String @id @default(uuid())
@@ -44,7 +44,6 @@ model Pet {
 
   @@index([profileId])
 }
-
 
 enum AnimalKeeperRole {
   ADMIN
@@ -69,29 +68,29 @@ model AnimalKeeper {
 }
 
 model Forum {
-  id        String      @id @default(uuid())
+  id        String @id @default(uuid())
   title     String
   content   String
-  creatorId String      // ID of the profile who created the forum
+  creatorId String // ID of the profile who created the forum
 
-  createdAt DateTime    @default(now())
-  updatedAt DateTime    @updatedAt
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 
-  creator   Profile     @relation(fields: [creatorId], references: [id]) // Relationship with Profile model
-  chatLogs  ChatLog[]   // Relationship with ChatLog model
+  creator  Profile   @relation(fields: [creatorId], references: [id]) // Relationship with Profile model
+  chatLogs ChatLog[] // Relationship with ChatLog model
 
   @@index([creatorId])
 }
 
 model ChatLog {
-  id        String   @id @default(uuid())
-  message   String
-  senderId  String
-  forumId   String
-  sentAt    DateTime @default(now())
+  id       String   @id @default(uuid())
+  message  String
+  senderId String
+  forumId  String
+  sentAt   DateTime @default(now())
 
-  sender    Profile  @relation(fields: [senderId], references: [id])
-  forum     Forum    @relation(fields: [forumId], references: [id])
+  sender Profile @relation(fields: [senderId], references: [id])
+  forum  Forum   @relation(fields: [forumId], references: [id])
 
   @@index([senderId])
   @@index([forumId])
