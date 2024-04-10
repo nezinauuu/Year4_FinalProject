@@ -6,6 +6,7 @@ import Joi from "joi";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { useUser } from "@clerk/nextjs";
+import { PiDogFill } from "react-icons/pi";
 
 const schema = Joi.object({
   content: Joi.string(),
@@ -72,13 +73,16 @@ const PetCareAssistant = () => {
   return (
     <div className="flex justify-center items-center  min-h-screen gap-10 flex-col">
       <title>PetLink Assistant</title>
-      <div className="text-red-400 text-5xl  px-10 py-10 font-extrabold top-10 absolute">
-        <h1>PetLink Ai Assistant</h1>
+      <div className="text-red-400 text-5xl flex flex-row px-10 py-10 font-extrabold top-10 absolute">
+        <h1>PetLink</h1>
+        <div className="text-red-400 text-lg">
+          <PiDogFill /> <h1 className="text-xl">Ai Assistant</h1>
+        </div>
       </div>
       <div className="bg-gray-800 rounded-lg m-5 border border-red-100  ">
         <div className="flex justify-center flex-col items-center gap-5 m-5">
-          <div className="flex justify-center text-red-400 text-xl">
-            Hello, Start by asking a question!
+          <div className="flex justify-center text-red-400 text-xl font-bold">
+            PetLink Virtual Ai Assistant
           </div>
           <div className="card card-compact w-96 bg-gray-700  shadow-xl h-96 border-2 border-blue-200 ">
             <div className="h-96 py-3 px-3  text-red-400 overflow-y-auto">

@@ -7,6 +7,7 @@ import Link from "next/link";
 import React, { PureComponent } from "react";
 import DynamicCarousel from "@/components/ui/dynamicCarousel";
 import Greeting from "@/components/ui/greeting";
+import { PiDogFill } from "react-icons/pi";
 
 const Home = async () => {
   const profile = await initialProfile();
@@ -30,9 +31,16 @@ const Home = async () => {
     <main>
       <div className="flex flex-col min-h-screen">
         <div className="flex justify-between p-4 bg-gray-900 bg-cover">
-          <div>
+          <div className="flex flex-row">
             <h1 className="text-3xl font-bold bg-gray-900 text-red-400">
-              PetLink Dashboard
+              PetLink
+            </h1>
+            <div className="text-red-400 text-lg">
+              <PiDogFill />
+            </div>
+
+            <h1 className="text-3xl font-bold bg-gray-900 text-red-400">
+              Dashboard
             </h1>
           </div>
           <div>
@@ -44,7 +52,8 @@ const Home = async () => {
 
         <div className="flex flex-col items-center justify-center bg-gray-300 glass flex-grow p-4">
           <h1 className="text-4xl font-bold my-8 flex flex-row">
-            <Greeting />{profile.name.split(" ")[0]}!
+            <Greeting />
+            {profile.name.split(" ")[0]}!
           </h1>
 
           <div className="flex items-center flex-wrap justify-center gap-8">
@@ -94,7 +103,10 @@ const Home = async () => {
           <div className="max-w-2xl ">
             <Link href={`/pets}`}>
               <h1 className="text-4xl hover:text-red-400  font-bold justify-center flex text-white mb-4">
-                First time using PetLink?
+                First time using PetLink
+                <div className=" text-lg">
+                  <PiDogFill />
+                </div>?
               </h1>
             </Link>{" "}
             <Link href={`/pets}`}>
