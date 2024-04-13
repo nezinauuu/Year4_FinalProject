@@ -7,6 +7,7 @@ import axios from "axios";
 import { nullable } from "zod";
 import { SlArrowDown } from "react-icons/sl";
 import { UserButton } from "@clerk/nextjs";
+import { DogStats } from "@/components/charts/dogStats";
 
 
 interface AnimalDataEntry {
@@ -104,15 +105,16 @@ const Statistics = () => {
   return (
     <main>
       <title>Animal Statistics</title>
-      <div className="flex min-h-screen justify-center flex-col bg-base-100 ">
+      <div className="flex min-h-screen justify-center flex-col bg-gray-900 ">
         <div className="px-5">
           <div className="absolute right-10 top-10 border-4 rounded-badge">
             <UserButton />
           </div>
-
-          <h1 className="text-8xl font-mono font-semibold text-gray-600">
-            Shelter Statistics
-          </h1>
+          <div className=" gap-64 flex">
+            <div className="text-8xl font-mono font-semibold text-gray-600">
+              Shelter Statistics
+            </div>
+          </div>
         </div>
         <div className="bg-white dark:bg-red-800 px-10 py-10 flex justify-center items-center">
           <div className="flex bg-gray-100 px-10 py-10 rounded-md w-full justify-center gap-40">
@@ -120,9 +122,7 @@ const Statistics = () => {
               <h2 className="text-base-400 py-2 flex px-10">
                 Dog, Cat & Rabbit Shelter Statistics.
               </h2>
-
               <StackedChart />
-
               {/* <div className="py-5 max-w-lg">{reason || 0}</div> */}
               <div>
                 <h2>
@@ -161,7 +161,7 @@ const Statistics = () => {
               <h2 className="text-error py-2 flex items-center ">
                 Last 50 Shelter Animal Outcomes in Long Beach California
               </h2>
-                    
+
               <TwoPieChart data={outcomeData} />
               <div>
                 <div className="py-5 text-gray-300">
@@ -215,12 +215,13 @@ const Statistics = () => {
             </div>
           </div>
         </div>
-        <div className="flex justify-center py-5 text-blue-100 opacity-50">
-          <SlArrowDown className="text-4xl" />
+        <div className="flex justify-center  text-blue-100 ">
+          <DogStats />
+          
         </div>
       </div>
 
-      <div className="flex min-h-screen flex-col bg-base-100 ">
+      <div className=" flex-col bg-base-100 ">
         <div className="bg-white dark:bg-red-800 px-10 py-10 flex justify-center items-center m-2">
           <div className=" indicator">
             <span className="indicator-item badge bg-cyan-500 text-gray-900 indicator-start">
@@ -228,7 +229,6 @@ const Statistics = () => {
             </span>
             <div className="flex flex-col bg-gray-100 px-10 py-10 rounded-md w-full justify-center gap-4">
               <p>
-                {" "}
                 Looking at the graphs, it is great to see that there has
                 actually been some decline in intakes in Animal Shelters,
                 atleast in Long Beach California. However, it is nowhere near a
