@@ -24,7 +24,7 @@ export default async function ForumTitle({
 
   if (forum.chatLogs.every((chatLog) => chatLog.message == null)) {
     return (
-      <div className="py-10 px-10 bg-gray-900 flex justify-center items-center flex-col">
+      <div className="py-10 px-10 bg-gray-900 min-h-screen flex justify-center items-center flex-col">
         <div className="justify-center flex">
           <h2 className="text-left text-7xl font-extrabold text-red-400">
             {forum.title}
@@ -38,7 +38,7 @@ export default async function ForumTitle({
   }
 
   return (
-    <div className="py-10 px-10 bg-gray-900">
+    <div className="py-10 px-10 min-h-screen bg-gray-900">
       <div className="absolute right-10">
         <UserButton />
       </div>
