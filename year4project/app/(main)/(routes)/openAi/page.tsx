@@ -41,6 +41,9 @@ const PetCareAssistant = () => {
 
   if (!user) return null;
 
+  const isLoading = form.formState.isSubmitting;
+
+
   const onSubmit = async (values: { content: string }) => {
     try {
       const response = await axios.post("/api/openAi", values);
@@ -125,7 +128,13 @@ const PetCareAssistant = () => {
                 className="flex gap-2"
                 onSubmit={form.handleSubmit(onSubmit)}
               >
-                <button className="btn hover:bg-red-400">Send</button>
+                <button className="btn hover:bg-red-400" disabled={isLoading}>
+                  {isLoading ? (
+                    <span className="loading loading-infinity loading-sm bg-red-400 text-2xl"></span>
+                  ) : (
+                    "Send"
+                  )}
+                </button>
               </form>
             </div>
             <div className="card-actions justify-end"></div>

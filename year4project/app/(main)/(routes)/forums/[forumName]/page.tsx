@@ -31,9 +31,10 @@ export default async function ForumTitle({
             {forum.title}
           </h2>
         </div>
-        <div className="text-3xl text-gray-400 py-64">
+        <div className="text-3xl text-gray-400 py-32">
           There are currently no messages in this forum :(
         </div>
+        <CreateMessage forumId={forum.id} />
       </div>
     );
   }
@@ -63,7 +64,9 @@ export default async function ForumTitle({
                 <p className="text-gray-600">{chatLog.message}</p>
               </div>
             </div>
-            <CreateMessage forumId={forum.id} />
+            <div className="right-20 fixed bottom-20 ">
+              <CreateMessage forumId={forum.id} />
+            </div>
           </div>
         ))}
       </div>

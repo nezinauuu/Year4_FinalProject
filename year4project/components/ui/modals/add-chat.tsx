@@ -27,7 +27,7 @@ export const CreateMessage = ({ forumId }: { forumId: string }) => {
   const form = useForm({
     resolver: joiResolver(schema),
     defaultValues: {
-      message: "balls",
+      message: "",
       id: forumId,
     },
   });
@@ -53,7 +53,6 @@ export const CreateMessage = ({ forumId }: { forumId: string }) => {
   return (
     <>
       <div
-        className="right-20 fixed bottom-20 "
         onClick={() => {
           const modal = document.getElementById(
             "my_modal_1"
@@ -81,15 +80,13 @@ export const CreateMessage = ({ forumId }: { forumId: string }) => {
               control={form.control}
               name="message"
               render={({ field }) => (
-                <input
+                <textarea
                   {...field}
-                  type="text"
-                  placeholder="Name"
-                  className="input input-bordered input-error w-full max-w-xs bg-red-100"
+                  placeholder="Content"
+                  className="input input-bordered input-error w-full max-w-xs bg-red-100 text-gray-900 py-3 min-h-fit"
                 />
               )}
             />
-
           </div>
           <div className="flex py-2 modal-action">
             <form
@@ -98,7 +95,19 @@ export const CreateMessage = ({ forumId }: { forumId: string }) => {
               onSubmit={form.handleSubmit(onSubmit)}
             >
               {/* if there is a button in form, it will close the modal */}
-              <button className="btn bg-emerald-400 text-white">Save</button>
+              <button
+                onClick={() => {
+                  const modal = document.getElementById(
+                    "my_modal_1"
+                  ) as HTMLDialogElement;
+                  if (modal !== null) {
+                    modal.close(); // Close the modal when the "Close" button is clicked
+                  }
+                }}
+                className="btn bg-emerald-400 text-white"
+              >
+                Save
+              </button>
               <button
                 className="btn bg-red-400 text-white"
                 type="button" // Make sure it's not a submit button
