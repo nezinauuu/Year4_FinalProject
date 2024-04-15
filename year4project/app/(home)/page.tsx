@@ -128,7 +128,7 @@ const Home = async () => {
               <h1 className="text-4xl hover:text-red-400  font-bold justify-center flex text-white mb-4">
                 First time using WoofWoofWorld
                 <div className=" text-lg">
-                  <PiDogFill />
+                  <GiDogHouse />
                 </div>
                 ?
               </h1>
