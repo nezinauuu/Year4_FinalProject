@@ -15,14 +15,15 @@ const forums = async () => {
       </div> */}
       <div className="px-5 py-5">
         <div className=" text-xl flex-row flex  text-white py-5 bg-white/10 drop-shadow-lg font-extrabold sm:text-[3rem] px-5 justify-center">
-       
           <div className="py-3 ">Pet Forums</div>
         </div>
-       
       </div>
       <CreateForum />
 
-      <div className="overflow-y-auto max-h-screen px-64">
+      <div
+        className="overflow-y-auto max-h-screen px-64"
+        style={{ scrollSnapType: "y mandatory", scrollBehavior: "smooth" }}
+      >
         <Forum />
       </div>
     </div>

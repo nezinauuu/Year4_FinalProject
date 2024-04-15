@@ -7,22 +7,22 @@ import { v4 as uuidv4 } from "uuid";
 
 export async function POST(req: Request) {
   try {
-    const { name, description } = await req.json();
+    const { message, id } = await req.json();
     const profile = await currentProfile();
 
     if (!profile) {
       return new NextResponse("Unauthorized", { status: 401 });
     }
 
-    const Forum = await db.forum.create({
+    const Message = await db.chatLog.create({
       data: {
-        title: name,
-        content: description,
-        creatorId: profile.id,
+        senderId: profile.id,
+        forumId: id,
+        message: message,
       },
     });
 
-    return NextResponse.json(Forum);
+    return NextResponse.json(Message);
   } catch (error) {
     console.log("[SERVERS_POST]", error);
     return new NextResponse("Internal Error", { status: 500 });

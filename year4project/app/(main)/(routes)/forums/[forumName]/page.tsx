@@ -1,3 +1,4 @@
+import { CreateMessage } from "@/components/ui/modals/add-chat";
 import { db } from "@/lib/db";
 import { UserButton } from "@clerk/nextjs";
 import { format } from "date-fns"; // Import the format function from date-fns
@@ -62,6 +63,7 @@ export default async function ForumTitle({
                 <p className="text-gray-600">{chatLog.message}</p>
               </div>
             </div>
+            <CreateMessage forumId={forum.id} />
           </div>
         ))}
       </div>

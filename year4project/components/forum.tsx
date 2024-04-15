@@ -21,7 +21,7 @@ export const Forum = async () => {
     <div className="py-10 px-10">
       {forums &&
         forums.map((forum) => (
-          <div className="px-2 py-2 min-w-screen" key={forum.title}>
+          <div className="px-2 py-2 min-w-screen" key={"forum.title"}>
             <Link href={`/forums/${forum.title.replace(/\s+/g, "-")}`}>
               <div className=" bg-gray-900 px-3 py-1 ">
                 <div className="border-red-500 btn btn-ghost text-xl bg-gray-300 min-w-full h-24">
