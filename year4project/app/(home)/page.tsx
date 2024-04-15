@@ -8,19 +8,21 @@ import React, { PureComponent } from "react";
 import DynamicCarousel from "@/components/ui/dynamicCarousel";
 import Greeting from "@/components/ui/greeting";
 import { PiDogFill } from "react-icons/pi";
-
+import { GiDogHouse } from "react-icons/gi";
 const Home = async () => {
   const profile = await initialProfile();
-
-  const pet = await db.pet.findFirst({
-    where: {
-      animalKeepers: {
-        some: {
-          profileId: profile.id,
+  let pet;
+  if (profile) {
+    pet = await db.pet.findFirst({
+      where: {
+        animalKeepers: {
+          some: {
+            profileId: profile.id,
+          },
         },
       },
-    },
-  });
+    });
+  }
 
   //Automatically redirect user to the pets page if they already have pets
   // if (pet) {
@@ -33,17 +35,17 @@ const Home = async () => {
         <div className="flex justify-between p-4 bg-gray-900 bg-cover">
           <div className="flex flex-row">
             <h1 className="text-3xl font-bold bg-gray-900 text-red-400">
-              PetLink
+              WoofWoofWorld
             </h1>
             <div className="text-red-400 text-lg">
-              <PiDogFill />
+              <GiDogHouse />
             </div>
 
             <h1 className="text-3xl font-bold bg-gray-900 text-red-400">
               Dashboard
             </h1>
           </div>
-          <div>
+          <div className="right-10 fixed top-5">
             <UserButton />
             <SignIn />
             <SignUp />
@@ -52,29 +54,50 @@ const Home = async () => {
 
         <div className="flex flex-col items-center justify-center bg-gray-300 glass flex-grow p-4">
           <h1 className="text-4xl font-bold my-8 flex flex-row">
-            <Greeting />
-            {profile.name.split(" ")[0]}!
+            {profile && (
+              <div className="flex flex-row">
+                <Greeting />
+                <div className="text-red-400">{profile.name.split(" ")[0]}</div>
+                !
+              </div>
+            )}
           </h1>
 
           <div className="flex items-center flex-wrap justify-center gap-8">
             <div className="flex-col w-96">
               <div className="w-full">
-                {pet && (
+                {/* {pet && (
                   <Link href={`/pets/${pet.id}`}>
                     <button className="w-full h-32 text-3xl font-bold block mt-4 text-center text-white bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-lg">
                       Your Pets
                     </button>
                   </Link>
-                )}
+                )} */}
               </div>
 
               <div className="w-full">
-                <Link href={`/openAi`}>
-                  <button className="w-full h-32 font-bold block mt-4 text-center text-white bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-lg">
-                    <h1 className="text-3xl">Looking for a pet?</h1>
-                    <p className="text-md">Talk to our virtual ai assistant!</p>
-                  </button>
-                </Link>
+                {profile && (
+                  <Link href={`/openAi`}>
+                    <button className="w-full h-32 font-bold block mt-4 text-center text-white bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-lg">
+                      <h1 className="text-3xl">Looking for a pet?</h1>
+                      <p className="text-md">
+                        Talk to our virtual ai assistant!
+                      </p>
+                    </button>
+                  </Link>
+                )}
+                {!profile && (
+                  <Link href={`/sign-in`}>
+                    <button className="w-full h-32 font-bold block mt-4 text-center text-white bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-lg">
+                      <h1 className="text-3xl">
+                        Sign in to unlock more features!
+                      </h1>
+                      <p className="text-md">
+                        Talk to our Ai , add pets and more!
+                      </p>
+                    </button>
+                  </Link>
+                )}
               </div>
 
               <div className="w-full">
@@ -103,10 +126,11 @@ const Home = async () => {
           <div className="max-w-2xl ">
             <Link href={`/pets}`}>
               <h1 className="text-4xl hover:text-red-400  font-bold justify-center flex text-white mb-4">
-                First time using PetLink
+                First time using WoofWoofWorld
                 <div className=" text-lg">
                   <PiDogFill />
-                </div>?
+                </div>
+                ?
               </h1>
             </Link>{" "}
             <Link href={`/pets}`}>

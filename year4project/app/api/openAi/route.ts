@@ -13,8 +13,15 @@ export async function POST(req: Request) {
 
     console.log(content);
     const completion = await openai.chat.completions.create({
-      messages: [{ role: "system", content: String(content) }],
-      model: "gpt-3.5-turbo",
+      messages: [
+        { role: "system", content: String(content) },
+        {
+          role: "system",
+          content:
+            "You are a helpful pet care assistant that should answer pet related questions to the best of your ability. However you should politely decline questions that dont relate to pets or animals at all.",
+        },
+      ],
+      model: "gpt-3.5-turbo-16k",
     });
 
     return NextResponse.json(completion.choices[0].message.content);

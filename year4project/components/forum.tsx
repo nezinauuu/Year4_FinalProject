@@ -7,9 +7,9 @@ import Link from "next/link";
 export const Forum = async () => {
   const profile = await currentProfile();
 
-  if (!profile) {
-    return redirect("/");
-  }
+  // if (!profile) {
+  //   return redirect("/");
+  // }
 
   const forums = await db.forum.findMany({
     where: {
@@ -34,6 +34,7 @@ export const Forum = async () => {
             </Link>
           </div>
         ))}
+
     </div>
   );
 };

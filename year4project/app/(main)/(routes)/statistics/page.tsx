@@ -6,9 +6,11 @@ import { StackedChart } from "@/components/charts/stackedChart";
 import axios from "axios";
 import { nullable } from "zod";
 import { SlArrowDown } from "react-icons/sl";
-import { UserButton } from "@clerk/nextjs";
+import { SignIn, SignUp, UserButton } from "@clerk/nextjs";
 import { DogStats } from "@/components/charts/dogStats";
-
+import { PiDogFill } from "react-icons/pi";
+import Link from "next/link";
+import { GiDogHouse } from "react-icons/gi";
 
 interface AnimalDataEntry {
   animal_name: string;
@@ -106,14 +108,25 @@ const Statistics = () => {
     <main>
       <title>Animal Statistics</title>
       <div className="flex min-h-screen justify-center flex-col bg-gray-900 ">
-        <div className="px-5">
-          <div className="absolute right-10 top-10 border-4 rounded-badge">
-            <UserButton />
-          </div>
-          <div className=" gap-64 flex">
-            <div className="text-8xl font-mono font-semibold text-gray-600">
-              Shelter Statistics
+        <div className="flex justify-between p-4 bg-gray-900 bg-cover">
+          <div className="flex flex-row">
+            <Link href={"/"}>
+              <h1 className="text-3xl font-bold bg-gray-900 text-red-400 hover:text-emerald-400 duration-700">
+                WoofWoofWorld
+              </h1>
+            </Link>
+            <div className="text-red-400 text-lg">
+              <GiDogHouse />
             </div>
+
+            <h1 className="text-3xl font-bold bg-gray-900 text-red-400">
+              Statistics
+            </h1>
+          </div>
+          <div>
+            <UserButton />
+            <SignIn />
+            <SignUp />
           </div>
         </div>
         <div className="bg-white dark:bg-red-800 px-10 py-10 flex justify-center items-center">
@@ -204,20 +217,10 @@ const Statistics = () => {
                 </div>
               </div>
             </div>
-
-            <div className="px-10 bg-base-200 max-w-sm rounded-md">
-              <h2 className="text-error py-2 flex items-center">
-                Last 50 Shelter Animal Outcomes in Long Beach California
-              </h2>
-              <TwoPieChart data={outcomeData} />
-
-              <div className="text-gray-300">help</div>
-            </div>
           </div>
         </div>
         <div className="flex justify-center  text-blue-100 ">
           <DogStats />
-          
         </div>
       </div>
 
