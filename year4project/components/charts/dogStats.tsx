@@ -3,6 +3,7 @@ import { csv } from "d3-fetch"; // Import the CSV parsing function from d3-fetch
 import { MdOutlinePets } from "react-icons/md";
 import { GiTombstone } from "react-icons/gi";
 import { FaHouseMedical } from "react-icons/fa6";
+import Link from "next/link";
 
 export const DogStats = () => {
   const [sum3To7, setSum3To7] = useState(0); // State to store the sum of columns 3 to 7
@@ -86,7 +87,11 @@ export const DogStats = () => {
           <div className="stat-desc">↘︎(12.66%)</div>
         </div>
       </div>
-      <div className="stat-desc flex justify-center items-center">Shelter Animal Count - The National Database</div>
+      <Link href="https://www.shelteranimalscount.org/">
+        <div className="stat-desc flex justify-center items-center">
+          Shelter Animal Count - The National Database
+        </div>
+      </Link>
     </div>
   );
 };

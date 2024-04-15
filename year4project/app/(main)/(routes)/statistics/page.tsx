@@ -131,6 +131,36 @@ const Statistics = () => {
         </div>
         <div className="bg-white dark:bg-red-800 px-10 py-10 flex justify-center items-center">
           <div className="flex bg-gray-100 px-10 py-10 rounded-md w-full justify-center gap-40">
+            <div className="bg-gray-900/90 rounded px-5 py-5">
+              <div className="bg-white px-5 py-5 min-h-full">
+                <div className="font-extrabold">Animals in shelters</div>
+                <p>
+                  Fortunately, according to the datasets gathered by numerous
+                  researchers, the amount of Animals in shelters have thankfully
+                  been slightly reduced over the years. However this should not
+                  be taken for granted as there are still hundreds of thousands
+                  of pets being surrendered.
+                </p>
+                <br></br>
+                <p>
+                  Looking at the graphs, it is great to see that there has
+                  actually been some decline in intakes in Animal Shelters,
+                  atleast in Long Beach California. However, it is nowhere near
+                  a healthy number with 1542 Cats being brought in in 2023
+                  alone. And this year, there have already been 152 cats, 252
+                  dogs and 14 rabbits brought into the shelters of Long Beach
+                  California. This is data from only one city in one state. The
+                  numbers for the rest of the world must be in the millions.
+                </p>
+                <br></br>
+                <p>
+                  Whats more important to notice however, is that the majority
+                  of animal intake reasons are No Time or Aggressive animal.
+                  Reasons such as these could have been easily avoidable if
+                  proper research was done before adopting.
+                </p>
+              </div>
+            </div>
             <div className="px-10">
               <h2 className="text-base-400 py-2 flex px-10">
                 Dog, Cat & Rabbit Shelter Statistics.
@@ -224,30 +254,21 @@ const Statistics = () => {
         </div>
       </div>
 
-      <div className=" flex-col bg-base-100 ">
-        <div className="bg-white dark:bg-red-800 px-10 py-10 flex justify-center items-center m-2">
-          <div className=" indicator">
-            <span className="indicator-item badge bg-cyan-500 text-gray-900 indicator-start">
-              Note:
-            </span>
-            <div className="flex flex-col bg-gray-100 px-10 py-10 rounded-md w-full justify-center gap-4">
-              <p>
-                Looking at the graphs, it is great to see that there has
-                actually been some decline in intakes in Animal Shelters,
-                atleast in Long Beach California. However, it is nowhere near a
-                healthy number with 1542 Cats being brought in in 2023 alone.
-                And this year, there have already been 152 cats, 252 dogs and 14
-                rabbits brought into the shelters of Long Beach California. This
-                is data from only one city in one state. The numbers for the
-                rest of the world must be in the millions.
-              </p>
-              <p>
-                Whats more important to notice however, is that the majority of
-                animal intake reasons are No Time or Aggressive animal. Reasons
-                such as these could have been easily avoidable if proper
-                research was done before adopting.
-              </p>
-            </div>
+      <div className=" flex-col px-5 py-5">
+        <div className="flex flex-row justify-center gap-20">
+          <div className="text-emerald-400 max-w-lg text-2xl px-5 py-5 border border-slate-400">
+            Taking a look at the 2020-2023 canine intake count from The National
+            Database, It is again good to see that although 3368639 dogs were brought into shelters,
+            29016929 (86.59%) found new homes and families.
+          </div>
+
+          <div className="text-red-400 max-w-lg text-2xl px-5 py-5 border border-slate-400">
+            However, this leaves a staggering 12.66% of dogs that have not been
+            so fortunate. They did not find a home and eventually passed away.
+          </div>
+
+          <div className="text-gray-400 max-w-lg text-2xl px-5 py-5 border border-slate-400">
+            The remaining 0.75% are dogs who have escaped the shelters or their outcomes otherwise unknown.
           </div>
         </div>
       </div>
