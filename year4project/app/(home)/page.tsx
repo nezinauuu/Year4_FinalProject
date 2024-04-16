@@ -41,9 +41,9 @@ const Home = async () => {
               <GiDogHouse />
             </div>
 
-            <h1 className="text-3xl font-bold bg-gray-900 text-red-400">
+            {/* <h1 className="text-3xl font-bold bg-gray-900 text-red-400">
               Dashboard
-            </h1>
+            </h1> */}
           </div>
           <div className="right-10 fixed top-5">
             <UserButton />
@@ -132,12 +132,12 @@ const Home = async () => {
                 </div>
                 ?
               </h1>
-            </Link>{" "}
-            <Link href={`/pets}`}>
+            </Link>
+            {/* <Link href={`/pets}`}>
               <p className="text-white hover:text-red-400  mb-8 justify-center flex">
                 Click here to find out what you can do!
               </p>{" "}
-            </Link>
+            </Link> */}
             <ScrollToTop />
           </div>
         </div>

@@ -28,7 +28,8 @@ const AboutMe = () => {
           </div>
         </div>
         <div className="max-w-full flex justify-center">
-          <div className="mockup-browser border bg-gray-300 w-3/5 ">
+          
+          <div className="mockup-browser border bg-gray-300 w-3/5  ">
             <div className="mockup-browser-toolbar ">
               <div className="input text-red-400 bg-gray-400">
                 https://woofwoofworld.net/pets
