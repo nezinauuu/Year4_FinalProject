@@ -47,7 +47,7 @@ export const Forum = async () => {
                   </div>
 
                   <div className="flex flex-col  items-center">
-                    <h2 className="text-left  text-red-400">{forum.title}</h2>
+                    <h2 className="text-left  text-red-400 font-extrabold">{forum.title}</h2>
                     <p className="text-gray-600 text-left">{forum.content}</p>
                   </div>
                 </div>
