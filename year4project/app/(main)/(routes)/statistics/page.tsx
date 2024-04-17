@@ -11,6 +11,10 @@ import { DogStats } from "@/components/charts/dogStats";
 import { PiDogFill } from "react-icons/pi";
 import Link from "next/link";
 import { GiDogHouse } from "react-icons/gi";
+import { Nav } from "@/components/navbars/nav";
+import { SiRobotframework } from "react-icons/si";
+import { ImStatsBars } from "react-icons/im";
+import { MdOutlineForum } from "react-icons/md";
 
 interface AnimalDataEntry {
   animal_name: string;
@@ -107,26 +111,38 @@ const Statistics = () => {
   return (
     <main>
       <title>Animal Statistics</title>
-      <div className="flex min-h-screen justify-center flex-col bg-gray-900 ">
-        <div className="flex justify-between p-4 bg-gray-900 bg-cover">
-          <div className="flex flex-row">
+      <div className=" min-h-screen justify-center flex-col bg-gray-900 ">
+        <div className="flex py-4 px-4  bg-gray-900">
+          <div className=" w-4/12">
             <Link href={"/"}>
-              <h1 className="text-3xl font-bold bg-gray-900 text-red-400 hover:text-emerald-400 duration-700">
+              <h1 className="flex text-3xl font-bold bg-gray-900 text-red-400 hover:text-emerald-400 duration-700">
                 WoofWoofWorld
+                <GiDogHouse />
               </h1>
             </Link>
-            <div className="text-red-400 text-lg">
-              <GiDogHouse />
-            </div>
-
-            <h1 className="text-3xl font-bold bg-gray-900 text-red-400">
-              Statistics
-            </h1>
           </div>
-          <div>
+          <div className="gap-2 flex-row flex items-center text-red-400 text-lg font-extrabold  w-4/12 justify-center">
+            <Link href={"/openAi"}>
+              <div className="hover:text-emerald-400 duration-700 flex gap-2">
+                <p>WoofAi</p> <SiRobotframework />
+              </div>
+            </Link>
+            <div className="text-gray-600">/</div>
+            <Link href={"/statistics"}>
+              <div className="hover:text-emerald-400 duration-700 gap-2 flex">
+                <p>Statistics</p> <ImStatsBars />
+              </div>
+            </Link>
+            <div className="text-gray-600">/</div>
+            <Link href={"/forums"}>
+              <div className="hover:text-emerald-400 duration-700 gap-2 flex">
+                <p>Forums</p>
+                <MdOutlineForum />
+              </div>
+            </Link>
+          </div>
+          <div className="w-4/12  flex justify-end">
             <UserButton />
-            <SignIn />
-            <SignUp />
           </div>
         </div>
         <div className="bg-white dark:bg-red-800 px-10 py-10 flex justify-center items-center">
@@ -258,8 +274,9 @@ const Statistics = () => {
         <div className="flex flex-row justify-center gap-20">
           <div className="text-emerald-400 max-w-lg text-2xl px-5 py-5 border border-slate-400">
             Taking a look at the 2020-2023 canine intake count from The National
-            Database, It is again good to see that although 3368639 dogs were brought into shelters,
-            29016929 (86.59%) found new homes and families.
+            Database, It is again good to see that although 3368639 dogs were
+            brought into shelters, 29016929 (86.59%) found new homes and
+            families.
           </div>
 
           <div className="text-red-400 max-w-lg text-2xl px-5 py-5 border border-slate-400">
@@ -268,7 +285,8 @@ const Statistics = () => {
           </div>
 
           <div className="text-gray-400 max-w-lg text-2xl px-5 py-5 border border-slate-400">
-            The remaining 0.75% are dogs who have escaped the shelters or their outcomes otherwise unknown.
+            The remaining 0.75% are dogs who have escaped the shelters or their
+            outcomes otherwise unknown.
           </div>
         </div>
       </div>

@@ -5,10 +5,13 @@ import { joiResolver } from "@hookform/resolvers/joi";
 import Joi from "joi";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import { useUser } from "@clerk/nextjs";
+import { UserButton, useUser } from "@clerk/nextjs";
 import { PiDogFill } from "react-icons/pi";
 import Link from "next/link";
 import { GiDogHouse } from "react-icons/gi";
+import { SiRobotframework } from "react-icons/si";
+import { ImStatsBars } from "react-icons/im";
+import { MdOutlineForum } from "react-icons/md";
 
 const schema = Joi.object({
   content: Joi.string(),
@@ -45,7 +48,6 @@ const PetCareAssistant = () => {
 
   const isLoading = form.formState.isSubmitting;
 
-
   const onSubmit = async (values: { content: string }) => {
     try {
       const response = await axios.post("/api/openAi", values);
@@ -76,74 +78,100 @@ const PetCareAssistant = () => {
   }
 
   return (
-    <div className="flex justify-center items-center  min-h-screen gap-10 flex-col">
+    <div className="">
       <title>Woof Assistant</title>
-      <div className="text-red-400 text-5xl flex flex-row px-10 py-10 font-extrabold top-10 absolute">
-        <Link href={"/"}>
-          <h1 className=" hover:text-emerald-400 duration-700">
-            WoofWoofWorld
-          </h1>
-        </Link>
-        <div className="text-red-400 text-lg">
-          <GiDogHouse /> <h1 className="text-xl">Ai Assistant</h1>
+      <div className="flex py-4 px-4  bg-gray-900">
+        <div className=" w-4/12">
+          <Link href={"/"}>
+            <h1 className="flex text-3xl font-bold bg-gray-900 text-red-400 hover:text-emerald-400 duration-700">
+              WoofWoofWorld
+              <GiDogHouse />
+            </h1>
+          </Link>
+        </div>
+        <div className="gap-2 flex-row flex items-center text-red-400 text-lg font-extrabold  w-4/12 justify-center">
+          <Link href={"/openAi"}>
+            <div className="hover:text-emerald-400 duration-700 flex gap-2">
+              <p>WoofAi</p> <SiRobotframework />
+            </div>
+          </Link>
+          <div className="text-gray-600">/</div>
+          <Link href={"/statistics"}>
+            <div className="hover:text-emerald-400 duration-700 gap-2 flex">
+              <p>Statistics</p> <ImStatsBars />
+            </div>
+          </Link>
+          <div className="text-gray-600">/</div>
+          <Link href={"/forums"}>
+            <div className="hover:text-emerald-400 duration-700 gap-2 flex">
+              <p>Forums</p>
+              <MdOutlineForum />
+            </div>
+          </Link>
+        </div>
+        <div className="w-4/12  flex justify-end">
+          <UserButton />
         </div>
       </div>
-      <div className="bg-gray-800 rounded-lg m-5 border border-red-100  ">
-        <div className="flex justify-center flex-col items-center gap-5 m-5">
-          <div className="flex justify-center text-red-400 text-xl font-bold">
-            WoofWoofWorld Virtual Ai Assistant
-          </div>
-          <div className="card card-compact w-96 bg-gray-700  shadow-xl h-96 border-2 border-blue-200 ">
-            <div className="h-96 py-3 px-3  text-red-400 overflow-y-auto">
-              {messages.map((message, index) => (
-                <div className="py-2" key={index}>
-                  {message.role === "user" ? (
-                    <div className="flex flex-col justify-center items-center  ">
-                      <p className="font-bold">{user.firstName}: </p>{" "}
-                      <p>{message.content}</p>
-                    </div>
-                  ) : (
-                    <div className="text-blue-200 flex flex-col justify-center items-center ">
-                      <p className="font-bold ">Woof Ai:</p>{" "}
-                      <p>{message.content}</p>
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
 
-          <div className="card-body flex-row border-t-2 border-t-red-400">
-            <div className="gap-3 flex flex-col ">
-              <Controller
-                control={form.control}
-                name="content"
-                render={({ field }) => (
-                  <input
-                    {...field}
-                    type="text"
-                    placeholder="Cats or dogs?"
-                    className="input border-red-400 w-full text-gray-400"
-                  />
-                )}
-              />
+      <div className="flex justify-center items-center  min-h-screen gap-10 flex-col">
+        <div className="bg-gray-800 rounded-lg m-5 border border-red-100  ">
+          <div className="flex justify-center flex-col items-center gap-5 m-5">
+            <div className="flex justify-center text-red-400 text-xl font-bold">
+              WoofWoofWorld Virtual Ai Assistant
             </div>
-            <div className="flex ">
-              <form
-                method="dialog"
-                className="flex gap-2"
-                onSubmit={form.handleSubmit(onSubmit)}
-              >
-                <button className="btn hover:bg-red-400" disabled={isLoading}>
-                  {isLoading ? (
-                    <span className="loading loading-infinity loading-sm bg-red-400 text-2xl"></span>
-                  ) : (
-                    "Send"
+            <div className="card card-compact w-96 bg-gray-700  shadow-xl h-96 border-2 border-blue-200 ">
+              <div className="h-96 py-3 px-3  text-red-400 overflow-y-auto">
+                {messages.map((message, index) => (
+                  <div className="py-2" key={index}>
+                    {message.role === "user" ? (
+                      <div className="flex flex-col justify-center items-center  ">
+                        <p className="font-bold">{user.firstName}: </p>{" "}
+                        <p>{message.content}</p>
+                      </div>
+                    ) : (
+                      <div className="text-blue-200 flex flex-col justify-center items-center ">
+                        <p className="font-bold ">Woof Ai:</p>{" "}
+                        <p>{message.content}</p>
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="card-body flex-row border-t-2 border-t-red-400">
+              <div className="gap-3 flex flex-col ">
+                <Controller
+                  control={form.control}
+                  name="content"
+                  render={({ field }) => (
+                    <input
+                      {...field}
+                      type="text"
+                      placeholder="Cats or dogs?"
+                      className="input border-red-400 w-full text-gray-400"
+                    />
                   )}
-                </button>
-              </form>
+                />
+              </div>
+              <div className="flex ">
+                <form
+                  method="dialog"
+                  className="flex gap-2"
+                  onSubmit={form.handleSubmit(onSubmit)}
+                >
+                  <button className="btn hover:bg-red-400" disabled={isLoading}>
+                    {isLoading ? (
+                      <span className="loading loading-infinity loading-sm bg-red-400 text-2xl"></span>
+                    ) : (
+                      "Send"
+                    )}
+                  </button>
+                </form>
+              </div>
+              <div className="card-actions justify-end"></div>
             </div>
-            <div className="card-actions justify-end"></div>
           </div>
         </div>
       </div>

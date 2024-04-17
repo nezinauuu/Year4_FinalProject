@@ -20,14 +20,14 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en">
         <body className={inter.className}>
-          {children}
+          <div className="bg-gray-900">{children}</div>
           {/* <input
             type="checkbox"
             value="mytheme"
             className="toggle theme-controller"
           /> */}
 
-          <Footer/>
+          <Footer />
         </body>
       </html>
     </ClerkProvider>

@@ -7,28 +7,13 @@ import { CreateForum } from "@/components/ui/modals/add-forum";
 import { PiDogFill } from "react-icons/pi";
 import Link from "next/link";
 import { GiDogHouse } from "react-icons/gi";
+import { Nav } from "@/components/navbars/nav";
 
 const forums = async () => {
   const profile = await currentProfile();
   return (
     <div className="min-h-screen ">
-      <div>
-        <div className="right-10 fixed top-5">
-          <UserButton />
-        </div>
-      </div>
-      <div className="flex py-4 px-4 flex-row">
-        <Link href={"/"}>
-          <h1 className="text-3xl font-bold bg-gray-900 text-red-400 hover:text-emerald-400 duration-700">
-            WoofWoofWorld
-          </h1>
-        </Link>
-        <div className="text-red-400 text-lg">
-          <GiDogHouse />
-        </div>
-
-        <h1 className="text-3xl font-bold bg-gray-900 text-red-400">Forums</h1>
-      </div>
+<Nav/>
       {profile && <CreateForum />}
       <div className="flex justify-center">
         <div

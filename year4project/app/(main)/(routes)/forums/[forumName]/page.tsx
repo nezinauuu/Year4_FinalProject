@@ -41,9 +41,7 @@ export default async function ForumTitle({
 
   return (
     <div className="py-10 px-10 min-h-screen bg-gray-900">
-      <div className="absolute right-10">
-        <UserButton />
-      </div>
+
 
       <div className="justify-center flex">
         <h2 className="text-left text-7xl font-extrabold text-red-400">

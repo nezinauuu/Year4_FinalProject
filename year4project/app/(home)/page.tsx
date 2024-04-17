@@ -9,6 +9,7 @@ import DynamicCarousel from "@/components/ui/dynamicCarousel";
 import Greeting from "@/components/ui/greeting";
 import { PiDogFill } from "react-icons/pi";
 import { GiDogHouse } from "react-icons/gi";
+import { Nav } from "@/components/navbars/nav";
 const Home = async () => {
   const profile = await initialProfile();
   let pet;
@@ -32,25 +33,7 @@ const Home = async () => {
   return (
     <main>
       <div className="flex flex-col min-h-screen">
-        <div className="flex justify-between p-4 bg-gray-900 bg-cover">
-          <div className="flex flex-row">
-            <h1 className="text-3xl font-bold bg-gray-900 text-red-400">
-              WoofWoofWorld
-            </h1>
-            <div className="text-red-400 text-lg">
-              <GiDogHouse />
-            </div>
-
-            {/* <h1 className="text-3xl font-bold bg-gray-900 text-red-400">
-              Dashboard
-            </h1> */}
-          </div>
-          <div className="right-10 fixed top-5">
-            <UserButton />
-            <SignIn />
-            <SignUp />
-          </div>
-        </div>
+        <Nav />
 
         <div className="flex flex-col items-center justify-center bg-gray-300 glass flex-grow p-4">
           <h1 className="text-4xl font-bold my-8 flex flex-row">
