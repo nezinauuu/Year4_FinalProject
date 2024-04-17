@@ -4,6 +4,7 @@ import { UserButton } from "@clerk/nextjs";
 import { redirect } from "next/navigation";
 import Link from "next/link";
 import { IoIosChatboxes } from "react-icons/io";
+
 export const Forum = async () => {
   const profile = await currentProfile();
 
@@ -22,7 +23,10 @@ export const Forum = async () => {
     <div className="bg-gray-200 min-h-screen py-10">
       {forums &&
         forums.map((forum) => (
-          <Link href={`/forums/${forum.title.replace(/\s+/g, "-")}`}>
+          <Link
+            key={forum.id}
+            href={`/forums/${forum.title.replace(/\s+/g, "-")}`}
+          >
             <div className="text-red-300 flex flex-row items-center py-2 flex-wrap gap-3 border justify-center hover:bg-red-300/30 ">
               <div className="py-1.5 bg-gray-100  rounded-xl  px-1.5 hover:rotate-6">
                 <img
