@@ -3,7 +3,7 @@ import { db } from "@/lib/db";
 import { UserButton } from "@clerk/nextjs";
 import { redirect } from "next/navigation";
 import Link from "next/link";
-
+import { IoIosChatboxes } from "react-icons/io";
 export const Forum = async () => {
   const profile = await currentProfile();
 
@@ -14,27 +14,40 @@ export const Forum = async () => {
   const forums = await db.forum.findMany({
     include: {
       creator: true,
+      chatLogs: true,
     },
   });
 
   return (
-    <div className="py-10 px-10 ">
+    <div className="bg-gray-200 min-h-screen py-10">
       {forums &&
         forums.map((forum) => (
-          <div className="px-2 py-2 min-w-screen " key={"forum.title"}>
-            <Link href={`/forums/${forum.title.replace(/\s+/g, "-")}`}>
-              <div className="px-3 py-1 ">
-                <div className="border-red-500 text-xl bg-gray-300 hover:bg-gray-400 min-w-full h-48">
-                  <div className="flex flex-row min-w-full">
-                    <div className="flex justify-start items-center px-2 py-2 text-gray-600">
-                      <img
-                        className="h-12 w-12 rounded-xl"
-                        src={forum.creator.imageUrl}
-                      ></img>
-                      <div className="px-2"> {forum.creator.name.split(" ")[0]}</div>
-                     
+          <Link href={`/forums/${forum.title.replace(/\s+/g, "-")}`}>
+            <div className="text-red-300 flex flex-row items-center py-2 flex-wrap gap-3 border justify-center hover:bg-red-300/30 ">
+              <div className="py-1.5 bg-gray-100  rounded-xl  px-1.5 hover:rotate-6">
+                <img
+                  className="h-14 w-14 rounded-xl"
+                  src={forum.creator.imageUrl}
+                ></img>
+              </div>
+              <div className="">
+                <div className="px-1.5 py-1.5 bg-gray-100 rounded-xl">
+                  <div className=" h-14 w-14 px-1.5 items-center justify-center flex flex-col bg-gray-100 text-gray-900">
+                    <div className="text-3xl text-red-400">
+                      <IoIosChatboxes />
                     </div>
-                    <div className=" right-20 py-2 absolute text-gray-600 ">
+                    {forum.chatLogs.length}
+                  </div>
+                </div>
+              </div>
+              <div className="w-3/5">
+                <div className="px-1.5 py-1.5 bg-gray-100 rounded-xl ">
+                  <div className=" h-14 px-1.5 items-center  w-full flex bg-gray-100 text-gray-900 ">
+                    <div className="w-3/5">{forum.title}</div>
+                    <div className="w-1/5   text-red-400 justify-end flex ">
+                      {forum.creator.name.split(" ")[0]}
+                    </div>
+                    <div className="w-1/5 justify-end flex ">
                       {new Date(forum.createdAt).toLocaleString("en-US", {
                         weekday: "short",
                         month: "short",
@@ -45,15 +58,10 @@ export const Forum = async () => {
                       })}
                     </div>
                   </div>
-
-                  <div className="flex flex-col  items-center">
-                    <h2 className="text-left  text-red-400 font-extrabold">{forum.title}</h2>
-                    <p className="text-gray-600 text-left">{forum.content}</p>
-                  </div>
                 </div>
               </div>
-            </Link>
-          </div>
+            </div>
+          </Link>
         ))}
     </div>
   );
