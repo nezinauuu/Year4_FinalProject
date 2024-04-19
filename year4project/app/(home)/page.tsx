@@ -10,7 +10,7 @@ import Greeting from "@/components/ui/greeting";
 import { PiDogFill } from "react-icons/pi";
 import { GiDogHouse } from "react-icons/gi";
 import { Nav } from "@/components/navbars/nav";
-import { PetAdoption } from "@/components/ui/petAdoption";
+import { PetAdoption } from "@/components/adoption/petAdoption";
 const Home = async () => {
   const profile = await initialProfile();
   let pet;
@@ -113,7 +113,7 @@ const Home = async () => {
                 Looking to adopt a companion?
               </h1>
             </Link> */}
-            <PetAdoption/>
+            <PetAdoption />
             {/* <div className="border flex w-full flex-wrap bg-slate-800">
               <div className="text-red-400 w-5/12 border-red-400 border-4  min-w-fit">
                 <div className="text-4xl font-extrabold flex flex-row gap-2 justify-center">
