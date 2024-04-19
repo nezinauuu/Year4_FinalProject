@@ -66,7 +66,7 @@ export const PetAdoption = () => {
           </div>
         </div>
       )}
-      {showDog && <div><Dog /></div>} {/* Render Dog component when showDog is true */}
+      {showDog && <div><Dog /></div>}
     </div>
   );
 };
