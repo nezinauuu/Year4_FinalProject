@@ -373,6 +373,79 @@ export const Dog = () => {
                 </p>
               </div>
             </details>
+
+            <details className="collapse w-full max-w-2xl px-2 py-2 hover:bg-gray-200">
+              <summary className=" text-xl font-medium  border-4 border-red-400 rounded-xl">
+                <div className="flex w-full">
+                  <div className="w-1/2 items-center flex justify-center text-4xl font-extrabold px-4">
+                    <h1 className="px-10">6. Beagle</h1>
+                  </div>
+                  <div className="items-center flex w-1/2 flex-col py-2 h-[200px]">
+                    <img
+                      className="px-5 mask mask-squircle object-contain h-full"
+                      src="https://storage.needpix.com/rsynced_images/beagle-4168817_1280.jpg"
+                      alt="Beagle"
+                    ></img>
+                    <span className="text-[12px] text-gray-600">
+                      Photo by christinescha
+                    </span>
+                  </div>
+                </div>
+              </summary>
+              <div className="collapse-content bg-red-400/90 rounded-xl flex flex-col ">
+                <div className="flex-row flex">
+                  <div className="w-1/2">
+                    <p className="text-yellow-400 decoration-2 underline decoration-dotted text-lg justify-center flex">
+                      Features
+                    </p>
+                    <ul className="list-disc px-5 flex justify-center">
+                      <li>Friendly and very sociable.</li>
+                    </ul>
+
+                    <ul className="list-disc px-5 flex justify-center">
+                      <li>Strong sense of smell.</li>
+                    </ul>
+
+                    <ul className="list-disc px-5 flex justify-center">
+                      <li>Minimal grooming.</li>
+                    </ul>
+
+                    <ul className="list-disc px-5 flex justify-center">
+                      <li>Easy to train and eager to please.</li>
+                    </ul>
+                  </div>
+                  <div className="w-1/2">
+                    <p className="text-red-600 text-lg  decoration-2 underline decoration-dotted flex justify-center">
+                      Cons
+                    </p>
+                    <ul className="list-disc px-5 flex justify-center">
+                      <li>Strong prey drive.</li>
+                    </ul>
+
+                    <ul className="list-disc px-5 flex justify-center">
+                      <li>Needs plenty of regular exercise.</li>
+                    </ul>
+
+                    <ul className="list-disc px-5 flex justify-center">
+                      <li>Tend to follow their nose.</li>
+                    </ul>
+
+                    <ul className="list-disc px-5 flex justify-center">
+                      <li>Needs early socialisation.</li>
+                    </ul>
+                  </div>
+                </div>
+                <p className="py-4 font-medium">
+                  Beagles are good for active families. They have an excellent
+                  sense of smell, making them great dogs for tracking, but they
+                  can occasionally wonder off and become distracted following
+                  their nose. Digging is also a common behavior of beagles if
+                  left alone, along with barking. Overall, they are a well
+                  rounded breed that requirest minimal maintenance and they are
+                  generally healthy dogs.
+                </p>
+              </div>
+            </details>
           </div>
         </div>
       </div>
