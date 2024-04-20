@@ -58,7 +58,6 @@ const Home = async () => {
                   </Link>
                 )} */}
               </div>
-
               <div className="w-full">
                 {profile && (
                   <Link href={`/openAi`}>
@@ -83,7 +82,6 @@ const Home = async () => {
                   </Link>
                 )}
               </div>
-
               <div className="w-full">
                 <Link href="/statistics">
                   <button className="w-full h-32 text-3xl font-bold block mt-4 text-center text-white bg-gray-900 hover:text-red-400 px-4 py-2 rounded-lg">
@@ -91,7 +89,6 @@ const Home = async () => {
                   </button>
                 </Link>
               </div>
-
               <div className="w-full">
                 <Link href="/forums">
                   <button className="w-full h-32 text-3xl font-bold block mt-4 text-center text-white bg-gray-900 hover:text-red-400 px-4 py-2 rounded-lg">
