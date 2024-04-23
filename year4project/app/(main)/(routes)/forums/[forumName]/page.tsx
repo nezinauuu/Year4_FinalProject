@@ -1,7 +1,7 @@
 import { CreateMessage } from "@/components/ui/modals/add-chat";
 import { db } from "@/lib/db";
-import { UserButton } from "@clerk/nextjs";
-import { format } from "date-fns"; // Import the format function from date-fns
+import { format } from "date-fns";
+import { IoIosChatboxes } from "react-icons/io";
 
 export default async function ForumTitle({
   params,
@@ -25,7 +25,7 @@ export default async function ForumTitle({
 
   if (forum.chatLogs.every((chatLog) => chatLog.message == null)) {
     return (
-      <div className="py-10 px-10 bg-gray-900 min-h-screen flex justify-center items-center flex-col">
+      <div className="py-10 px-10 bg-gray-200 min-h-screen flex justify-center items-center flex-col">
         <div className="justify-center flex">
           <h2 className="text-left text-7xl font-extrabold text-red-400">
             {forum.title}
@@ -40,21 +40,25 @@ export default async function ForumTitle({
   }
 
   return (
-    <div className="py-10 px-10 min-h-screen bg-gray-900">
-
-
+    <div className="py-10 px-10 min-h-screen bg-gray-200">
       <div className="justify-center flex">
         <h2 className="text-left text-7xl font-extrabold text-red-400">
           {forum.title}
         </h2>
       </div>
-      <div className=" bg-gray-800 rounded-md px-3 py-3 m-8">
+      <div className="bg-gray-100 rounded-md p-8 mt-8">
         {forum.chatLogs.map((chatLog) => (
-          <div className="py-2" key={chatLog.id}>
-            <div className="border-red-500 text-xl rounded-md bg-gray-300 min-w-full h-64">
-              <div className="flex flex-col text-left px-3 py-3">
-                <div className="flex-row flex gap-2 justify-center">
-                  <div>{chatLog.sender.name.split(" ")[0]}</div>
+          <div className="py-4 " key={chatLog.id}>
+            
+            <div className="flex items-center">
+              <div className="w-14 h-14 bg-gray-100  flex items-center justify-center mr-4">
+                <img className="rounded-lg" src={chatLog.sender.imageUrl}></img>
+              </div>
+              <div className="flex flex-col">
+                <div className="flex items-center">
+                  <div className="text-xl font-bold text-red-400 mr-2">
+                    {chatLog.sender.name.split(" ")[0]}
+                  </div>
                   <p className="text-gray-500 text-sm">
                     {format(new Date(chatLog.sentAt), "yyyy-MM-dd HH:mm:ss")}
                   </p>
@@ -62,11 +66,11 @@ export default async function ForumTitle({
                 <p className="text-gray-600">{chatLog.message}</p>
               </div>
             </div>
-            <div className="right-20 fixed bottom-20 ">
-              <CreateMessage forumId={forum.id} />
-            </div>
           </div>
         ))}
+      </div>
+      <div className="fixed bottom-10 right-10">
+        <CreateMessage forumId={forum.id} />
       </div>
     </div>
   );
