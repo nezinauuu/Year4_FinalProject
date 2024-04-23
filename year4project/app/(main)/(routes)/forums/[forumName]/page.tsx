@@ -63,9 +63,11 @@ export default async function ForumTitle({
                   </p>
                 </div>
                 <p className="text-gray-600">{chatLog.message}</p>
-                <div className="relative h-20 w-20">
-                  <Image fill alt="balls" src={chatLog.imageUrl} />
-                </div>
+                {chatLog.imageUrl && (
+                  <div className="relative h-20 w-20">
+                    <Image fill alt="" src={chatLog.imageUrl} />
+                  </div>
+                )}
               </div>
             </div>
           </div>

@@ -19,7 +19,7 @@ export async function POST(req: Request) {
         title: name,
         content: description,
         creatorId: profile.id,
-        imageUrl: imageUrl
+        imageUrl: imageUrl || ""
       },
     });
 

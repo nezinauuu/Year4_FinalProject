@@ -10,7 +10,7 @@ const authHandle = () => {
 };
 
 // FileRouter for your app, can contain multiple FileRoutes
-export const ourFileRouter = {
+export const FileRoute = {
   forumImage: f({ image: { maxFileSize: "8MB", maxFileCount: 1 } })
     .middleware(() => authHandle())
     .onUploadComplete(() => {}),
@@ -19,4 +19,4 @@ export const ourFileRouter = {
     .onUploadComplete(() => {}),
 } satisfies FileRouter;
 
-export type OurFileRouter = typeof ourFileRouter;
+export type OurFileRouter = typeof FileRoute;

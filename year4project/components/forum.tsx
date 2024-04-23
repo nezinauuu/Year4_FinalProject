@@ -4,7 +4,7 @@ import { UserButton } from "@clerk/nextjs";
 import { redirect } from "next/navigation";
 import Link from "next/link";
 import { IoIosChatboxes } from "react-icons/io";
-
+import { MdPets } from "react-icons/md";
 export const Forum = async () => {
   const profile = await currentProfile();
 
@@ -28,11 +28,19 @@ export const Forum = async () => {
             href={`/forums/${forum.title.replace(/\s+/g, "-")}`}
           >
             <div className="text-red-300 flex flex-row items-center py-2 flex-wrap gap-3 border justify-center hover:bg-red-300/30 ">
-              <div className="py-1.5 bg-gray-100  rounded-xl  px-1.5 hover:rotate-6">
-                <img
-                  className="h-14 w-14 rounded-xl"
-                  src={forum.imageUrl}
-                ></img>
+              <div className="py-1.5 bg-gray-100  rounded-xl  px-1.5 hover:scale-[.5]">
+                {forum.imageUrl && (
+                  <img
+                    className="h-14 w-14 rounded-xl"
+                    src={forum.imageUrl}
+                  ></img>
+                )}
+
+                {!forum.imageUrl && (
+                  <div className="h-14 w-14 rounded-xl text-5xl justify-center items-center flex text-red-200">
+                    <MdPets />
+                  </div>
+                )}
               </div>
               <div className="">
                 <div className="px-1.5 py-1.5 bg-gray-100 rounded-xl">

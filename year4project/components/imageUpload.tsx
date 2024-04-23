@@ -30,6 +30,7 @@ export const ImageUpload = ({
       </div>
     );
   }
+
   return (
     <UploadDropzone
       endpoint={endpoint}

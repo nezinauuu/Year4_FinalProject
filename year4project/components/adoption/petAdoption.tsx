@@ -23,24 +23,24 @@ export const PetAdoption = () => {
   }, []);
 
   useEffect(() => {
-    if (showContent && contentRef.current) {
+    if (showDog && contentRef.current) {
       // Scroll to the content div when it becomes visible
       contentRef.current.scrollIntoView({ behavior: "smooth" });
     }
-  }, [showContent]);
+  }, [showDog]);
 
   return (
     <div className="flex justify-center flex-col">
       <div
         onClick={() => {
-          setShowContent(true); // Set showContent to true when clicked
+          setShowDog(true); // Set showContent to true when clicked
         }}
       >
         <h1 className="text-4xl hover:text-red-400 font-bold justify-center flex text-white mb-4">
           Looking to adopt a companion?
         </h1>
       </div>
-      {showContent && (
+      {/* {showContent && (
         <div
           className={`duration-1000 transition-opacity ${
             showContent ? "opacity-100" : "opacity-0"
@@ -65,8 +65,17 @@ export const PetAdoption = () => {
             </div>
           </div>
         </div>
+      )} */}
+      {showDog && (
+        <div
+          className={`duration-1000 transition-opacity ${
+            showDog ? "opacity-100" : "opacity-0"
+          }`}
+          ref={contentRef}
+        >
+          <Dog />
+        </div>
       )}
-      {showDog && <div><Dog /></div>}
     </div>
   );
 };

@@ -13,8 +13,9 @@ import { ImageUpload } from "@/components/imageUpload";
 const schema = Joi.object({
   message: Joi.string(),
   id: Joi.string(),
-  imageUrl: Joi.string()
+  imageUrl: Joi.string().allow("").optional(), // Make imageUrl optional
 });
+
 
 export const CreateMessage = ({ forumId }: { forumId: string }) => {
   const [isMounted, setIsMounted] = useState(false);
@@ -37,18 +38,26 @@ export const CreateMessage = ({ forumId }: { forumId: string }) => {
 
   const isLoading = form.formState.isSubmitting;
 
-  const onSubmit = async (values: { message: string; id: string }) => {
+const onSubmit = async (values: {
+  message: string;
+  id: string;
+  imageUrl?: string;
+}) => {
+  try {
+    // If imageUrl is an empty string, set it to undefined to avoid sending it unnecessarily
+    const dataToSend = {
+      message: values.message,
+      id: values.id,
+      imageUrl: values.imageUrl || undefined,
+    };
+    await axios.post("/api/chat", dataToSend);
+    form.reset();
+    router.refresh();
+  } catch (error) {
+    console.log(error);
+  }
+};
 
-
-    try {
-      await axios.post("/api/chat", values);
-      form.reset();
-      router.refresh();
-      //window.location.reload();
-    } catch (error) {
-      console.log(error);
-    }
-  };
 
   if (!isMounted) {
     return null;
