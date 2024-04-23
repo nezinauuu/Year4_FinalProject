@@ -62,7 +62,7 @@ const Home = async () => {
                 {profile && (
                   <Link href={`/openAi`}>
                     <button className="w-full h-32 font-bold block border-2 border-gray-950 mt-4 text-center text-white  bg-red-400 hover:text-gray-950 px-4 py-2 rounded-lg">
-                      <h1 className="text-3xl">Looking for a pet?</h1>
+                      <h1 className="text-3xl">Have a quick question?</h1>
                       <p className="text-md">
                         Talk to our virtual ai assistant!
                       </p>

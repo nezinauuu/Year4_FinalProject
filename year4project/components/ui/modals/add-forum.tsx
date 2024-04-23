@@ -13,7 +13,7 @@ import { ImageUpload } from "@/components/imageUpload";
 const schema = Joi.object({
   name: Joi.string(),
   description: Joi.string(),
-  imageUrl: Joi.string(),
+  imageUrl: Joi.string().allow("").optional(),
 });
 
 export const CreateForum = () => {
@@ -36,11 +36,20 @@ export const CreateForum = () => {
 
   const isLoading = form.formState.isSubmitting;
 
-  const onSubmit = async (values: { name: string; description: string }) => {
+  const onSubmit = async (values: {
+    name: string;
+    description: string;
+    imageUrl?: string;
+  }) => {
     console.log(values);
 
     try {
-      await axios.post("/api/forums", values);
+      const dataToSend = {
+        name: values.name,
+        description: values.description,
+        imageUrl: values.imageUrl || undefined,
+      };
+      await axios.post("/api/forums", dataToSend);
       form.reset();
       router.refresh();
       //window.location.reload();
@@ -81,12 +90,16 @@ export const CreateForum = () => {
 
           <div className="gap-3 flex flex-col">
             <Controller
-            
               control={form.control}
               name="imageUrl"
               render={({ field }) => (
                 <div className="border">
-                <ImageUpload endpoint="forumImage" value={field.value} onChange={field.onChange}/></div>
+                  <ImageUpload
+                    endpoint="forumImage"
+                    value={field.value}
+                    onChange={field.onChange}
+                  />
+                </div>
               )}
             />
             <Controller

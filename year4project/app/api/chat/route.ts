@@ -19,7 +19,7 @@ export async function POST(req: Request) {
         senderId: profile.id,
         forumId: id,
         message: message,
-        imageUrl: imageUrl,
+        imageUrl: imageUrl || "",
       },
     });
 
