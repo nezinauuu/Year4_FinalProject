@@ -71,6 +71,7 @@ model Forum {
   title     String
   content   String
   creatorId String // ID of the profile who created the forum
+  imageUrl    String @db.Text
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -87,6 +88,7 @@ model ChatLog {
   senderId String
   forumId  String
   sentAt   DateTime @default(now())
+  imageUrl    String @db.Text
 
   sender Profile @relation(fields: [senderId], references: [id])
   forum  Forum   @relation(fields: [forumId], references: [id])

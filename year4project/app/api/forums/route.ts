@@ -7,7 +7,7 @@ import { v4 as uuidv4 } from "uuid";
 
 export async function POST(req: Request) {
   try {
-    const { name, description } = await req.json();
+    const { name, description, imageUrl } = await req.json();
     const profile = await currentProfile();
 
     if (!profile) {
@@ -19,6 +19,7 @@ export async function POST(req: Request) {
         title: name,
         content: description,
         creatorId: profile.id,
+        imageUrl: imageUrl
       },
     });
 

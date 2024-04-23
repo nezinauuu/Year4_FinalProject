@@ -7,7 +7,7 @@ import { v4 as uuidv4 } from "uuid";
 
 export async function POST(req: Request) {
   try {
-    const { message, id } = await req.json();
+    const { message, id, imageUrl } = await req.json();
     const profile = await currentProfile();
 
     if (!profile) {
@@ -19,6 +19,7 @@ export async function POST(req: Request) {
         senderId: profile.id,
         forumId: id,
         message: message,
+        imageUrl: imageUrl,
       },
     });
 

@@ -2,7 +2,7 @@ import { CreateMessage } from "@/components/ui/modals/add-chat";
 import { db } from "@/lib/db";
 import { format } from "date-fns";
 import { IoIosChatboxes } from "react-icons/io";
-
+import Image from "next/image";
 export default async function ForumTitle({
   params,
 }: {
@@ -49,7 +49,6 @@ export default async function ForumTitle({
       <div className="bg-gray-100 rounded-md p-8 mt-8">
         {forum.chatLogs.map((chatLog) => (
           <div className="py-4 " key={chatLog.id}>
-            
             <div className="flex items-center">
               <div className="w-14 h-14 bg-gray-100  flex items-center justify-center mr-4">
                 <img className="rounded-lg" src={chatLog.sender.imageUrl}></img>
@@ -64,6 +63,9 @@ export default async function ForumTitle({
                   </p>
                 </div>
                 <p className="text-gray-600">{chatLog.message}</p>
+                <div className="relative h-20 w-20">
+                  <Image fill alt="balls" src={chatLog.imageUrl} />
+                </div>
               </div>
             </div>
           </div>

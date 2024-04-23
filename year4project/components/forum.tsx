@@ -31,7 +31,7 @@ export const Forum = async () => {
               <div className="py-1.5 bg-gray-100  rounded-xl  px-1.5 hover:rotate-6">
                 <img
                   className="h-14 w-14 rounded-xl"
-                  src={forum.creator.imageUrl}
+                  src={forum.imageUrl}
                 ></img>
               </div>
               <div className="">

@@ -8,10 +8,12 @@ import { Controller } from "react-hook-form";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import { MdOutlineForum } from "react-icons/md";
+import { ImageUpload } from "@/components/imageUpload";
 
 const schema = Joi.object({
   name: Joi.string(),
   description: Joi.string(),
+  imageUrl: Joi.string(),
 });
 
 export const CreateForum = () => {
@@ -28,6 +30,7 @@ export const CreateForum = () => {
     defaultValues: {
       name: "",
       description: "",
+      imageUrl: "",
     },
   });
 
@@ -77,6 +80,15 @@ export const CreateForum = () => {
           </p>
 
           <div className="gap-3 flex flex-col">
+            <Controller
+            
+              control={form.control}
+              name="imageUrl"
+              render={({ field }) => (
+                <div className="border">
+                <ImageUpload endpoint="forumImage" value={field.value} onChange={field.onChange}/></div>
+              )}
+            />
             <Controller
               control={form.control}
               name="name"

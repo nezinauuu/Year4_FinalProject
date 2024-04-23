@@ -8,10 +8,12 @@ import { Controller } from "react-hook-form";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import { MdOutlineForum } from "react-icons/md";
+import { ImageUpload } from "@/components/imageUpload";
 
 const schema = Joi.object({
   message: Joi.string(),
   id: Joi.string(),
+  imageUrl: Joi.string()
 });
 
 export const CreateMessage = ({ forumId }: { forumId: string }) => {
@@ -29,6 +31,7 @@ export const CreateMessage = ({ forumId }: { forumId: string }) => {
     defaultValues: {
       message: "",
       id: forumId,
+      imageUrl:"",
     },
   });
 
@@ -85,6 +88,20 @@ export const CreateMessage = ({ forumId }: { forumId: string }) => {
                   placeholder="Content"
                   className="input input-bordered input-error w-full max-w-xs bg-red-100 text-gray-900 py-3 min-h-fit"
                 />
+              )}
+            />
+
+            <Controller
+              control={form.control}
+              name="imageUrl"
+              render={({ field }) => (
+                <div className="border">
+                  <ImageUpload
+                    endpoint="forumImage"
+                    value={field.value}
+                    onChange={field.onChange}
+                  />
+                </div>
               )}
             />
           </div>
