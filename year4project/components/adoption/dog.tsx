@@ -56,7 +56,7 @@ export const Dog = () => {
                     </ul>
                   </div>
                   <div className="w-1/2">
-                    <p className="text-blue-600 flex justify-center">Cons</p>
+                    <p className="text-red-600 flex justify-center">Cons</p>
                     <ul className="list-disc px-5 flex justify-center">
                       <li className="">Prone to respiratory issues.</li>
                     </ul>
@@ -443,6 +443,295 @@ export const Dog = () => {
                   left alone, along with barking. Overall, they are a well
                   rounded breed that requirest minimal maintenance and they are
                   generally healthy dogs.
+                </p>
+              </div>
+            </details>
+
+            <details className="collapse w-full max-w-2xl px-2 py-2 hover:bg-gray-200">
+              <summary className=" text-xl font-medium  border-4 border-red-400 rounded-xl">
+                <div className="flex w-full">
+                  <div className="w-1/2 items-center flex justify-center text-4xl font-extrabold px-4">
+                    <h1 className="px-10">7. Border Collie</h1>
+                  </div>
+                  <div className="items-center flex w-1/2 flex-col py-2 h-[200px]">
+                    <img
+                      className="px-5 mask mask-squircle object-contain h-full"
+                      src="https://live.staticflickr.com/5333/17943979742_2e7ecb223e_b.jpg"
+                      alt="Beagle"
+                    ></img>
+                    <span className="text-[12px] text-gray-600">
+                      Photo by Corinne Benavides
+                    </span>
+                  </div>
+                </div>
+              </summary>
+              <div className="collapse-content bg-red-400/90 rounded-xl flex flex-col ">
+                <div className="flex-row flex">
+                  <div className="w-1/2">
+                    <p className="text-yellow-400 decoration-2 underline decoration-dotted text-lg justify-center flex">
+                      Features
+                    </p>
+                    <ul className="list-disc px-5 flex justify-center">
+                      <li>Highly intelligent and trainable.</li>
+                    </ul>
+
+                    <ul className="list-disc px-5 flex justify-center">
+                      <li>Extremely loyal.</li>
+                    </ul>
+
+                    <ul className="list-disc px-5 flex justify-center">
+                      <li>Great working dogs.</li>
+                    </ul>
+
+                    <ul className="list-disc px-5 flex justify-center">
+                      <li>Great for very active families.</li>
+                    </ul>
+                  </div>
+                  <div className="w-1/2">
+                    <p className="text-red-600 text-lg  decoration-2 underline decoration-dotted flex justify-center">
+                      Cons
+                    </p>
+                    <ul className="list-disc px-5 flex justify-center">
+                      <li>Requires consistent training.</li>
+                    </ul>
+
+                    <ul className="list-disc px-5 flex justify-center">
+                      <li>Independent natured.</li>
+                    </ul>
+
+                    <ul className="list-disc px-5 flex justify-center">
+                      <li>Needs plenty of exercise.</li>
+                    </ul>
+
+                    <ul className="list-disc px-5 flex justify-center">
+                      <li>May need early socialisation.</li>
+                    </ul>
+                  </div>
+                </div>
+                <p className="py-4 font-medium">
+                  Despite their medium size, border collies are extremely active
+                  dogs which require copious amounts of exercise and training in
+                  order for them to not become bored and destructive. If
+                  families are planning to adopt border collies and not use them
+                  as farm dogs, it is highly recommended to look into dog
+                  events.
+                </p>
+              </div>
+            </details>
+
+            <details className="collapse w-full max-w-2xl px-2 py-2 hover:bg-gray-200">
+              <summary className=" text-xl font-medium  border-4 border-red-400 rounded-xl">
+                <div className="flex w-full">
+                  <div className="w-1/2 items-center flex justify-center text-4xl font-extrabold px-4">
+                    <h1 className="px-10">8. Yorkshire Terrier</h1>
+                  </div>
+                  <div className="items-center flex w-1/2 flex-col py-2 h-[200px]">
+                    <img
+                      className="px-5 mask mask-squircle object-contain h-full"
+                      src="https://img.goodfon.com/original/1920x1440/9/83/yorkshirskiy-terer-york-2401.jpg"
+                      alt="Beagle"
+                    ></img>
+                    <span className="text-[12px] text-gray-600">
+                      Photo by Maxima
+                    </span>
+                  </div>
+                </div>
+              </summary>
+              <div className="collapse-content bg-red-400/90 rounded-xl flex flex-col ">
+                <div className="flex-row flex">
+                  <div className="w-1/2">
+                    <p className="text-yellow-400 decoration-2 underline decoration-dotted text-lg justify-center flex">
+                      Features
+                    </p>
+                    <ul className="list-disc px-5 flex justify-center">
+                      <li>Compact size.</li>
+                    </ul>
+
+                    <ul className="list-disc px-5 flex justify-center">
+                      <li>Hypoallergenic coat.</li>
+                    </ul>
+
+                    <ul className="list-disc px-5 flex justify-center">
+                      <li>Playful personalities.</li>
+                    </ul>
+
+                    <ul className="list-disc px-5 flex justify-center">
+                      <li>Long life span.</li>
+                    </ul>
+                  </div>
+                  <div className="w-1/2">
+                    <p className="text-red-600 text-lg  decoration-2 underline decoration-dotted flex justify-center">
+                      Cons
+                    </p>
+                    <ul className="list-disc px-5 flex justify-center">
+                      <li>Requires consistent grooming.</li>
+                    </ul>
+
+                    <ul className="list-disc px-5 flex justify-center">
+                      <li>Fragile physical health.</li>
+                    </ul>
+
+                    <ul className="list-disc px-5 flex justify-center">
+                      <li>May need early socialisation.</li>
+                    </ul>
+
+                    <ul className="list-disc px-5 flex justify-center">
+                      <li>Can be stubborn.</li>
+                    </ul>
+                  </div>
+                </div>
+                <p className="py-4 font-medium">
+                  Yorkshire Terriers have a relatively long lifespan compared to
+                  other small breeds. Having said that, their bones are more
+                  fragile along with their health as they can develop various
+                  genetic health issues such as luxating patella & collapse
+                  trachea. But with a bit of extra care, they are great dogs for
+                  families who may be allergic and overall they have great
+                  personalities and even make decent watch dogs.
+                </p>
+              </div>
+            </details>
+
+            <details className="collapse w-full max-w-2xl px-2 py-2 hover:bg-gray-200">
+              <summary className=" text-xl font-medium  border-4 border-red-400 rounded-xl">
+                <div className="flex w-full">
+                  <div className="w-1/2 items-center flex justify-center text-4xl font-extrabold px-4">
+                    <h1 className="px-10">9.Australian Shephard</h1>
+                  </div>
+                  <div className="items-center flex w-1/2 flex-col py-2 h-[200px]">
+                    <img
+                      className="px-5 mask mask-squircle object-contain h-full"
+                      src="https://i1.pickpik.com/photos/598/992/29/australian-shepherd-blue-merle-dog-animal-preview.jpg"
+                      alt="Beagle"
+                    ></img>
+                    {/* <span className="text-[12px] text-gray-600">
+                      Photo by Maxima
+                    </span> */}
+                  </div>
+                </div>
+              </summary>
+              <div className="collapse-content bg-red-400/90 rounded-xl flex flex-col ">
+                <div className="flex-row flex">
+                  <div className="w-1/2">
+                    <p className="text-yellow-400 decoration-2 underline decoration-dotted text-lg justify-center flex">
+                      Features
+                    </p>
+                    <ul className="list-disc px-5 flex justify-center">
+                      <li>Highly intelligent & obedient.</li>
+                    </ul>
+
+                    <ul className="list-disc px-5 flex justify-center">
+                      <li>Versatile working dog.</li>
+                    </ul>
+
+                    <ul className="list-disc px-5 flex justify-center">
+                      <li>Very athletic & energetic.</li>
+                    </ul>
+
+                    <ul className="list-disc px-5 flex justify-center">
+                      <li>Strong work ethic.</li>
+                    </ul>
+                  </div>
+                  <div className="w-1/2">
+                    <p className="text-red-600 text-lg  decoration-2 underline decoration-dotted flex justify-center">
+                      Cons
+                    </p>
+                    <ul className="list-disc px-5 flex justify-center">
+                      <li>Requires lots of exercise.</li>
+                    </ul>
+
+                    <ul className="list-disc px-5 flex justify-center">
+                      <li>Needs mental stimulation.</li>
+                    </ul>
+
+                    <ul className="list-disc px-5 flex justify-center">
+                      <li>Strong herding instinct.</li>
+                    </ul>
+
+                    <ul className="list-disc px-5 flex justify-center">
+                      <li>Can be stubborn.</li>
+                    </ul>
+                  </div>
+                </div>
+                <p className="py-4 font-medium">
+                  Australian shepherds are amazing dogs that are very obedient
+                  and eager to please. They are great for farmers who need to
+                  herd their animals or for owners to attend plenty of dog
+                  events. If you do not fit into this category, it is highly not
+                  recommended to adopt this breed as they require copious
+                  amounts of mental and physical exercise.
+                </p>
+              </div>
+            </details>
+
+            <details className="collapse w-full max-w-2xl px-2 py-2 hover:bg-gray-200">
+              <summary className=" text-xl font-medium  border-4 border-red-400 rounded-xl">
+                <div className="flex w-full">
+                  <div className="w-1/2 items-center flex justify-center text-4xl font-extrabold px-4">
+                    <h1 className="px-10">10. Siberian Husky</h1>
+                  </div>
+                  <div className="items-center flex w-1/2 flex-col py-2 h-[200px]">
+                    <img
+                      className="px-5 mask mask-squircle object-contain h-full"
+                      src="https://images.pexels.com/photos/12891903/pexels-photo-12891903.jpeg"
+                      alt="Beagle"
+                    ></img>
+                    {/* <span className="text-[12px] text-gray-600">
+                      Photo by Maxima
+                    </span> */}
+                  </div>
+                </div>
+              </summary>
+              <div className="collapse-content bg-red-400/90 rounded-xl flex flex-col ">
+                <div className="flex-row flex">
+                  <div className="w-1/2">
+                    <p className="text-yellow-400 decoration-2 underline decoration-dotted text-lg justify-center flex">
+                      Features
+                    </p>
+                    <ul className="list-disc px-5 flex justify-center">
+                      <li>Affectionate & loyal.</li>
+                    </ul>
+
+                    <ul className="list-disc px-5 flex justify-center">
+                      <li>Intelligent & independant.</li>
+                    </ul>
+
+                    <ul className="list-disc px-5 flex justify-center">
+                      <li>Very athletic & energetic.</li>
+                    </ul>
+
+                    <ul className="list-disc px-5 flex justify-center">
+                      <li>Playful & mischevious.</li>
+                    </ul>
+                  </div>
+                  <div className="w-1/2">
+                    <p className="text-red-600 text-lg  decoration-2 underline decoration-dotted flex justify-center">
+                      Cons
+                    </p>
+                    <ul className="list-disc px-5 flex justify-center">
+                      <li>Tendancy to howl.</li>
+                    </ul>
+
+                    <ul className="list-disc px-5 flex justify-center">
+                      <li>Can be stubborn.</li>
+                    </ul>
+
+                    <ul className="list-disc px-5 flex justify-center">
+                      <li>Shed twice a year.</li>
+                    </ul>
+
+                    <ul className="list-disc px-5 flex justify-center">
+                      <li>High energy.</li>
+                    </ul>
+                  </div>
+                </div>
+                <p className="py-4 font-medium">
+                  Siberian Huskies have a beautiful appearance and a gentle
+                  temperament. They have excellent stamina and do well in cold
+                  climates. But they can also be quiet mischevious and very
+                  vocal, which could become a nuisance in some cases. They are
+                  also known to be quite difficult to train, requiring some
+                  extra patience due to their independant nature.
                 </p>
               </div>
             </details>
