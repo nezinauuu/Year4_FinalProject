@@ -265,28 +265,163 @@ const Statistics = () => {
             </div>
           </div>
         </div>
-        <div className="flex justify-center  text-blue-100 ">
+        <div className=" ">
           <DogStats />
         </div>
       </div>
 
-      <div className=" flex-col px-5 py-5 bg-gray-900">
-        <div className="flex flex-row justify-center gap-20">
-          <div className="text-emerald-400 max-w-lg text-2xl px-5 py-5 border border-slate-400">
+      <div className=" flex-col px-5 py-5 bg-gray-900 ">
+        <div className="flex flex-row justify-center flex-wrap gap-10 lg:gap-20 ">
+          <div className="text-emerald-400 lg:w-1/6 text-2xl px-5 py-5 border border-slate-400">
             Taking a look at the 2020-2023 canine intake count from The National
             Database, It is again good to see that although 3368639 dogs were
             brought into shelters, 29016929 (86.59%) found new homes and
             families.
           </div>
 
-          <div className="text-red-400 max-w-lg text-2xl px-5 py-5 border border-slate-400">
+          <div className="text-red-400 lg:w-1/6 text-2xl px-5 py-5 border border-slate-400">
             However, this leaves a staggering 12.66% of dogs that have not been
             so fortunate. They did not find a home and eventually passed away.
           </div>
 
-          <div className="text-gray-400 max-w-lg text-2xl px-5 py-5 border border-slate-400">
+          <div className="text-gray-400 lg:w-1/6 text-2xl px-5 py-5 border border-slate-400">
             The remaining 0.75% are dogs who have escaped the shelters or their
             outcomes otherwise unknown.
+          </div>
+        </div>
+        <div className="py-5">
+          <div className=" border-t-2 border-gray-700  text-gray-200">
+            <h1 className="text-4xl font-extrabold decoration-red-400 underline items-center flex justify-center py-8">
+              Common reasons for pets in shelters.
+            </h1>
+            <div className="flex flex-row gap-10 justify-center py-10 flex-wrap">
+              <div className="px-10 border border-red-400 rounded-xl lg:w-1/6 items-center flex py-5 flex-col ">
+                <h1 className="text-3xl ">Aggression</h1>
+                <p className="text-xl py-4">
+                  They may show signs of aggression when they feel possessive
+                  over certain items such as toys or food. However, they can
+                  also act aggressively out of fear, as the pet may perceive
+                  somebody as a threat.
+                </p>
+              </div>
+
+              <div className="px-10 border border-red-400 rounded-xl lg:w-1/6 items-center flex py-5 flex-col">
+                <h1 className="text-3xl">House Soiling</h1>
+                <p className="text-xl py-4">
+                  Urinating or defecating indoors. This can be caused due to
+                  medical or behavioural reasons such as territorial marking.
+                </p>
+              </div>
+
+              <div className="px-10 border border-red-400 rounded-xl lg:w-1/6 items-center flex py-5 flex-col">
+                <h1 className="text-3xl ">Barking</h1>
+                <p className="text-xl py-4">
+                  Needlessly barking, howling or overall being vocal to a
+                  disruptive level.
+                </p>
+              </div>
+
+              <div className="px-10 border border-red-400 rounded-xl lg:w-1/6 items-center flex py-5 flex-col">
+                <h1 className="text-3xl">Attention-Seeking</h1>
+                <p className="text-xl py-4">
+                  Seeking attention in undesirable ways. This can be by barking,
+                  meowing, or whining.
+                </p>
+              </div>
+
+              <div className="px-10 border border-red-400 rounded-xl lg:w-1/6 items-center flex py-5 flex-col">
+                <h1 className="text-3xl">Destructive Behaviour</h1>
+                <p className="text-xl py-4">
+                  Destroying furniture and biting or scratching chairs, sofas,
+                  and belongings. There can be many underlying issues as the
+                  root cause for this behaviour.
+                </p>
+              </div>
+
+              <div className="px-10 border border-red-400 rounded-xl lg:w-2/6 items-center flex py-5 flex-col">
+                <h1 className="text-3xl">Health Complications.</h1>
+                <p className="text-xl py-4">
+                  Many pet owners can unfortunately misunderstand or ignore
+                  signs of illness and therefore may not seek veterinary care.
+                  As obvious as it sounds, pets cannot communicate verbally, so
+                  it is extremely important to pay attention to your pets
+                  signals such as their body language and behaviour.
+                  Furthermore, going to the vet is not always the first choice
+                  for many owners. Surgeries can become very expensive, and they
+                  are not a procedure that everyone can afford.
+                </p>
+                <p className="text-xl py-4">
+                  In some cases, pet owners may also have their own opinion on
+                  health treatment. Studies by Ri Scarborough et al, found that
+                  72% of owners thought that their vets should only administer
+                  antibiotics when it was absolutely necessary.
+                  <Link
+                    className="text-blue-400 hover:text-red-400 px-1"
+                    href="https://www.mdpi.com/2079-6382/10/11/1326"
+                  >
+                    [1]
+                  </Link>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className=" flex-col px-5 bg-gray-900">
+          <div className=" text-gray-200">
+            <h1 className="text-4xl font-extrabold decoration-emerald-400 underline items-center flex justify-center py-8">
+              Possible solutions.
+            </h1>
+            <div className="flex flex-row gap-10 justify-center py-16 flex-wrap">
+              <div className="px-10 border border-emerald-400 rounded-xl lg:w-2/6 items-center flex py-5 flex-col ">
+                <h1 className="text-3xl ">Coping Strategies.</h1>
+                <p className="text-xl py-4">
+                  A study by Kristin Buller and Kelly C. Ballantyne stated that
+                  pet owners found coping strategies that allowed them to
+                  resolve their ill feelings towards their misbehaving pets and
+                  work with them. The owners did this by doing further research
+                  and looking deeper into additional education regarding animal
+                  misbehaviour.
+                  <Link
+                    className="text-blue-400 hover:text-red-400 px-1"
+                    href="https://www.sciencedirect.com/science/article/pii/
+S1558787820300356?ref=pdf_download&fr=RR-2&rr=82edc03c0d0f888f"
+                  >
+                    [2]
+                  </Link>
+                </p>
+              </div>
+
+              <div className="px-10 border border-emerald-400 rounded-xl lg:w-2/6 items-center flex py-5 flex-col">
+                <h1 className="text-3xl">Acknowledge Their Needs.</h1>
+                <p className="text-xl py-4">
+                  Accepting your pets behavioural issues and acknowledging their
+                  needs will go a long way. It will help you to understand your
+                  pet and work with them better. Many pet owners doing so have
+                  expressed their thoughts with quotes such as "His reactivity
+                  and barking are part of who he is. We learn to manage it and,
+                  in the meantime, consider him the smartest, best, and
+                  handsomest dog in the world".
+                  <Link
+                    className="text-blue-400 hover:text-red-400 px-1"
+                    href="https://www.sciencedirect.com/science/article/pii/
+S1558787820300356?ref=pdf_download&fr=RR-2&rr=82edc03c0d0f888f"
+                  >
+                    [2]
+                  </Link>
+                </p>
+              </div>
+
+              <div className="px-10 border border-emerald-400 rounded-xl lg:w-2/6 items-center flex py-5 flex-col">
+                <h1 className="text-3xl">Talk to professionals.</h1>
+                <p className="text-xl py-4">
+                  Having support from your family and talking to professionals
+                  such as the local veterinarians & trainers can be a massive
+                  help, allowing you are your pet to overcome unwanted
+                  behaviours.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>

@@ -1,19 +1,11 @@
-import { currentProfile } from "@/lib/current-profile";
-import { db } from "@/lib/db";
+
 import { UserButton } from "@clerk/nextjs";
-import { redirect } from "next/navigation";
-import { AddPetForm } from "../ui/modals/add-pet";
 import { GiDogHouse } from "react-icons/gi";
 import Link from "next/link";
 import { SiRobotframework } from "react-icons/si";
 import { ImStatsBars } from "react-icons/im";
 import { MdOutlineForum } from "react-icons/md";
 export const Nav = async () => {
-  const profile = await currentProfile();
-
-  if (!profile) {
-    return redirect("/");
-  }
 
   return (
     <div className="flex py-4 px-4  bg-gray-900 shadow-2xl">

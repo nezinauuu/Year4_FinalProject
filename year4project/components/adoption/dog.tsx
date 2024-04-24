@@ -9,7 +9,7 @@ export const Dog = () => {
   return (
     <div className="flex justify-center flex-col bg-red-400 px-4 py-4 md:m-16 rounded-3xl">
       <div className="bg-gray-100 rounded-3xl">
-        <div className="text-red-400 flex-col min-h-screen  py-4 px-4">
+        <div className="text-red-400 flex-col   py-4 px-4">
           <div className="lg:text-7xl text-3xl font-extrabold w-full justify-center flex">
             10 Popular Dog Choices
           </div>
@@ -19,7 +19,7 @@ export const Dog = () => {
               <summary className=" text-xl font-medium  border-4 border-red-400 rounded-xl">
                 <div className="flex w-full">
                   <div className="w-1/2 items-center flex justify-center text-4xl font-extrabold px-4">
-                    <h1 className="px-10">1. French Bulldogs</h1>
+                    <h1 className="px-10">French Bulldogs</h1>
                   </div>
                   <div className="items-center flex w-1/2 flex-col py-2 h-[200px]">
                     <img
@@ -87,7 +87,7 @@ export const Dog = () => {
               <summary className=" text-xl font-medium  border-4 border-red-400 rounded-xl">
                 <div className="flex w-full">
                   <div className="w-1/2 items-center flex justify-center text-4xl font-extrabold px-4">
-                    <h1 className="px-10">2. Golden Retriever</h1>
+                    <h1 className="px-10">Golden Retriever</h1>
                   </div>
                   <div className="items-center flex w-1/2 flex-col py-2 h-[200px]">
                     <img
@@ -155,7 +155,7 @@ export const Dog = () => {
               <summary className=" text-xl font-medium  border-4 border-red-400 rounded-xl">
                 <div className="flex w-full">
                   <div className="w-1/2 items-center flex justify-center text-4xl font-extrabold px-4">
-                    <h1 className="px-10">3. Labrador Retriever</h1>
+                    <h1 className="px-10">Labrador Retriever</h1>
                   </div>
                   <div className="items-center flex w-1/2 flex-col py-2 h-[200px]">
                     <img
@@ -228,7 +228,7 @@ export const Dog = () => {
               <summary className=" text-xl font-medium  border-4 border-red-400 rounded-xl">
                 <div className="flex w-full">
                   <div className="w-1/2 items-center flex justify-center text-4xl font-extrabold px-4">
-                    <h1 className="px-10">4.Dachshund</h1>
+                    <h1 className="px-10">Dachshund</h1>
                   </div>
                   <div className="items-center flex w-1/2 flex-col py-2 h-[200px]">
                     <img
@@ -303,7 +303,7 @@ export const Dog = () => {
               <summary className=" text-xl font-medium  border-4 border-red-400 rounded-xl">
                 <div className="flex w-full">
                   <div className="w-1/2 items-center flex justify-center text-4xl font-extrabold px-4">
-                    <h1 className="px-10">5. Bichon Frise</h1>
+                    <h1 className="px-10">Bichon Frise</h1>
                   </div>
                   <div className="items-center flex w-1/2 flex-col py-2 h-[200px]">
                     <img
@@ -378,7 +378,7 @@ export const Dog = () => {
               <summary className=" text-xl font-medium  border-4 border-red-400 rounded-xl">
                 <div className="flex w-full">
                   <div className="w-1/2 items-center flex justify-center text-4xl font-extrabold px-4">
-                    <h1 className="px-10">6. Beagle</h1>
+                    <h1 className="px-10">Beagle</h1>
                   </div>
                   <div className="items-center flex w-1/2 flex-col py-2 h-[200px]">
                     <img
@@ -451,7 +451,7 @@ export const Dog = () => {
               <summary className=" text-xl font-medium  border-4 border-red-400 rounded-xl">
                 <div className="flex w-full">
                   <div className="w-1/2 items-center flex justify-center text-4xl font-extrabold px-4">
-                    <h1 className="px-10">7. Border Collie</h1>
+                    <h1 className="px-10">Border Collie</h1>
                   </div>
                   <div className="items-center flex w-1/2 flex-col py-2 h-[200px]">
                     <img
@@ -523,7 +523,7 @@ export const Dog = () => {
               <summary className=" text-xl font-medium  border-4 border-red-400 rounded-xl">
                 <div className="flex w-full">
                   <div className="w-1/2 items-center flex justify-center text-4xl font-extrabold px-4">
-                    <h1 className="px-10">8. Yorkshire Terrier</h1>
+                    <h1 className="px-10">Yorkshire Terrier</h1>
                   </div>
                   <div className="items-center flex w-1/2 flex-col py-2 h-[200px]">
                     <img
@@ -596,7 +596,7 @@ export const Dog = () => {
               <summary className=" text-xl font-medium  border-4 border-red-400 rounded-xl">
                 <div className="flex w-full">
                   <div className="w-1/2 items-center flex justify-center text-4xl font-extrabold px-4">
-                    <h1 className="px-10">9.Australian Shephard</h1>
+                    <h1 className="px-10">Australian Shephard</h1>
                   </div>
                   <div className="items-center flex w-1/2 flex-col py-2 h-[200px]">
                     <img
@@ -668,7 +668,7 @@ export const Dog = () => {
               <summary className=" text-xl font-medium  border-4 border-red-400 rounded-xl">
                 <div className="flex w-full">
                   <div className="w-1/2 items-center flex justify-center text-4xl font-extrabold px-4">
-                    <h1 className="px-10">10. Siberian Husky</h1>
+                    <h1 className="px-10">Siberian Husky</h1>
                   </div>
                   <div className="items-center flex w-1/2 flex-col py-2 h-[200px]">
                     <img

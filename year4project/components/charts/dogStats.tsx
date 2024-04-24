@@ -15,7 +15,7 @@ export const DogStats = () => {
       try {
         const data = await csv("animalShelterGlobal.csv"); // Fetch CSV data
         let sum3To7 = 0;
-        let sum17To19 = 0;
+
         let sum8To12 = 0;
         let sum13To16 = 0;
 
@@ -59,8 +59,8 @@ export const DogStats = () => {
 
   return (
     <div className="flex-col shadow justify-center items-center text-red-400">
-      <div className="flex">
-        <div className="stat">
+      <div className="flex justify-center flex-wrap py-5">
+        <div className="stat lg:w-1/6 border-slate-400 border">
           <div className="stat-figure text-secondary text-5xl">
             <MdOutlinePets />
           </div>
@@ -69,7 +69,7 @@ export const DogStats = () => {
           <div className="stat-desc">2020-2023</div>
         </div>
 
-        <div className="stat">
+        <div className="stat lg:w-1/6 border-slate-400 border">
           <div className="stat-figure text-secondary text-5xl">
             <FaHouseMedical />
           </div>
@@ -78,7 +78,7 @@ export const DogStats = () => {
           <div className="stat-desc">↗︎(86.59%)</div>
         </div>
 
-        <div className="stat">
+        <div className="stat lg:w-1/6 border-slate-400 border">
           <div className="stat-figure text-secondary text-5xl">
             <GiTombstone />
           </div>
