@@ -1,6 +1,6 @@
 "use client";
 import { TiDelete } from "react-icons/ti";
-import { UploadDropzone } from "@/lib/uploadthing";
+import { UploadButton, UploadDropzone } from "@/lib/uploadthing";
 import "@uploadthing/react/styles.css";
 import Image from "next/image";
 
@@ -17,7 +17,7 @@ export const ImageUpload = ({
   const fileType = value?.split(".").pop();
   if (value && fileType !== "pdf") {
     return (
-      <div className="flex  justify-center">
+      <div className="flex justify-center">
         <div className="relative h-40 w-40">
           <Image fill src={value} alt="Upload" className="rounded-xl" />
           <button
@@ -32,13 +32,17 @@ export const ImageUpload = ({
   }
 
   return (
-    <UploadDropzone
+    <UploadButton
+      className="mt-4 ut-button:bg-red-500 ut-button:ut-readying:bg-red-500/50"
       endpoint={endpoint}
       onClientUploadComplete={(res) => {
-        onChange(res?.[0].url);
+        // Do something with the response
+        console.log("Files: ", res);
+        alert("Upload Completed");
       }}
       onUploadError={(error: Error) => {
-        console.log(error);
+        // Do something with the error.
+        alert(`ERROR! ${error.message}`);
       }}
     />
   );

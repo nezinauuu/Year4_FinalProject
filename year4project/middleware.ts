@@ -1,6 +1,7 @@
 import { authMiddleware } from "@clerk/nextjs";
+
 export default authMiddleware({
-  publicRoutes: ["/api/uploadthing"],
+  publicRoutes: ["/", "/statistics", "/forums", /^\/forums\/.*/, "/api/uploadthing"], // Specify the homepage ("/") as a public route
 });
 
 export const config = {

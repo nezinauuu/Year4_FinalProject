@@ -1,4 +1,3 @@
-
 import { UserButton } from "@clerk/nextjs";
 import { Forum } from "@/components/forum";
 import { IoIosArrowForward } from "react-icons/io";
@@ -13,25 +12,18 @@ const forums = async () => {
   const profile = await currentProfile();
   return (
     <div className="min-h-screen ">
-<Nav/>
-      {profile && <CreateForum />}
+      <Nav />
+      <CreateForum />
       <div className="flex justify-center">
         <div
           className="overflow-y-auto max-h-screen min-w-full"
           style={{ scrollSnapType: "y mandatory", scrollBehavior: "smooth" }}
         >
-        
           <Forum />
         </div>
       </div>
-      
-      {!profile && (
-        <div className="toast">
-          <div className="alert alert-info">
-            <span>Login to create a forum!</span>
-          </div>
-        </div>
-      )}
+
+
     </div>
   );
 };
