@@ -3,6 +3,7 @@ import { db } from "@/lib/db";
 import { format } from "date-fns";
 import { IoIosChatboxes } from "react-icons/io";
 import Image from "next/image";
+import { Nav } from "@/components/navbars/nav";
 export default async function ForumTitle({
   params,
 }: {
@@ -40,41 +41,47 @@ export default async function ForumTitle({
   }
 
   return (
-    <div className="py-10 px-10 min-h-screen bg-gray-200">
-      <div className="justify-center flex">
-        <h2 className="text-left text-7xl font-extrabold text-red-400">
-          {forum.title}
-        </h2>
-      </div>
-      <div className="bg-gray-100 rounded-md p-8 mt-8">
-        {forum.chatLogs.map((chatLog) => (
-          <div className="py-4 " key={chatLog.id}>
-            <div className="flex items-center">
-              <div className="w-14 h-14 bg-gray-100  flex items-center justify-center mr-4">
-                <img className="rounded-lg" src={chatLog.sender.imageUrl}></img>
-              </div>
-              <div className="flex flex-col">
-                <div className="flex items-center">
-                  <div className="text-xl font-bold text-red-400 mr-2">
-                    {chatLog.sender.name.split(" ")[0]}
-                  </div>
-                  <p className="text-gray-500 text-sm">
-                    {format(new Date(chatLog.sentAt), "yyyy-MM-dd HH:mm:ss")}
-                  </p>
+    <div>
+      <Nav />
+      <div className="py-10 px-10 min-h-screen bg-gray-200">
+        <div className="justify-center flex">
+          <h2 className="text-left text-7xl font-extrabold text-red-400">
+            {forum.title}
+          </h2>
+        </div>
+        <div className="bg-gray-100 rounded-md p-8 mt-8">
+          {forum.chatLogs.map((chatLog) => (
+            <div className="py-4 " key={chatLog.id}>
+              <div className="flex items-center">
+                <div className="w-14 h-14 bg-gray-100  flex items-center justify-center mr-4">
+                  <img
+                    className="rounded-lg"
+                    src={chatLog.sender.imageUrl}
+                  ></img>
                 </div>
-                <p className="text-gray-600">{chatLog.message}</p>
-                {chatLog.imageUrl && (
-                  <div className="relative h-20 w-20">
-                    <Image fill alt="" src={chatLog.imageUrl} />
+                <div className="flex flex-col">
+                  <div className="flex items-center">
+                    <div className="text-xl font-bold text-red-400 mr-2">
+                      {chatLog.sender.name.split(" ")[0]}
+                    </div>
+                    <p className="text-gray-500 text-sm">
+                      {format(new Date(chatLog.sentAt), "yyyy-MM-dd HH:mm:ss")}
+                    </p>
                   </div>
-                )}
+                  <p className="text-gray-600">{chatLog.message}</p>
+                  {chatLog.imageUrl && (
+                    <div className="relative h-20 w-20">
+                      <Image fill alt="" src={chatLog.imageUrl} />
+                    </div>
+                  )}
+                </div>
               </div>
             </div>
-          </div>
-        ))}
-      </div>
-      <div className="fixed bottom-10 right-10">
-        <CreateMessage forumId={forum.id} />
+          ))}
+        </div>
+        <div className="fixed bottom-10 right-10">
+          <CreateMessage forumId={forum.id} />
+        </div>
       </div>
     </div>
   );

@@ -28,10 +28,10 @@ export const Forum = async () => {
             href={`/forums/${forum.title.replace(/\s+/g, "-")}`}
           >
             <div className="text-red-300 flex flex-row items-center py-2 flex-wrap gap-3 border justify-center hover:bg-red-300/30 ">
-              <div className="py-1.5 bg-gray-100  rounded-xl  px-1.5 hover:scale-[.5]">
+              <div className="py-1.5 bg-gray-100  rounded-xl  px-1.5 ">
                 {forum.imageUrl && (
                   <img
-                    className="h-14 w-14 rounded-xl"
+                    className="h-14 w-14 rounded-xl hover:delay-500 hover:scale-[3.5]"
                     src={forum.imageUrl}
                   ></img>
                 )}

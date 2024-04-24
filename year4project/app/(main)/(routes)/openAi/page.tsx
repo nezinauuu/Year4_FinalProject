@@ -113,25 +113,29 @@ const PetCareAssistant = () => {
           <UserButton />
         </div>
       </div>
-
-      <div className="flex justify-center items-center  min-h-screen gap-10 flex-col">
-        <div className="bg-gray-800 rounded-lg m-5 border border-red-100  ">
+      <div className=" flex justify-center py-10 px-10 text-red-400 text-5xl font-bold">
+        WoofWoofWorld Virtual Ai Assistant
+      </div>
+      <div className="flex  items-center  min-h-screen  flex-col">
+        <div className="bg-gray-100 rounded-lg m-5 border border-red-100 shadow-xl lg:w-1/2">
           <div className="flex justify-center flex-col items-center gap-5 m-5">
-            <div className="flex justify-center text-red-400 text-xl font-bold">
+            <div className="  text-red-400 text-xl font-bold">
               WoofWoofWorld Virtual Ai Assistant
             </div>
-            <div className="card card-compact w-96 bg-gray-700  shadow-xl h-96 border-2 border-blue-200 ">
-              <div className="h-96 py-3 px-3  text-red-400 overflow-y-auto">
+            <div className="card card-compact bg-gray-100  shadow-lg border-2  w-full">
+              <div className="h-96 py-3 px-3  text-red-400 overflow-y-auto font-bold">
                 {messages.map((message, index) => (
                   <div className="py-2" key={index}>
                     {message.role === "user" ? (
                       <div className="flex flex-col justify-center items-center  ">
-                        <p className="font-bold">{user.firstName}: </p>{" "}
+                        <p className="font-extrabold text-xl">
+                          {user.firstName}:{" "}
+                        </p>{" "}
                         <p>{message.content}</p>
                       </div>
                     ) : (
-                      <div className="text-blue-200 flex flex-col justify-center items-center ">
-                        <p className="font-bold ">Woof Ai:</p>{" "}
+                      <div className="text-blue-400 flex flex-col justify-center items-center ">
+                        <p className="font-extrabold text-xl">Woof Ai:</p>{" "}
                         <p>{message.content}</p>
                       </div>
                     )}
@@ -140,8 +144,8 @@ const PetCareAssistant = () => {
               </div>
             </div>
 
-            <div className="card-body flex-row border-t-2 border-t-red-400">
-              <div className="gap-3 flex flex-col ">
+            <div className="card-body flex-row border-t-2 border-t-red-400  w-full ">
+              <div className="gap-3 flex flex-col  w-full">
                 <Controller
                   control={form.control}
                   name="content"
@@ -149,8 +153,8 @@ const PetCareAssistant = () => {
                     <input
                       {...field}
                       type="text"
-                      placeholder="Cats or dogs?"
-                      className="input border-red-400 w-full text-gray-400"
+                      placeholder="What type of pet is suitable for me?"
+                      className="input border-red-400  text-gray-400 bg-slate-100"
                     />
                   )}
                 />
@@ -158,12 +162,15 @@ const PetCareAssistant = () => {
               <div className="flex ">
                 <form
                   method="dialog"
-                  className="flex gap-2"
+                  className="flex gap-2 "
                   onSubmit={form.handleSubmit(onSubmit)}
                 >
-                  <button className="btn hover:bg-red-400" disabled={isLoading}>
+                  <button
+                    className="btn hover:bg-red-400 bg-slate-100 text-lg "
+                    disabled={isLoading}
+                  >
                     {isLoading ? (
-                      <span className="loading loading-infinity loading-sm bg-red-400 text-2xl"></span>
+                      <span className="loading loading-infinity loading-lg bg-red-400 "></span>
                     ) : (
                       "Send"
                     )}

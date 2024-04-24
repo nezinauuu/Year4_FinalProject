@@ -16,7 +16,7 @@ export const Nav = async () => {
   }
 
   return (
-    <div className="flex py-4 px-4  bg-gray-900">
+    <div className="flex py-4 px-4  bg-gray-900 shadow-2xl">
       <div className=" w-4/12">
         <Link href={"/"}>
           <h1 className="flex text-3xl font-bold bg-gray-900 text-red-400 hover:text-emerald-400 duration-700">

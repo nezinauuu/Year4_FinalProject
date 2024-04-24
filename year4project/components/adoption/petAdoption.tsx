@@ -31,7 +31,7 @@ export const PetAdoption = () => {
 
   return (
     <div className="flex justify-center flex-col">
-      <div
+      <button
         onClick={() => {
           setShowDog(true); // Set showContent to true when clicked
         }}
@@ -39,7 +39,7 @@ export const PetAdoption = () => {
         <h1 className="text-4xl hover:text-red-400 font-bold justify-center flex text-white mb-4">
           Looking to adopt a companion?
         </h1>
-      </div>
+      </button>
       {/* {showContent && (
         <div
           className={`duration-1000 transition-opacity ${

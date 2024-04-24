@@ -20,7 +20,7 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en">
         <body className={inter.className}>
-          <div className="bg-gray-900">{children}</div>
+          <div className="bg-gray-100">{children}</div>
           {/* <input
             type="checkbox"
             value="mytheme"

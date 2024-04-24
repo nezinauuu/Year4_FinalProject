@@ -35,8 +35,7 @@ const Home = async () => {
     <main>
       <div className="flex flex-col min-h-screen">
         <Nav />
-
-        <div className="flex flex-col items-center justify-center bg-gray-200 glass flex-grow p-4">
+        <div className="flex flex-col items-center  bg-gray-200 glass flex-grow p-4">
           <h1 className="text-4xl font-bold my-8 flex flex-row">
             {profile && (
               <div className="flex flex-row">
@@ -61,7 +60,7 @@ const Home = async () => {
               <div className="w-full">
                 {profile && (
                   <Link href={`/openAi`}>
-                    <button className="w-full h-32 font-bold block border-2 border-gray-950 mt-4 text-center text-white  bg-red-400 hover:text-gray-950 px-4 py-2 rounded-lg">
+                    <button className="w-full h-32 font-bold block border-2 border-gray-950 mt-4 text-center text-white  bg-red-400 hover:text-gray-950 px-4 py-2 rounded-lg shadow-lg">
                       <h1 className="text-3xl">Have a quick question?</h1>
                       <p className="text-md">
                         Talk to our virtual ai assistant!
@@ -71,7 +70,7 @@ const Home = async () => {
                 )}
                 {!profile && (
                   <Link href={`/sign-in`}>
-                    <button className="w-full h-32 font-bold block border-2 border-gray-950 mt-4 text-center text-white  bg-red-400 hover:text-gray-950 px-4 py-2 rounded-lg">
+                    <button className="w-full h-32 font-bold block border-2 border-gray-950 mt-4 text-center text-white  bg-red-400 hover:text-gray-950 px-4 py-2 rounded-lg shadow-lg">
                       <h1 className="text-3xl">
                         Sign in to unlock more features!
                       </h1>
@@ -84,7 +83,7 @@ const Home = async () => {
               </div>
               <div className="w-full">
                 <Link href="/statistics">
-                  <button className="w-full h-32 text-3xl font-bold block mt-4 text-center text-white bg-gray-900 hover:text-red-400 px-4 py-2 rounded-lg">
+                  <button className="w-full h-32 text-3xl font-bold block mt-4 text-center text-white bg-gray-900 hover:text-red-400 px-4 py-2 rounded-lg shadow-lg">
                     Pet Statistics
                   </button>
                 </Link>
@@ -97,21 +96,20 @@ const Home = async () => {
                 </Link>
               </div>
             </div>
-            <div className="">
+            <div className="shadow-xl">
               <DynamicCarousel />
             </div>
           </div>
         </div>
 
         <div className="justify-center p-4 bg-gray-900 bg-cover">
-          <div className=" ">
-            {/* <Link href={`/pets}`}>
+          {/* <Link href={`/pets}`}>
               <h1 className="text-4xl hover:text-red-400  font-bold justify-center flex text-white mb-4">
                 Looking to adopt a companion?
               </h1>
             </Link> */}
-            <PetAdoption />
-            {/* <div className="border flex w-full flex-wrap bg-slate-800">
+          <PetAdoption />
+          {/* <div className="border flex w-full flex-wrap bg-slate-800">
               <div className="text-red-400 w-5/12 border-red-400 border-4  min-w-fit">
                 <div className="text-4xl font-extrabold flex flex-row gap-2 justify-center">
                   Dogs <PiDogFill />
@@ -135,8 +133,7 @@ const Home = async () => {
               </div>
             </div> */}
 
-            {/* <ScrollToTop /> */}
-          </div>
+          {/* <ScrollToTop /> */}
         </div>
       </div>
     </main>
