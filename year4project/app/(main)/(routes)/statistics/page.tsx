@@ -270,7 +270,7 @@ const Statistics = () => {
         </div>
       </div>
 
-      <div className=" flex-col px-5 py-5">
+      <div className=" flex-col px-5 py-5 bg-gray-900">
         <div className="flex flex-row justify-center gap-20">
           <div className="text-emerald-400 max-w-lg text-2xl px-5 py-5 border border-slate-400">
             Taking a look at the 2020-2023 canine intake count from The National

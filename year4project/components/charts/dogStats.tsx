@@ -66,7 +66,7 @@ export const DogStats = () => {
           </div>
           <div className="stat-title">Canine intakes</div>
           <div className="stat-value text-blue-400">{sum3To7}</div>
-          <div className="stat-desc">2013-2023</div>
+          <div className="stat-desc">2020-2023</div>
         </div>
 
         <div className="stat">

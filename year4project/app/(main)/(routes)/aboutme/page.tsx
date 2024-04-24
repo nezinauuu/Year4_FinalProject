@@ -53,7 +53,7 @@ const AboutMe = () => {
                 <UserButton />
               </div>
             </div>
-            <div className="py-5 bg-red-200 flex justify-center flex-col items-center">
+            <div className="py-5 bg-gray-800 flex justify-center flex-col items-center">
               <div className="gap-4 flex min-w-max items-center justify-center">
                 <button className="btn bg-gray-950 hover:bg-gray-800 px-6 text-gray-200">
                   Mila
@@ -71,18 +71,18 @@ const AboutMe = () => {
                   Sushi
                 </button>
               </div>
-              <div className="flex text-4xl font-extrabold justify-center px-4 py-16 bg-red-200">
+              <div className="flex text-4xl font-extrabold justify-center px-4 py-16 text-red-400">
                 Lucky
               </div>
               <div className="flex max-w-sm flex-row   ">
-                <div className=" bg-white/40 px-5 py-5 right-10 flex">
+                <div className=" bg-red-400 px-5 py-5 right-10 flex rounded-md">
                   <img
                     src={
                       "https://cdn.discordapp.com/attachments/647530722789425193/1229496895039213650/20240307_140256.jpg?ex=662fe536&is=661d7036&hm=30008ea6404f368c498d0b73d1554eaf46b55388b393eccaf8b7484ec0547a89&"
                     }
                   />
                 </div>
-                <div className=" py-5 bg-white/40 flex px-5 flex-col min-w-fit ">
+                <div className=" py-5 bg-gray-100 flex px-5 flex-col min-w-fit rounded-md">
                   <div>Breed: Bischon Frise</div>
                   <div>Name: Lucky</div>
                   <div>Age: 2.5</div>
