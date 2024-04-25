@@ -36,22 +36,21 @@ const Home = async () => {
 
   return (
     <main>
-      <div className="flex flex-col min-h-screen">
+      <div className="flex flex-col min-h-[197vh] ">
         <Nav />
-        <div className="flex flex-col items-center  bg-gray-200 glass flex-grow p-4">
-          <h1 className="text-4xl font-bold my-8 flex flex-row">
-            {profile && (
-              <div className="flex flex-row">
-                <Greeting />
-                <div className="text-red-400">{profile.name.split(" ")[0]}</div>
-                !
+
+        <div className=" flex flex-col items-center  bg-[url('/background.jpg')]   bg-cover  flex-grow p-10 drop-shadow-2xl">
+          <h1 className=" bg-white/10 rounded-full px-4 text-4xl font-bold my-8 flex flex-row">
+            {/* {!profile && (
+              <div className="flex flex-row drop-shadow-2xl">
+
               </div>
-            )}
+            )} */}
           </h1>
 
           <div className="flex items-center flex-wrap justify-center gap-8">
             <div className="flex-col w-96">
-              <div className="w-full">
+              <div className="w-full ">
                 {/* {pet && (
                   <Link href={`/pets/${pet.id}`}>
                     <button className="w-full h-32 text-3xl font-bold block mt-4 text-center text-white bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-lg">
@@ -60,7 +59,7 @@ const Home = async () => {
                   </Link>
                 )} */}
               </div>
-              <div className="w-full">
+              <div className="w-full ">
                 {profile && (
                   <Link href={`/openAi`}>
                     <button className="w-full h-32 font-bold block border-2 border-gray-950 mt-4 text-center text-white  bg-red-400 hover:text-gray-950 px-4 py-2 rounded-lg shadow-lg">
@@ -74,11 +73,9 @@ const Home = async () => {
                 {!profile && (
                   <Link href={`/sign-in`}>
                     <button className="w-full h-32 font-bold block border-2 border-gray-950 mt-4 text-center text-white  bg-red-400 hover:text-gray-950 px-4 py-2 rounded-lg shadow-lg">
-                      <h1 className="text-3xl">
-                        Sign in to unlock more features!
-                      </h1>
+                      <h1 className="text-3xl">Ai assistant</h1>
                       <p className="text-md">
-                        Talk to our Ai , add pets and more!
+                        You must login to use this feature.
                       </p>
                     </button>
                   </Link>
@@ -87,7 +84,7 @@ const Home = async () => {
               <div className="w-full">
                 <Link href="/statistics">
                   <button className="w-full h-32 text-3xl font-bold block mt-4 text-center text-white bg-gray-900 hover:text-red-400 px-4 py-2 rounded-lg shadow-lg">
-                    Pet Statistics
+                    Research & Statistics
                   </button>
                 </Link>
               </div>
@@ -107,7 +104,7 @@ const Home = async () => {
 
         <div className="justify-center py-10 bg-gray-900 bg-cover">
           <h1 className="text-4xl hover:text-red-400  font-bold justify-center flex text-white mb-4">
-            Looking to adopt a companion?
+            Looking to adopt a pet?
           </h1>
           <div className="text-red-400 text-5xl py-2 flex justify-center">
             <VscArrowDown />

@@ -27,7 +27,7 @@ export default function RootLayout({
             value="mytheme"
             className="toggle theme-controller"
           /> */}
-          <SpeedInsights />
+
           <Footer />
         </body>
       </html>

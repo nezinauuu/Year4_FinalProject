@@ -81,7 +81,7 @@ const PetCareAssistant = () => {
   }
 
   return (
-    <div className="">
+    <div className="bg-gray-900">
       <title>Woof Assistant</title>
       <div className="flex py-4 px-4  bg-gray-900">
         <div className=" w-4/12">

@@ -454,7 +454,7 @@ S1558787820300356?ref=pdf_download&fr=RR-2&rr=82edc03c0d0f888f"
                 <p className="text-xl py-4">
                   Having support from your family and talking to professionals
                   such as the local veterinarians & trainers can be a massive
-                  help, allowing you are your pet to overcome unwanted
+                  help, allowing you and your pet to overcome unwanted
                   behaviours.
                 </p>
               </div>

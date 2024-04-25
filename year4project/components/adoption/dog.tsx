@@ -11,14 +11,14 @@ export const Dog = () => {
       <div className="bg-gray-100 rounded-3xl">
         <div className="text-red-400 flex-col   py-4 px-4">
           <div className="lg:text-7xl text-3xl font-extrabold w-full justify-center flex">
-            10 Popular Dog Choices
+            Popular Dog Breeds
           </div>
 
           <div className="flex font-extrabold py-4 justify-center text-gray-950 flex-wrap min-w-fit  ">
             <details className="collapse w-full max-w-2xl px-2 py-2 hover:bg-gray-200">
               <summary className=" text-xl font-medium  border-4 border-red-400 rounded-xl">
                 <div className="flex w-full">
-                  <div className="w-1/2 items-center flex justify-center text-4xl font-extrabold px-4">
+                  <div className="w-1/2 items-center flex justify-center sm:text-4xl text-3xl font-extrabold px-4">
                     <h1 className="px-10">French Bulldogs</h1>
                   </div>
                   <div className="items-center flex w-1/2 flex-col py-2 h-[200px]">
@@ -86,7 +86,7 @@ export const Dog = () => {
             <details className="collapse w-full max-w-2xl px-2 py-2 hover:bg-gray-200">
               <summary className=" text-xl font-medium  border-4 border-red-400 rounded-xl">
                 <div className="flex w-full">
-                  <div className="w-1/2 items-center flex justify-center text-4xl font-extrabold px-4">
+                  <div className="w-1/2 items-center flex justify-center sm:text-4xl text-3xl font-extrabold px-4">
                     <h1 className="px-10">Golden Retriever</h1>
                   </div>
                   <div className="items-center flex w-1/2 flex-col py-2 h-[200px]">
@@ -154,7 +154,7 @@ export const Dog = () => {
             <details className="collapse w-full max-w-2xl px-2 py-2 hover:bg-gray-200">
               <summary className=" text-xl font-medium  border-4 border-red-400 rounded-xl">
                 <div className="flex w-full">
-                  <div className="w-1/2 items-center flex justify-center text-4xl font-extrabold px-4">
+                  <div className="w-1/2 items-center flex justify-center sm:text-4xl text-3xl font-extrabold px-4">
                     <h1 className="px-10">Labrador Retriever</h1>
                   </div>
                   <div className="items-center flex w-1/2 flex-col py-2 h-[200px]">
@@ -227,7 +227,7 @@ export const Dog = () => {
             <details className="collapse w-full max-w-2xl px-2 py-2 hover:bg-gray-200">
               <summary className=" text-xl font-medium  border-4 border-red-400 rounded-xl">
                 <div className="flex w-full">
-                  <div className="w-1/2 items-center flex justify-center text-4xl font-extrabold px-4">
+                  <div className="w-1/2 items-center flex justify-center sm:text-4xl text-3xl font-extrabold px-4">
                     <h1 className="px-10">Dachshund</h1>
                   </div>
                   <div className="items-center flex w-1/2 flex-col py-2 h-[200px]">
@@ -302,7 +302,7 @@ export const Dog = () => {
             <details className="collapse w-full max-w-2xl px-2 py-2 hover:bg-gray-200">
               <summary className=" text-xl font-medium  border-4 border-red-400 rounded-xl">
                 <div className="flex w-full">
-                  <div className="w-1/2 items-center flex justify-center text-4xl font-extrabold px-4">
+                  <div className="w-1/2 items-center flex justify-center sm:text-4xl text-3xl font-extrabold px-4">
                     <h1 className="px-10">Bichon Frise</h1>
                   </div>
                   <div className="items-center flex w-1/2 flex-col py-2 h-[200px]">
@@ -377,7 +377,7 @@ export const Dog = () => {
             <details className="collapse w-full max-w-2xl px-2 py-2 hover:bg-gray-200">
               <summary className=" text-xl font-medium  border-4 border-red-400 rounded-xl">
                 <div className="flex w-full">
-                  <div className="w-1/2 items-center flex justify-center text-4xl font-extrabold px-4">
+                  <div className="w-1/2 items-center flex justify-center sm:text-4xl text-3xl font-extrabold px-4">
                     <h1 className="px-10">Beagle</h1>
                   </div>
                   <div className="items-center flex w-1/2 flex-col py-2 h-[200px]">
@@ -450,7 +450,7 @@ export const Dog = () => {
             <details className="collapse w-full max-w-2xl px-2 py-2 hover:bg-gray-200">
               <summary className=" text-xl font-medium  border-4 border-red-400 rounded-xl">
                 <div className="flex w-full">
-                  <div className="w-1/2 items-center flex justify-center text-4xl font-extrabold px-4">
+                  <div className="w-1/2 items-center flex justify-center sm:text-4xl text-3xl font-extrabold px-4">
                     <h1 className="px-10">Border Collie</h1>
                   </div>
                   <div className="items-center flex w-1/2 flex-col py-2 h-[200px]">
@@ -522,7 +522,7 @@ export const Dog = () => {
             <details className="collapse w-full max-w-2xl px-2 py-2 hover:bg-gray-200">
               <summary className=" text-xl font-medium  border-4 border-red-400 rounded-xl">
                 <div className="flex w-full">
-                  <div className="w-1/2 items-center flex justify-center text-4xl font-extrabold px-4">
+                  <div className="w-1/2 items-center flex justify-center sm:text-4xl text-3xl font-extrabold px-4">
                     <h1 className="px-10">Yorkshire Terrier</h1>
                   </div>
                   <div className="items-center flex w-1/2 flex-col py-2 h-[200px]">
@@ -595,7 +595,7 @@ export const Dog = () => {
             <details className="collapse w-full max-w-2xl px-2 py-2 hover:bg-gray-200">
               <summary className=" text-xl font-medium  border-4 border-red-400 rounded-xl">
                 <div className="flex w-full">
-                  <div className="w-1/2 items-center flex justify-center text-4xl font-extrabold px-4">
+                  <div className="w-1/2 items-center flex justify-center sm:text-4xl text-3xl font-extrabold px-4">
                     <h1 className="px-10">Australian Shephard</h1>
                   </div>
                   <div className="items-center flex w-1/2 flex-col py-2 h-[200px]">
@@ -667,7 +667,7 @@ export const Dog = () => {
             <details className="collapse w-full max-w-2xl px-2 py-2 hover:bg-gray-200">
               <summary className=" text-xl font-medium  border-4 border-red-400 rounded-xl">
                 <div className="flex w-full">
-                  <div className="w-1/2 items-center flex justify-center text-4xl font-extrabold px-4">
+                  <div className="w-1/2 items-center flex justify-center sm:text-4xl text-3xl font-extrabold px-4">
                     <h1 className="px-10">Siberian Husky</h1>
                   </div>
                   <div className="items-center flex w-1/2 flex-col py-2 h-[200px]">
