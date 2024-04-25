@@ -169,7 +169,7 @@ const PetCareAssistant = () => {
                   onSubmit={form.handleSubmit(onSubmit)}
                 >
                   <button
-                    className="btn hover:bg-red-400 bg-slate-100 text-lg "
+                    className="btn hover:bg-red-500 bg-red-400 text-white text-lg "
                     disabled={isLoading}
                   >
                     {isLoading ? (
