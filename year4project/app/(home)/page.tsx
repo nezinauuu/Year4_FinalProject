@@ -11,6 +11,9 @@ import { PiDogFill } from "react-icons/pi";
 import { GiDogHouse } from "react-icons/gi";
 import { Nav } from "@/components/navbars/nav";
 import { PetAdoption } from "@/components/adoption/petAdoption";
+import { Dog } from "@/components/adoption/dog";
+import { VscArrowDown } from "react-icons/vsc";
+
 const Home = async () => {
   const profile = await initialProfile();
   let pet;
@@ -102,13 +105,14 @@ const Home = async () => {
           </div>
         </div>
 
-        <div className="justify-center p-4 bg-gray-900 bg-cover">
-          {/* <Link href={`/pets}`}>
-              <h1 className="text-4xl hover:text-red-400  font-bold justify-center flex text-white mb-4">
-                Looking to adopt a companion?
-              </h1>
-            </Link> */}
-          <PetAdoption />
+        <div className="justify-center py-10 bg-gray-900 bg-cover">
+          <h1 className="text-4xl hover:text-red-400  font-bold justify-center flex text-white mb-4">
+            Looking to adopt a companion?
+          </h1>
+          <div className="text-red-400 text-5xl py-2 flex justify-center">
+            <VscArrowDown />
+          </div>
+          <Dog />
           {/* <div className="border flex w-full flex-wrap bg-slate-800">
               <div className="text-red-400 w-5/12 border-red-400 border-4  min-w-fit">
                 <div className="text-4xl font-extrabold flex flex-row gap-2 justify-center">

@@ -32,17 +32,13 @@ export const ImageUpload = ({
   }
 
   return (
-    <UploadButton
-      className="mt-4 ut-button:bg-red-500 ut-button:ut-readying:bg-red-500/50"
+    <UploadDropzone
       endpoint={endpoint}
       onClientUploadComplete={(res) => {
-        // Do something with the response
-        console.log("Files: ", res);
-        alert("Upload Completed");
+        onChange(res?.[0].url);
       }}
       onUploadError={(error: Error) => {
-        // Do something with the error.
-        alert(`ERROR! ${error.message}`);
+        console.log(error);
       }}
     />
   );

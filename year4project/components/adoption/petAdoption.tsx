@@ -12,7 +12,7 @@ export const PetAdoption = () => {
       const scrollTop =
         window.pageYOffset || document.documentElement.scrollTop;
       const halfPageHeight = document.documentElement.scrollHeight / 2;
-      setShowButton(scrollTop > halfPageHeight && !showDog);
+      setShowButton(scrollTop < halfPageHeight || showDog);
     };
 
     window.addEventListener("scroll", handleScroll);

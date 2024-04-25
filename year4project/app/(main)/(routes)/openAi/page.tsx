@@ -39,8 +39,11 @@ const PetCareAssistant = () => {
 
   const { isLoaded, user } = useUser();
 
+
+
+
+  
   if (!isLoaded) {
-    // Handle loading state however you like
     return null;
   }
 

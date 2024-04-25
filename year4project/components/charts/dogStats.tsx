@@ -88,7 +88,7 @@ export const DogStats = () => {
         </div>
       </div>
       <Link href="https://www.shelteranimalscount.org/">
-        <div className="stat-desc flex justify-center items-center">
+        <div className="stat-desc flex justify-center items-center hover:text-red-400">
           Shelter Animal Count - The National Database
         </div>
       </Link>
