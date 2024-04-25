@@ -87,11 +87,14 @@ export const DogStats = () => {
           <div className="stat-desc">↘︎(12.66%)</div>
         </div>
       </div>
-      <Link href="https://www.shelteranimalscount.org/">
-        <div className="stat-desc flex justify-center items-center hover:text-red-400">
-          Shelter Animal Count - The National Database
-        </div>
-      </Link>
+
+      <div className="stat-desc flex justify-center items-center ">
+        <Link href="https://www.shelteranimalscount.org/">
+          <p className="hover:text-red-400">
+            Shelter Animal Count - The National Database
+          </p>
+        </Link>
+      </div>
     </div>
   );
 };

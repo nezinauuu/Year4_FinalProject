@@ -154,6 +154,7 @@ export const CreateForum = () => {
                 render={({ field }) => (
                   <input
                     {...field}
+                    maxLength={80}
                     type="text"
                     placeholder="Name"
                     className="input input-bordered input-error lg:w-2/3  bg-white"
@@ -167,6 +168,7 @@ export const CreateForum = () => {
                 render={({ field }) => (
                   <input
                     {...field}
+                    maxLength={200}
                     type="text"
                     placeholder="Description"
                     className="input input-bordered input-error lg:w-2/3  bg-white"

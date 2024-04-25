@@ -147,6 +147,7 @@ export const CreateMessage = ({ forumId }: { forumId: string }) => {
               render={({ field }) => (
                 <textarea
                   {...field}
+                  maxLength={1000}
                   placeholder="Content"
                   className="input input-bordered input-error w-full max-w-xs bg-white text-gray-900 py-3 min-h-fit"
                 />

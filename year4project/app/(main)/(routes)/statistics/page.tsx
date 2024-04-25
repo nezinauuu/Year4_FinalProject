@@ -375,6 +375,17 @@ const Statistics = () => {
                 </p>
               </div>
 
+              <div className="px-10 border border-red-400 rounded-xl lg:w-1/6 items-center flex py-5 flex-col">
+                <h1 className="text-3xl">Time Management</h1>
+                <p className="text-xl py-4">
+                  Many pets are being brought to shelters due to their owners
+                  running out of time to properly take care of them. Although
+                  with certain circumstances, this may be unavoidable, however
+                  in many cases, pet owners simply misjudged the time and care
+                  needed to have the desired pet.
+                </p>
+              </div>
+
               <div className="px-10 border border-red-400 rounded-xl lg:w-2/6 items-center flex py-5 flex-col">
                 <h1 className="text-3xl">Health Complications.</h1>
                 <p className="text-xl py-4">
@@ -398,6 +409,15 @@ const Statistics = () => {
                   >
                     [1]
                   </Link>
+                </p>
+              </div>
+
+              <div className="px-10 border border-red-400 rounded-xl lg:w-1/6 items-center flex py-5 flex-col">
+                <h1 className="text-3xl">Landlord</h1>
+                <p className="text-xl py-4">
+                  Many landlords disallow pets in their properties for various
+                  reasons. It is extremely important to communicate with your
+                  landlord before committing to pet adoption. 
                 </p>
               </div>
             </div>
