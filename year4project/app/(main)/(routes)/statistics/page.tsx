@@ -16,7 +16,7 @@ import { SiRobotframework } from "react-icons/si";
 import { ImStatsBars } from "react-icons/im";
 import { MdOutlineForum } from "react-icons/md";
 
-import { GiSpanner } from "react-icons/gi"; 
+import { GiSpanner } from "react-icons/gi";
 
 interface AnimalDataEntry {
   animal_name: string;
@@ -45,7 +45,6 @@ const Statistics = () => {
     setIsMounted(true);
   }, []);
 
-  
   useEffect(() => {
     async function fetchData() {
       setIsLoading(true);
@@ -115,7 +114,6 @@ const Statistics = () => {
 
     fetchData();
   }, []);
-
 
   if (!isMounted) {
     return null;
@@ -209,10 +207,7 @@ const Statistics = () => {
                     <StackedChart />
                     {/* <div className="py-5 max-w-lg">{reason || 0}</div> */}
                     <div>
-                      <h2 >
-                        Animal Intakes in Long Beach
-                        California
-                      </h2>
+                      <h2>Animal Intakes in Long Beach California</h2>
 
                       <table className="flex flex-col gap-1 px- w-full">
                         <thead>
@@ -307,7 +302,7 @@ const Statistics = () => {
           </>
         )}
 
-        <div >
+        <div>
           <DogStats />
         </div>
       </div>
@@ -440,10 +435,10 @@ S1558787820300356?ref=pdf_download&fr=RR-2&rr=82edc03c0d0f888f"
                   Accepting your pets behavioural issues and acknowledging their
                   needs will go a long way. It will help you to understand your
                   pet and work with them better. Many pet owners doing so have
-                  expressed their thoughts with quotes such as "His reactivity
-                  and barking are part of who he is. We learn to manage it and,
-                  in the meantime, consider him the smartest, best, and
-                  handsomest dog in the world".
+                  expressed their thoughts with quotes such as &quot;His
+                  reactivity and barking are part of who he is. We learn to
+                  manage it and, in the meantime, consider him the smartest,
+                  best, and handsomest dog in the world&quot;.
                   <Link
                     className="text-blue-400 hover:text-red-400 px-1"
                     href="https://www.sciencedirect.com/science/article/pii/
