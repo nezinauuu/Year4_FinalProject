@@ -735,6 +735,216 @@ export const Dog = () => {
                 </p>
               </div>
             </details>
+
+            <details className="collapse w-full max-w-2xl px-2 py-2 hover:bg-gray-200">
+              <summary className=" text-xl font-medium  border-4 border-red-400 rounded-xl">
+                <div className="flex w-full">
+                  <div className="w-1/2 items-center flex justify-center sm:text-4xl text-3xl font-extrabold px-4">
+                    <h1 className="px-10">Chihuahua</h1>
+                  </div>
+                  <div className="items-center flex w-1/2 flex-col py-2 h-[200px]">
+                    <img
+                      className="px-5 mask mask-squircle object-contain h-full"
+                      src="https://live.staticflickr.com/5266/5597083289_b330aa27b0_b.jpg"
+                      alt="Chihuahua"
+                    ></img>
+                    <span className="text-[12px] text-gray-600">
+                      Photo by Jean G
+                    </span>
+                  </div>
+                </div>
+              </summary>
+              <div className="collapse-content bg-red-400/90 rounded-xl flex flex-col ">
+                <div className="flex-row flex">
+                  <div className="w-1/2">
+                    <p className="text-yellow-400 decoration-2 underline decoration-dotted text-lg justify-center flex">
+                      Features
+                    </p>
+                    <ul className="list-disc px-5 flex justify-center">
+                      <li>Compact size, ideal for travel.</li>
+                    </ul>
+
+                    <ul className="list-disc px-5 flex justify-center">
+                      <li>Long lifespan.</li>
+                    </ul>
+
+                    <ul className="list-disc px-5 flex justify-center">
+                      <li>Good watchdogs</li>
+                    </ul>
+
+                    <ul className="list-disc px-5 flex justify-center">
+                      <li>Quick learners.</li>
+                    </ul>
+                  </div>
+                  <div className="w-1/2">
+                    <p className="text-red-600 text-lg  decoration-2 underline decoration-dotted flex justify-center">
+                      Cons
+                    </p>
+                    <ul className="list-disc px-5 flex justify-center">
+                      <li>Fragile Health.</li>
+                    </ul>
+
+                    <ul className="list-disc px-5 flex justify-center">
+                      <li>Tendancy to bark.</li>
+                    </ul>
+
+                    <ul className="list-disc px-5 flex justify-center">
+                      <li>Not suitable with young children.</li>
+                    </ul>
+
+                    <ul className="list-disc px-5 flex justify-center">
+                      <li>Requires extra patience.</li>
+                    </ul>
+                  </div>
+                </div>
+                <p className="py-4 font-medium">
+                  Due to their small size, chihuahas are good at living in
+                  moderately sized spaces, and are ideal for travelling.
+                  However, despite having a long life span, chihuahas do
+                  typically have some form of health complications, such as
+                  broken bones as they are quiet fragile, dental problems and
+                  various genetic health issues.
+                </p>
+              </div>
+            </details>
+
+            <details className="collapse w-full max-w-2xl px-2 py-2 hover:bg-gray-200">
+              <summary className=" text-xl font-medium  border-4 border-red-400 rounded-xl">
+                <div className="flex w-full">
+                  <div className="w-1/2 items-center flex justify-center sm:text-4xl text-3xl font-extrabold px-4">
+                    <h1 className="px-10">Pug</h1>
+                  </div>
+                  <div className="items-center flex w-1/2 flex-col py-2 h-[200px]">
+                    <img
+                      className="px-5 mask mask-squircle object-contain h-full"
+                      src="https://pd.w.org/2023/10/565652112c7432867.33501444.jpg"
+                      alt="Pug"
+                    ></img>
+                    <span className="text-[12px] text-gray-600">
+                      Photo by nxchikxt
+                    </span>
+                  </div>
+                </div>
+              </summary>
+              <div className="collapse-content bg-red-400/90 rounded-xl flex flex-col ">
+                <div className="flex-row flex">
+                  <div className="w-1/2">
+                    <p className="text-yellow-400 decoration-2 underline decoration-dotted text-lg justify-center flex">
+                      Features
+                    </p>
+                    <ul className="list-disc px-5 flex justify-center">
+                      <li>Affectionate & friendly.</li>
+                    </ul>
+
+                    <ul className="list-disc px-5 flex justify-center">
+                      <li>Low exercise needs.</li>
+                    </ul>
+
+                    <ul className="list-disc px-5 flex justify-center">
+                      <li>Portable size.</li>
+                    </ul>
+
+                    <ul className="list-disc px-5 flex justify-center">
+                      <li>Low shedding.</li>
+                    </ul>
+                  </div>
+                  <div className="w-1/2">
+                    <p className="text-red-600 text-lg  decoration-2 underline decoration-dotted flex justify-center">
+                      Cons
+                    </p>
+                    <ul className="list-disc px-5 flex justify-center">
+                      <li>Prone to serious health problems.</li>
+                    </ul>
+
+                    <ul className="list-disc px-5 flex justify-center">
+                      <li>Prone to obesity.</li>
+                    </ul>
+
+                    <ul className="list-disc px-5 flex justify-center">
+                      <li>Poor temperature regulation.</li>
+                    </ul>
+                  </div>
+                </div>
+                <p className="py-4 font-medium">
+                  Pugs are extremely friendly and affectionate dogs. They have
+                  entertaining and playful personalities and are good with
+                  children and other pets. Unfortunately, this breed suffers
+                  many health problems. Due to their flat face, they are
+                  susceptible to many respiratory issues. They may also
+                  experience eye problems such as corneal ulcers, have skin fold
+                  infections and also struggle to regulate their body
+                  temperatures.
+                </p>
+              </div>
+            </details>
+
+            <details className="collapse w-full max-w-2xl px-2 py-2 hover:bg-gray-200">
+              <summary className=" text-xl font-medium  border-4 border-red-400 rounded-xl">
+                <div className="flex w-full">
+                  <div className="w-1/2 items-center flex justify-center sm:text-4xl text-3xl font-extrabold px-4">
+                    <h1 className="px-10">Shih tzu</h1>
+                  </div>
+                  <div className="items-center flex w-1/2 flex-col py-2 h-[200px]">
+                    <img
+                      className="px-5 mask mask-squircle object-contain h-full"
+                      src="https://askvet.app/wp-content/uploads/2022/05/Shih-Tzu.jpg"
+                      alt="Shih tzu"
+                    ></img>
+                    {/* <span className="text-[12px] text-gray-600">
+      
+                    </span> */}
+                  </div>
+                </div>
+              </summary>
+              <div className="collapse-content bg-red-400/90 rounded-xl flex flex-col ">
+                <div className="flex-row flex">
+                  <div className="w-1/2">
+                    <p className="text-yellow-400 decoration-2 underline decoration-dotted text-lg justify-center flex">
+                      Features
+                    </p>
+                    <ul className="list-disc px-5 flex justify-center">
+                      <li>Friendly & playful.</li>
+                    </ul>
+
+                    <ul className="list-disc px-5 flex justify-center">
+                      <li>Beautiful coat.</li>
+                    </ul>
+
+                    <ul className="list-disc px-5 flex justify-center">
+                      <li>Portable size.</li>
+                    </ul>
+
+                    <ul className="list-disc px-5 flex justify-center">
+                      <li>Low exercise.</li>
+                    </ul>
+                  </div>
+                  <div className="w-1/2">
+                    <p className="text-red-600 text-lg  decoration-2 underline decoration-dotted flex justify-center">
+                      Cons
+                    </p>
+                    <ul className="list-disc px-5 flex justify-center">
+                      <li>Prone to serious health problems.</li>
+                    </ul>
+
+                    <ul className="list-disc px-5 flex justify-center">
+                      <li>Prone to obesity.</li>
+                    </ul>
+
+                    <ul className="list-disc px-5 flex justify-center">
+                      <li>Poor temperature regulation.</li>
+                    </ul>
+                  </div>
+                </div>
+                <p className="py-4 font-medium">
+                  Shih tzu are very similiar to pugs in terms of temperamant,
+                  size and health. They are a very friendly and affectionate
+                  breed however due to their brachycephalic (flat face), they
+                  can often suffer from respitory problems along with poor body
+                  temperature regulation. They may also suffer from obesity, may
+                  encounter skin fold infections, and have dental issues.
+                </p>
+              </div>
+            </details>
           </div>
         </div>
       </div>
