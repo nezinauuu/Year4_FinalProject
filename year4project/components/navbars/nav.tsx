@@ -14,7 +14,8 @@ export const Nav = async () => {
         <Link href={"/"}>
           <h1 className="flex text-3xl font-bold bg-gray-900 text-red-400 hover:text-blue-300 duration-700">
             WoofWoofWorld
-            <GiDogHouse />
+            <img src="/bone.png" className="w-12 px-2"></img>
+            {/* <GiDogHouse /> */}
           </h1>
         </Link>
       </div>

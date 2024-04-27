@@ -91,7 +91,15 @@ const Home = async () => {
               <div className="w-full">
                 <Link href="/forums">
                   <button className="w-full h-32 text-3xl font-bold block mt-4 text-center text-white bg-gray-900 hover:text-red-400 px-4 py-2 rounded-lg">
-                    Pet Forums
+                    Forums
+                  </button>
+                </Link>
+              </div>
+
+              <div className="w-full">
+                <Link href="/PetPractices">
+                  <button className="w-full h-32 text-3xl font-bold block mt-4 text-center text-white bg-gray-900 hover:text-orange-400 px-4 py-2 rounded-lg">
+                    Pet Practices
                   </button>
                 </Link>
               </div>
@@ -103,7 +111,7 @@ const Home = async () => {
         </div>
 
         <div className="justify-center py-10 bg-gray-900 bg-cover">
-          <h1 className="text-4xl hover:text-red-400  font-bold justify-center flex text-white mb-4">
+          <h1 className="text-4xl font-bold justify-center flex text-white mb-4">
             Looking to adopt a pet?
           </h1>
           <div className="text-red-400 text-5xl py-2 flex justify-center">
