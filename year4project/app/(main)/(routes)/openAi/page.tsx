@@ -81,14 +81,15 @@ const PetCareAssistant = () => {
   }
 
   return (
-    <div className="bg-gray-900">
+    <div className="bg-gradient-to-br from-gray-900 to-gray-800">
       <title>Woof Assistant</title>
       <div className="flex py-4 px-4  bg-gray-900">
         <div className=" w-4/12">
           <Link href={"/"}>
             <h1 className="flex text-3xl font-bold bg-gray-900 text-red-400 hover:text-emerald-400 duration-700">
               WoofWoofWorld
-              <GiDogHouse />
+              <img src="/bone.png" className="w-12 px-2"></img>
+              {/* <GiDogHouse /> */}
             </h1>
           </Link>
         </div>

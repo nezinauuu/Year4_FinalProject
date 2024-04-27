@@ -20,13 +20,10 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en">
         <link rel="icon" type="image/png" href="bone.png"></link>
-        <body className={inter.className}>
-          <div className="bg-gray-100">{children}</div>
-          {/* <input
-            type="checkbox"
-            value="mytheme"
-            className="toggle theme-controller"
-          /> */}
+        <body
+          className={`bg-gradient-to-br from-gray-900 to-gray-800 ${inter.className}`}
+        >
+          <div className="">{children}</div>
 
           <Footer />
         </body>
