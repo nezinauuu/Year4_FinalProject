@@ -5,6 +5,7 @@ import Link from "next/link";
 import { SiRobotframework } from "react-icons/si";
 import { ImStatsBars } from "react-icons/im";
 import { MdOutlineForum } from "react-icons/md";
+import { FaShieldDog } from "react-icons/fa6";
 export const Nav = async () => {
   const profile = await initialProfile();
 
@@ -36,6 +37,13 @@ export const Nav = async () => {
           <div className="hover:text-blue-300 duration-500 gap-2 flex">
             <p>Forums</p>
             <MdOutlineForum />
+          </div>
+        </Link>
+        <div className="text-gray-600">/</div>
+        <Link href={"/PetPractices"}>
+          <div className="hover:text-blue-300 duration-500 gap-2 flex">
+            <p>Pet Practices</p>
+            <FaShieldDog />
           </div>
         </Link>
       </div>

@@ -50,16 +50,51 @@ const PetPractices = () => {
                   "https://www.msd-animal-health.com/about-us/features-stories/preventative-pet-health/"
                 }
               >
-                <span className="text-xs text-gray-500 hover:text-red-400">MSD Animal Health</span>
+                <span className="text-xs text-gray-500 hover:text-red-400">
+                  MSD Animal Health
+                </span>
               </Link>
             </div>
           </div>
         </div>
 
-        <div className="min-h-screen lg:w-4/6 flex items-center  flex-col gap-2 border-2 border-gray-800">
-          <h1 className="text-7xl justify-center flex  py-16 font-extrabold text-orange-400">
-            Pet Practices
+        <div className="min-h-screen lg:w-4/6 flex items-center  flex-col gap-6 border-2 border-gray-800">
+          <h1 className="text-7xl justify-center flex  py-12 font-extrabold text-orange-400">
+            Common Pet FaQ
           </h1>
+
+          <div className="lg:w-5/6 border-4 rounded-3xl bg-gray-800 border-red-400 flex justify-start px-8 text-white lg:text-3xl text-2xl py-10">
+            <div className="flex-col">
+              <h1 className="text-orange-400 font-bold">
+                My pet is tugging on my leash, what should i do?
+              </h1>
+              <p className="lg:text-2xl text-xl">
+                If your pet is tugging on your leash, there are many easy steps that can be taken to prevent this.
+              </p>
+            </div>
+          </div>
+
+          <div className="lg:w-5/6 border-4 rounded-3xl bg-gray-800 border-red-400 flex justify-start px-8 text-white lg:text-3xl text-2xl py-10">
+            <div className="flex-col">
+              <h1 className="text-orange-400 font-bold">
+                My pet is tugging on my leash, what should i do?
+              </h1>
+              <p className="lg:text-2xl text-xl">
+                If your pet is tugging on your leash
+              </p>
+            </div>
+          </div>
+
+          <div className="lg:w-5/6 border-4 rounded-3xl bg-gray-800 border-red-400 flex justify-start px-8 text-white lg:text-3xl text-2xl py-10">
+            <div className="flex-col">
+              <h1 className="text-orange-400 font-bold">
+                My pet is tugging on my leash, what should i do?
+              </h1>
+              <p className="lg:text-2xl text-xl">
+                If your pet is tugging on your leash
+              </p>
+            </div>
+          </div>
 
           <div className="lg:w-5/6 border-4 rounded-3xl bg-gray-800 border-red-400 flex justify-start px-8 text-white lg:text-3xl text-2xl py-10">
             <div className="flex-col">
