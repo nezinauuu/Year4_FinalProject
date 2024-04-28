@@ -6,11 +6,13 @@ import { SiRobotframework } from "react-icons/si";
 import { ImStatsBars } from "react-icons/im";
 import { MdOutlineForum } from "react-icons/md";
 import { FaShieldDog } from "react-icons/fa6";
+
 export const Nav = async () => {
   const profile = await initialProfile();
 
   return (
     <div className="flex py-4 px-4  bg-gray-900 shadow-2xl">
+      
       <div className=" w-4/12">
         <Link href={"/"}>
           <h1 className="flex text-3xl font-bold bg-gray-900 text-red-400 hover:text-blue-300 duration-700">

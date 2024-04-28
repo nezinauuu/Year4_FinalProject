@@ -66,7 +66,7 @@ export const CreateForum = () => {
     return null;
   }
 
-  if (!user) {
+
     return (
       <>
         <div
@@ -85,142 +85,122 @@ export const CreateForum = () => {
           </button>
         </div>
 
-        <dialog id="my_modal_1" className="modal ">
-          <div className="modal-box bg-slate-100 border text-gray-900 flex justify-center flex-col">
-            <h3 className="font-bold text-lg justify-center flex">
-              You must sign in to create a forum.
-            </h3>
+        {!user && (
+          <dialog id="my_modal_1" className="modal ">
+            <div className="modal-box bg-slate-100 border text-gray-900 flex justify-center flex-col">
+              <h3 className="font-bold text-lg justify-center flex">
+                You must sign in to create a forum.
+              </h3>
 
-            <div className="flex py-2 modal-action justify-center">
-              <SignInButton>
-                <button className="btn bg-red-400 hover:bg-emerald-400 text-white w-1/2">
-                  Sign in.
+              <div className="flex py-2 modal-action justify-center">
+                <SignInButton>
+                  <button className="btn bg-red-400 hover:bg-emerald-400 text-white w-1/2">
+                    Sign in.
+                  </button>
+                </SignInButton>
+
+                <button
+                  className="text-red-400 text-3xl absolute top-2 right-2 z-10 hover:text-red-500 border rounded-full border-gray-500"
+                  type="button"
+                  onClick={() => {
+                    const modal = document.getElementById(
+                      "my_modal_1"
+                    ) as HTMLDialogElement;
+                    if (modal !== null) {
+                      modal.close(); // Close the modal when the "Close" button is clicked
+                    }
+                  }}
+                >
+                  <IoIosCloseCircle />
                 </button>
-              </SignInButton>
+              </div>
+            </div>
+          </dialog>
+        )}
 
-              <button
-                className="text-red-400 text-3xl absolute top-2 right-2 z-10 hover:text-red-500 border rounded-full border-gray-500"
-                type="button"
-                onClick={() => {
-                  const modal = document.getElementById(
-                    "my_modal_1"
-                  ) as HTMLDialogElement;
-                  if (modal !== null) {
-                    modal.close(); // Close the modal when the "Close" button is clicked
-                  }
-                }}
+      {user && (
+        <dialog id="my_modal_1" className="modal w-full ">
+          <div className="lg:w-1/3 px-8 lg:px-10 py-10 rounded-xl bg-gray-100 text-gray-900 ">
+            <h3 className="font-bold text-lg">
+              Enter your Forum information below:
+            </h3>
+            <p className="py-4">
+              Press ESC key or click the button below to close
+            </p>
+
+            <div className="gap-3 flex-col flex justify-center ">
+              <div className="flex justify-center flex-col items-center gap-2">
+                <Controller
+                  control={form.control}
+                  name="name"
+                  render={({ field }) => (
+                    <input
+                      {...field}
+                      maxLength={80}
+                      type="text"
+                      placeholder="Name"
+                      className="input input-bordered input-error lg:w-2/3  bg-white"
+                    />
+                  )}
+                />
+
+                <Controller
+                  control={form.control}
+                  name="description"
+                  render={({ field }) => (
+                    <input
+                      {...field}
+                      maxLength={200}
+                      type="text"
+                      placeholder="Description"
+                      className="input input-bordered input-error lg:w-2/3  bg-white"
+                    />
+                  )}
+                />
+                <Controller
+                  control={form.control}
+                  name="imageUrl"
+                  render={({ field }) => (
+                    <div className=" ">
+                      <ImageUpload
+                        endpoint="forumImage"
+                        value={field.value}
+                        onChange={field.onChange}
+                      />
+                    </div>
+                  )}
+                />
+              </div>
+            </div>
+            <div className="flex py-2 modal-action">
+              <form
+                method="dialog"
+                className="flex gap-2"
+                onSubmit={form.handleSubmit(onSubmit)}
               >
-                <IoIosCloseCircle />
-              </button>
+                {/* if there is a button in form, it will close the modal */}
+                <button className="btn bg-emerald-400 text-white">
+                  Create Forum
+                </button>
+                <button
+                  className="btn bg-red-400 text-white"
+                  type="button" // Make sure it's not a submit button
+                  onClick={() => {
+                    const modal = document.getElementById(
+                      "my_modal_1"
+                    ) as HTMLDialogElement;
+                    if (modal !== null) {
+                      modal.close(); // Close the modal when the "Close" button is clicked
+                    }
+                  }}
+                >
+                  Cancel
+                </button>
+              </form>
             </div>
           </div>
         </dialog>
-      </>
-    );
-  }
-
-  return (
-    <>
-      <div
-        className="right-20 fixed bottom-20 "
-        onClick={() => {
-          const modal = document.getElementById(
-            "my_modal_1"
-          ) as HTMLDialogElement;
-          if (modal !== null) {
-            modal.showModal();
-          }
-        }}
-      >
-        <button className="btn btn-circle btn-outline text-3xl h-20 w-20 hover:text-red-400 hover:bg-red-300">
-          <MdOutlineForum />
-        </button>
-      </div>
-
-      <dialog id="my_modal_1" className="modal w-full ">
-        <div className="lg:w-1/3 px-8 lg:px-10 py-10 rounded-xl bg-gray-100 text-gray-900 ">
-          <h3 className="font-bold text-lg">
-            Enter your Forum information below:
-          </h3>
-          <p className="py-4">
-            Press ESC key or click the button below to close
-          </p>
-
-          <div className="gap-3 flex-col flex justify-center ">
-            <div className="flex justify-center flex-col items-center gap-2">
-              <Controller
-                control={form.control}
-                name="name"
-                render={({ field }) => (
-                  <input
-                    {...field}
-                    maxLength={80}
-                    type="text"
-                    placeholder="Name"
-                    className="input input-bordered input-error lg:w-2/3  bg-white"
-                  />
-                )}
-              />
-
-              <Controller
-                control={form.control}
-                name="description"
-                render={({ field }) => (
-                  <input
-                    {...field}
-                    maxLength={200}
-                    type="text"
-                    placeholder="Description"
-                    className="input input-bordered input-error lg:w-2/3  bg-white"
-                  />
-                )}
-              />
-              <Controller
-                control={form.control}
-                name="imageUrl"
-                render={({ field }) => (
-                  <div className=" ">
-                    <ImageUpload
-                      endpoint="forumImage"
-                      value={field.value}
-                      onChange={field.onChange}
-                    />
-                  </div>
-                )}
-              />
-            </div>
-          </div>
-          <div className="flex py-2 modal-action">
-            <form
-              method="dialog"
-              className="flex gap-2"
-              onSubmit={form.handleSubmit(onSubmit)}
-            >
-              {/* if there is a button in form, it will close the modal */}
-              <button className="btn bg-emerald-400 text-white">
-                Create Forum
-              </button>
-              <button
-                className="btn bg-red-400 text-white"
-                type="button" // Make sure it's not a submit button
-                onClick={() => {
-                  const modal = document.getElementById(
-                    "my_modal_1"
-                  ) as HTMLDialogElement;
-                  if (modal !== null) {
-                    modal.close(); // Close the modal when the "Close" button is clicked
-                  }
-                }}
-              >
-                Cancel
-              </button>
-            </form>
-          </div>
-        </div>
-      </dialog>
+      )}
     </>
   );
-
-  if (!user) {
-  }
 };

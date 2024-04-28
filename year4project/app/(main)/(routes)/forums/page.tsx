@@ -1,18 +1,14 @@
-import { UserButton } from "@clerk/nextjs";
 import { Forum } from "@/components/forum";
-import { IoIosArrowForward } from "react-icons/io";
-import { currentProfile } from "@/lib/current-profile";
+
 import { CreateForum } from "@/components/ui/modals/add-forum";
-import { PiDogFill } from "react-icons/pi";
-import Link from "next/link";
-import { GiDogHouse } from "react-icons/gi";
+
 import { Nav } from "@/components/navbars/nav";
 
-const forums = async () => {
-  const profile = await currentProfile();
+const ForumPage = () => {
   return (
     <div className="min-h-screen ">
       <Nav />
+      
       <CreateForum />
       <div className="flex justify-center">
         <div
@@ -22,10 +18,8 @@ const forums = async () => {
           <Forum />
         </div>
       </div>
-
-
     </div>
   );
 };
 
-export default forums;
+export default ForumPage;

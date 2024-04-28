@@ -25,28 +25,29 @@ export const TwoPieChart = ({ data }: { data: DataItem[] }) => {
     "#eb4034",
   ];
   return (
-    <PieChart
-      className="bg-black/40 px-3 py-3 rounded-md border-4 border-gray-800"
-      width={310}
-      height={310}
-    >
-      <Pie
-        
-        dataKey="value"
-        isAnimationActive={true}
-        data={data}
-        cx="50%"
-        cy="50%"
-        outerRadius={120}
-        fill="#8884d8"
-        label
-        animationDuration={3000}
+    <ResponsiveContainer width="100%" height="40%">
+      <PieChart
+        className="bg-black/40 px-3 py-3 rounded-md border-4 border-gray-800"
+        width={310}
+        height={310}
       >
-        {data.map((entry, index) => (
-          <Cell  key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-        ))}
-      </Pie>
-      <Tooltip />
-    </PieChart>
+        <Pie
+          dataKey="value"
+          isAnimationActive={true}
+          data={data}
+          cx="50%"
+          cy="50%"
+          outerRadius={120}
+          fill="#8884d8"
+          label
+          animationDuration={3000}
+        >
+          {data.map((entry, index) => (
+            <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+          ))}
+        </Pie>
+        <Tooltip />
+      </PieChart>
+    </ResponsiveContainer>
   );
 };

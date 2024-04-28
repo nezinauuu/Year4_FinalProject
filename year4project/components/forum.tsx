@@ -1,17 +1,9 @@
-import { currentProfile } from "@/lib/current-profile";
 import { db } from "@/lib/db";
-import { UserButton } from "@clerk/nextjs";
-import { redirect } from "next/navigation";
+
 import Link from "next/link";
 import { IoIosChatboxes } from "react-icons/io";
 import { MdPets } from "react-icons/md";
 export const Forum = async () => {
-  const profile = await currentProfile();
-
-  // if (!profile) {
-  //   return redirect("/");
-  // }
-
   const forums = await db.forum.findMany({
     include: {
       creator: true,

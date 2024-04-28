@@ -6,7 +6,6 @@ import { SignIn, SignUp } from "@clerk/nextjs";
 import Link from "next/link";
 import React, { PureComponent } from "react";
 import DynamicCarousel from "@/components/ui/dynamicCarousel";
-import Greeting from "@/components/ui/greeting";
 import { PiDogFill } from "react-icons/pi";
 import { GiDogHouse } from "react-icons/gi";
 import { Nav } from "@/components/navbars/nav";
@@ -36,7 +35,7 @@ const Home = async () => {
 
   return (
     <main>
-      <div className="flex flex-col min-h-[197vh] ">
+      <div className="flex flex-col min-h-[210vh] ">
         <Nav />
 
         <div className=" flex flex-col items-center   bg-[url('/backgroundblur.jpg')]   bg-cover  flex-grow p-10 drop-shadow-2xl ">
@@ -100,7 +99,7 @@ const Home = async () => {
                 </Link>
               </div>
             </div>
-            <div className="shadow-xl">
+            <div className="shadow-xl ">
               <DynamicCarousel />
             </div>
           </div>

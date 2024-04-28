@@ -5,6 +5,7 @@ import PetCareAssistant from "../(main)/(routes)/openAi/page";
 import ErrorBoundary from "../../components/ErrorBoundary.js";
 import { useUser } from "@clerk/nextjs";
 import { useRouter } from "next/navigation.js";
+import ForumPage from "../(main)/(routes)/forums/page";
 
 jest.mock("next/navigation", () => ({
   useRouter: jest.fn().mockReturnValue({
@@ -26,11 +27,10 @@ jest.mock("next/navigation", () => ({
 }));
 
 jest.mock("@clerk/nextjs", () => ({
-  ...jest.requireActual("@clerk/nextjs"),
-  useUser: jest.fn(() => ({
+  useUser: jest.fn().mockReturnValue({
     isLoaded: true,
-    user: null,
-  })),
+    user: null, 
+  }),
 }));
 
 describe("Common Pet FAQ", () => {
@@ -101,3 +101,4 @@ describe("Pet Ai", () => {
     });
   });
 });
+

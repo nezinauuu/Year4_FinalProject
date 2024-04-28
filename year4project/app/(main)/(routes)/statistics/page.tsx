@@ -17,6 +17,7 @@ import { ImStatsBars } from "react-icons/im";
 import { MdOutlineForum } from "react-icons/md";
 
 import { GiSpanner } from "react-icons/gi";
+import Example from "@/components/charts/radialChart";
 
 interface AnimalDataEntry {
   animal_name: string;
@@ -128,7 +129,8 @@ const Statistics = () => {
             <Link href={"/"}>
               <h1 className="flex text-3xl font-bold bg-gray-900 text-red-400 hover:text-emerald-400 duration-700">
                 WoofWoofWorld
-                <GiDogHouse />
+                <img src="/bone.png" className="w-12 px-2"></img>
+                {/* <GiDogHouse /> */}
               </h1>
             </Link>
           </div>
@@ -158,17 +160,17 @@ const Statistics = () => {
         </div>
 
         {isLoading ? (
-          <div className="flex justify-center items-center h-screen ">
+          <div className="flex justify-center items-center ">
             <span className="loading loading-spinner text-red-400 loading-lg"></span>
             <span className="ml-2 text-gray-500 text-xl">Loading...</span>
           </div>
         ) : (
           <>
             {
-              <div className="bg-white dark:bg-red-800 px-10 py-10 flex justify-center items-center">
-                <div className="flex bg-gray-100 px-10 py-10 rounded-md w-full justify-center gap-40">
-                  <div className="bg-gray-900/90 rounded px-5 py-5">
-                    <div className="bg-white px-5 py-5 min-h-full">
+              <div className="bg-white dark:bg-red-800  py-10 flex justify-center items-center flex-wrap border-4 border-blue-300">
+                <div className="flex bg-gradient-to-br gap-2 from-gray-200 to-gray-100 px-10 py-10 rounded-md flex-col lg:flex-row  justify-center">
+                  <div className="bg-gray-900/90 rounded px-5 py-5 lg:w-3/12 border-4 border-purple-600">
+                    <div className="bg-white px-5 py-5 ">
                       <div className="font-extrabold">Animals in shelters</div>
                       <p>
                         Fortunately, according to the datasets gathered by
@@ -200,7 +202,7 @@ const Statistics = () => {
                       </p>
                     </div>
                   </div>
-                  <div className="px-10">
+                  <div className="px-10 lg:w-6/12 border-4 border-orange-400">
                     <h2 className="text-base-400 py-2 flex px-10">
                       Dog, Cat & Rabbit Shelter Statistics.
                     </h2>
@@ -209,7 +211,7 @@ const Statistics = () => {
                     <div>
                       <h2>Animal Intakes in Long Beach California</h2>
 
-                      <table className="flex flex-col gap-1 px- w-full">
+                      <table className="flex flex-col gap-1 ">
                         <thead>
                           <tr className="grid grid-cols-4">
                             <th className="p-2 bg-cyan-700 text-gray-200">
@@ -247,10 +249,12 @@ const Statistics = () => {
                       </table>
                     </div>
                   </div>
-                  <div className="px-10 bg-base-200 max-w-sm rounded-md ">
+                  <div className="px-10 bg-base-200  rounded-md lg:w-2/12 border-4 border-red-400">
                     <h2 className="text-error py-2 flex items-center ">
                       Last 50 Shelter Animal Outcomes in Long Beach California
                     </h2>
+
+                    {/* <Example/>   */}
 
                     <TwoPieChart data={outcomeData} />
                     <div>
@@ -417,7 +421,7 @@ const Statistics = () => {
                 <p className="text-xl py-4">
                   Many landlords disallow pets in their properties for various
                   reasons. It is extremely important to communicate with your
-                  landlord before committing to pet adoption. 
+                  landlord before committing to pet adoption.
                 </p>
               </div>
             </div>

@@ -40,11 +40,11 @@ const Carousel = () => {
               <img
                 src={item}
                 className="w-full "
-                alt="Tailwind CSS Carousel component"
+                alt="Dog image carousel"
                 style={{ position: "relative", zIndex: "-1" }}
               />
-              <div className="absolute inset-0  justify-center  text-center">
-                <div className=" flex justify-center m-5 py-5 bg-black/70 rounded-lg">
+              <div className="absolute inset-0  justify-center  text-center ">
+                <div className=" flex justify-center m-5 py-5 bg-black/70 rounded-lg ">
                   <p className="font-extrabold text-4xl bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-cyan-500">
                     Roughly 1.3/10 dogs that enter shelters do not survive.
                   </p>
@@ -63,7 +63,7 @@ const Carousel = () => {
       )}
 
       {user && (
-        <div className="carousel border-4 border-blue-950 relative">
+        <div className="carousel border-4 border-blue-950 relative h-[65vh] w-[40vh]">
           {carouselItems.map((item, index) => (
             <div
               key={index}
@@ -74,7 +74,7 @@ const Carousel = () => {
               <img
                 src={item}
                 className="w-full"
-                alt="Tailwind CSS Carousel component"
+                alt="Dog image carousel"
                 style={{ position: "relative", zIndex: "-1" }}
               />
             </div>
