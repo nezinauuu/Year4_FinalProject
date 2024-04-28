@@ -17,7 +17,6 @@ import { ImStatsBars } from "react-icons/im";
 import { MdOutlineForum } from "react-icons/md";
 
 import { GiSpanner } from "react-icons/gi";
-import Example from "@/components/charts/radialChart";
 
 interface AnimalDataEntry {
   animal_name: string;
