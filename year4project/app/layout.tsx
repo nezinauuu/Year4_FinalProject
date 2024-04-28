@@ -4,6 +4,7 @@ import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
 import { Footer } from "@/components/ui/footer";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -18,16 +19,18 @@ export default function RootLayout({
 }) {
   return (
     <ClerkProvider>
-      <html lang="en">
-        <link rel="icon" type="image/png" href="bone.png"></link>
-        <body
-          className={`bg-gradient-to-br from-gray-900 to-gray-800 ${inter.className}`}
-        >
-          <div className="">{children}</div>
 
-          <Footer />
-        </body>
-      </html>
+        <html lang="en">
+          <link rel="icon" type="image/png" href="bone.png"></link>
+          <body
+            className={`bg-gradient-to-br from-gray-900 to-gray-800 ${inter.className}`}
+          >
+            <div className="">{children}</div>
+
+            <Footer />
+          </body>
+        </html>
+
     </ClerkProvider>
   );
 }

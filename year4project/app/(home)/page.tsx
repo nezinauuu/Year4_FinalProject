@@ -17,17 +17,17 @@ import { VscArrowDown } from "react-icons/vsc";
 const Home = async () => {
   const profile = await initialProfile();
   let pet;
-  if (profile) {
-    pet = await db.pet.findFirst({
-      where: {
-        animalKeepers: {
-          some: {
-            profileId: profile.id,
-          },
-        },
-      },
-    });
-  }
+  // if (profile) {
+  //   pet = await db.pet.findFirst({
+  //     where: {
+  //       animalKeepers: {
+  //         some: {
+  //           profileId: profile.id,
+  //         },
+  //       },
+  //     },
+  //   });
+  // }
 
   //Automatically redirect user to the pets page if they already have pets
   // if (pet) {
@@ -41,11 +41,7 @@ const Home = async () => {
 
         <div className=" flex flex-col items-center   bg-[url('/backgroundblur.jpg')]   bg-cover  flex-grow p-10 drop-shadow-2xl ">
           <h1 className=" bg-white/10 rounded-full px-4 text-4xl font-bold my-8 flex flex-row">
-            {/* {!profile && (
-              <div className="flex flex-row drop-shadow-2xl">
 
-              </div>
-            )} */}
           </h1>
 
           <div className="flex items-center flex-wrap justify-center gap-8">

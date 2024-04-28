@@ -25,7 +25,7 @@ interface Message {
 const PetPractices = () => {
   return (
     <div className="bg-gradient-to-br from-gray-900 to-gray-800">
-      <Nav />
+      {/* <Nav /> */}
       <div className="flex flex-row flex-wrap">
         <div className="min-h-screen lg:w-1/6 flex lg:items-center py-16 flex-col lg:gap-2 border border-gray-800">
           <div className="lg:w-5/6 border rounded-3xl bg-gray-800 border-red-400 flex justify-start px-8 text-white lg:text-2xl text-2xl py-10">
