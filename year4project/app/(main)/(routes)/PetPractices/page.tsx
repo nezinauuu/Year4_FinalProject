@@ -27,10 +27,10 @@ const PetPractices = () => {
     <div>
       <Nav />
 
-      <div className="bg-gradient-to-br from-gray-900 to-gray-800">
+      <div className="bg-gradient-to-br from-gray-900 to-gray-800 flex justify-center flex-col">
         {/* <Nav /> */}
-        <div className="flex flex-row flex-wrap">
-          <div className="min-h-screen lg:w-1/6 flex lg:items-center py-16 flex-col lg:gap-2 border border-gray-800">
+        <div className="flex flex-row flex-wrap justify-center">
+          <div className="lg:w-1/6 flex lg:items-center py-16 flex-col lg:gap-2 lg:border border-gray-800">
             <div className="lg:w-5/6 border rounded-3xl bg-gray-800 border-red-400 flex justify-start px-8 text-white lg:text-2xl text-2xl py-10">
               <div className="flex-col">
                 <h1 className="text-orange-400 font-bold">
@@ -64,7 +64,7 @@ const PetPractices = () => {
           </div>
 
           <div className="min-h-screen lg:w-4/6 flex items-center  flex-col gap-6 border-2 border-gray-800">
-            <h1 className="text-7xl justify-center flex  py-12 font-extrabold text-orange-400">
+            <h1 className="text-7xl justify-center flex py-12 font-extrabold px-16 text-orange-400">
               Common Pet FaQ
             </h1>
 
@@ -247,10 +247,10 @@ const PetPractices = () => {
             </div>
           </div>
 
-          <div className="min-h-screen lg:w-1/6 flex items-center justify-center flex-col gap-2 border border-gray-800"></div>
+          <div className=" lg:w-1/6 flex items-center justify-center flex-col gap-2 border border-gray-800"></div>
         </div>
-        <h1 className="text-5xl justify-center flex  py-12 font-extrabold text-orange-400">
-          Have more questions? Make a forum
+        <h1 className="lg:text-5xl justify-center flex  py-12 font-extrabold text-orange-400 flex-col text-wrap break-all text-4xl items-center">
+          <p>Have more questions?</p> <p>Make a forum</p>
           <Link
             className="px-3 underline decoration-dotted hover:text-red-400"
             href={"/forums"}
