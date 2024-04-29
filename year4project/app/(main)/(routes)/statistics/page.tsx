@@ -17,6 +17,8 @@ import { ImStatsBars } from "react-icons/im";
 import { MdOutlineForum } from "react-icons/md";
 
 import { GiSpanner } from "react-icons/gi";
+import { FaHome } from "react-icons/fa";
+import { FaShieldDog } from "react-icons/fa6";
 
 interface AnimalDataEntry {
   animal_name: string;
@@ -123,7 +125,85 @@ const Statistics = () => {
     <main>
       <title>Animal Statistics</title>
       <div className=" min-h-screen justify-center flex-col bg-gray-900 ">
-        <Nav />
+        <div className="navbar flex py-4 px-4  bg-gray-900 shadow-2xl">
+          <div className="navbar-start">
+            <div className="dropdown text-red-400">
+              <div
+                tabIndex={0}
+                role="button"
+                className="btn btn-ghost btn-circle text-3xl"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-8 w-8"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M4 6h16M4 12h16M4 18h7"
+                  />
+                </svg>
+              </div>
+              <ul
+                tabIndex={0}
+                className="menu menu-sm dropdown-content mt-5 z-[1] p-2 shadow bg-gray-900 rounded-box w-52 text-red-400  font-extrabold flex"
+              >
+                <li className=" hover:text-blue-300 ">
+                  <Link href={"/"} className="flex">
+                    <div className=" py-2 text-xl flex ">
+                      <p className="mr-2 items-center">Home</p> <FaHome />
+                    </div>
+                  </Link>
+                </li>
+                <li className=" hover:text-blue-300 ">
+                  <Link href={"/openAi"} className="flex">
+                    <div className=" py-2 text-xl flex ">
+                      <p className="mr-2 ">WoofAi</p> <SiRobotframework />
+                    </div>
+                  </Link>
+                </li>
+                <li className=" hover:text-blue-300 ">
+                  <Link href={"/statistics"}>
+                    <div className="flex py-2 text-xl">
+                      <p className="mr-2">Statistics</p> <ImStatsBars />
+                    </div>
+                  </Link>
+                </li>
+                <li className=" hover:text-blue-300 ">
+                  <Link href={"/forums"}>
+                    <div className="flex py-2 text-xl">
+                      <p className="mr-2 ">Forums</p> <MdOutlineForum />
+                    </div>
+                  </Link>
+                </li>
+                <li className=" hover:text-blue-300 ">
+                  <Link href={"/PetPractices"}>
+                    <div className="flex py-2 text-xl">
+                      <p className="mr-2">Pet Practices</p> <FaShieldDog />
+                    </div>
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className="navbar-center">
+            <Link href={"/"}>
+              <h1 className="flex text-3xl font-bold bg-gray-900 text-red-400 hover:text-blue-300 duration-700">
+                PetConnect
+                <img src="/bone.png" className="w-12 px-2"></img>
+              </h1>
+            </Link>
+          </div>
+          <div className="navbar-end">
+            <div className="w-4/12  flex justify-end">
+              <UserButton />
+            </div>
+          </div>
+        </div>
 
         {isLoading ? (
           <div className="flex justify-center items-center ">
@@ -170,12 +250,14 @@ const Statistics = () => {
                   </div>
                   <div className="lg:px-5 lg:w-6/12">
                     <h2 className="text-base-400 py-2 flex px-10 justify-center">
-                      Dog, Cat & Rabbit Shelter Statistics.
+                      Dog, Cat & Rabbit Shelter Statistics In Long Beach California.
                     </h2>
                     <StackedChart />
                     {/* <div className="py-5 max-w-lg">{reason || 0}</div> */}
                     <div className="hidden lg:flex flex-col">
-                      <h2 className="flex justify-center">Animal Intakes in Long Beach California</h2>
+                      <h2 className="flex justify-center">
+                        Animal Intakes in Long Beach California.
+                      </h2>
 
                       <table className="flex flex-col gap-1 ">
                         <thead>
@@ -217,13 +299,13 @@ const Statistics = () => {
                   </div>
                   <div className="px-10 bg-base-200  rounded-md  border-4 border-gray-600">
                     <h2 className="text-error py-2 flex items-center ">
-                      Last 100 Shelter Animal Outcomes in Long Beach California
+                      Last 100 Shelter Animal Outcomes in Long Beach California.
                     </h2>
 
                     <TwoPieChart data={outcomeData} />
 
                     <div>
-                      <div className="py-5 text-gray-300">
+                      <div className="py-5 text-gray-300 text-xl flex flex-col justify-center items-center">
                         <h1>
                           Transfer:{" "}
                           {outcomeData.find((item) => item.name === "TRANSFER")
@@ -463,9 +545,8 @@ S1558787820300356?ref=pdf_download&fr=RR-2&rr=82edc03c0d0f888f"
                   wandering or abandoned who are then taken into shelters.
                   Unfortunately the biggest reason for overcrowding and resource
                   straining in shelters is due to stray animals. That is why it
-                  is extremely important to spay/neuter your pet and programs are
-                  often promoted to address this problem.
-
+                  is extremely important to spay/neuter your pet and programs
+                  are often promoted to address this problem.
                 </p>
               </div>
             </div>

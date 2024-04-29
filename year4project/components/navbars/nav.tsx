@@ -84,7 +84,7 @@ export const Nav = async () => {
       <div className="navbar-center">
         <Link href={"/"}>
           <h1 className="flex text-3xl font-bold bg-gray-900 text-red-400 hover:text-blue-300 duration-700">
-            WoofWoofWorld
+            PetConnect
             <img src="/bone.png" className="w-12 px-2"></img>
           </h1>
         </Link>
@@ -96,7 +96,7 @@ export const Nav = async () => {
               <p className="text-gray-500 italic hidden md:flex">
                 Logged in as
               </p>
-              <p className="px-2 hidden sm:flex">{profile.name}</p>
+              <p className="px-2 hidden sm:flex">{profile.name.split(" ")[0]}</p>
               <UserButton />
             </div>
           )}
