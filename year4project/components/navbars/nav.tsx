@@ -1,4 +1,4 @@
-"use client";
+
 import { UserButton } from "@clerk/nextjs";
 import { GiDogHouse } from "react-icons/gi";
 import { useUser } from "@clerk/nextjs";
@@ -8,9 +8,12 @@ import { ImStatsBars } from "react-icons/im";
 import { MdOutlineForum } from "react-icons/md";
 import { FaShieldDog } from "react-icons/fa6";
 import { FaHome } from "react-icons/fa";
+import { initialProfile } from "@/lib/initial-profile";
 
-export const Nav = () => {
-  const { isLoaded, user } = useUser();
+
+export const Nav = async () => {
+
+    const profile = await initialProfile();
 
   return (
     <div className="navbar flex py-4 px-4  bg-gray-900 shadow-2xl">
@@ -88,15 +91,16 @@ export const Nav = () => {
       </div>
       <div className="navbar-end">
         <div className="w-4/12  flex justify-end">
-          {user && (
+          {profile && (
             <div className="text-red-400 flex-row flex items-center">
               <p className="text-gray-500 italic hidden md:flex">
                 Logged in as
               </p>
-              <p className="px-2 hidden sm:flex">{user.username}</p>
+              <p className="px-2 hidden sm:flex">{profile.name}</p>
+              <UserButton />
             </div>
           )}
-          {!user && (
+          {!profile && (
             <div className="navbar text-neutral-content justify-end  ">
               <Link href={"/sign-in"}>
                 <button className="btn btn-ghost text-xl hover:text-blue-300">
@@ -105,7 +109,6 @@ export const Nav = () => {
               </Link>
             </div>
           )}
-          <UserButton />
         </div>
       </div>
     </div>
