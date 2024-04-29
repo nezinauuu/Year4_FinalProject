@@ -26,16 +26,21 @@ export default async function ForumTitle({
 
   if (forum.chatLogs.every((chatLog) => chatLog.message == null)) {
     return (
-      <div className="py-10 px-10 bg-gray-200 min-h-screen flex justify-center items-center flex-col">
-        <div className="justify-center flex">
-          <h2 className="text-left text-7xl font-extrabold text-red-400">
-            {forum.title}
-          </h2>
+      <div>
+        <div className="absolute w-full">
+          <Nav />
         </div>
-        <div className="text-3xl text-gray-400 py-32">
-          There are currently no messages in this forum :(
+        <div className="py-10 px-10 bg-gray-200 min-h-screen flex justify-center items-center flex-col">
+          <div className="justify-center flex">
+            <h2 className="text-left text-7xl font-extrabold text-red-400">
+              {forum.title}
+            </h2>
+          </div>
+          <div className="text-3xl text-gray-400 py-32">
+            There are currently no messages in this forum :(
+          </div>
+          <CreateMessage forumId={forum.id} />
         </div>
-        <CreateMessage forumId={forum.id} />
       </div>
     );
   }
@@ -80,7 +85,6 @@ export default async function ForumTitle({
           ))}
         </div>
 
-        
         <div className="fixed bottom-10 right-10">
           <CreateMessage forumId={forum.id} />
         </div>
