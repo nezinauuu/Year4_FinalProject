@@ -217,7 +217,7 @@ const Statistics = () => {
                   </div>
                   <div className="px-10 bg-base-200  rounded-md  border-4 border-gray-600">
                     <h2 className="text-error py-2 flex items-center ">
-                      Last 50 Shelter Animal Outcomes in Long Beach California
+                      Last 100 Shelter Animal Outcomes in Long Beach California
                     </h2>
 
                     <TwoPieChart data={outcomeData} />

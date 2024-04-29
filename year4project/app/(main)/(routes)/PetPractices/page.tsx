@@ -205,7 +205,7 @@ const PetPractices = () => {
             <div className="w-5/6 border-2 rounded-3xl bg-gray-800 border-red-400 flex justify-start px-8 text-white lg:text-3xl text-2xl py-4 mb-5">
               <div className="flex-col w-full">
                 <h1 className="text-orange-400 font-bold mt-6">
-                  How can I stop by dog from needlessly barking?
+                  How can I stop my dog from needlessly barking?
                 </h1>
 
                 <ul
