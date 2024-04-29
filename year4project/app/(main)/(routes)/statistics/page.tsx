@@ -58,7 +58,7 @@ const Statistics = () => {
         let died = 0;
 
         const response = await axios.get(
-          "https://data.longbeach.gov/api/explore/v2.1/catalog/datasets/animal-shelter-intakes-and-outcomes/records?select=animal_name%2C%20intake_date%2C%20intake_cond%2C%20intake_type%2C%20outcome_type%2Cdob%2C%20outcome_is_dead%2C%20reason&where=intake_type%20!%3D%20%22WILDLIFE%22&limit=50&exclude=intake_type%3ASTRAY"
+          "https://data.longbeach.gov/api/explore/v2.1/catalog/datasets/animal-shelter-intakes-and-outcomes/records?select=animal_name%2C%20intake_date%2C%20intake_cond%2C%20intake_type%2C%20outcome_type%2Cdob%2C%20outcome_is_dead%2C%20reason&where=intake_type%20!%3D%20%22WILDLIFE%22&limit=100&exclude=intake_type%3ASTRAY"
         );
 
         for (let k = 0; k < response.data["results"].length; k++) {
@@ -169,13 +169,13 @@ const Statistics = () => {
                     </div>
                   </div>
                   <div className="lg:px-5 lg:w-6/12">
-                    <h2 className="text-base-400 py-2 flex px-10">
+                    <h2 className="text-base-400 py-2 flex px-10 justify-center">
                       Dog, Cat & Rabbit Shelter Statistics.
                     </h2>
                     <StackedChart />
                     {/* <div className="py-5 max-w-lg">{reason || 0}</div> */}
                     <div className="hidden lg:flex flex-col">
-                      <h2>Animal Intakes in Long Beach California</h2>
+                      <h2 className="flex justify-center">Animal Intakes in Long Beach California</h2>
 
                       <table className="flex flex-col gap-1 ">
                         <thead>
@@ -219,9 +219,9 @@ const Statistics = () => {
                     <h2 className="text-error py-2 flex items-center ">
                       Last 50 Shelter Animal Outcomes in Long Beach California
                     </h2>
-                    
-                      <TwoPieChart data={outcomeData} />
-              
+
+                    <TwoPieChart data={outcomeData} />
+
                     <div>
                       <div className="py-5 text-gray-300">
                         <h1>
@@ -445,6 +445,33 @@ S1558787820300356?ref=pdf_download&fr=RR-2&rr=82edc03c0d0f888f"
                   such as the local veterinarians & trainers can be a massive
                   help, allowing you and your pet to overcome unwanted
                   behaviours.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className=" flex-col px-5 bg-gray-900">
+          <div className=" text-gray-200">
+            <h1 className="text-4xl font-extrabold decoration-gray-400 underline items-center flex justify-center py-8">
+              Abandoned Animals
+            </h1>
+            <div className="flex flex-row gap-10 justify-center py-16 flex-wrap">
+              <div className="px-10 border border-gray-400 rounded-xl lg:w-2/6 items-center flex py-5 flex-col ">
+                <h1 className="text-3xl ">Stray animals in Shelters.</h1>
+                <p className="text-xl py-4">
+                  Strays are typically referred to animals that have been found
+                  wandering or abandoned who are then taken into shelters.
+                  Unfortunately the biggest reason for overcrowding and resource
+                  straining in shelters is due to stray animals. That is why it
+                  is extremely important to spay/neuter your pet and programs are
+                  often promoted to address this problem.
+                  <Link
+                    className="text-blue-400 hover:text-red-400 px-1"
+                    href="https://www.sciencedirect.com/science/article/pii/
+S1558787820300356?ref=pdf_download&fr=RR-2&rr=82edc03c0d0f888f"
+                  >
+                    [2]
+                  </Link>
                 </p>
               </div>
             </div>
