@@ -8,7 +8,6 @@ import { Controller } from "react-hook-form";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import { MdOutlineForum } from "react-icons/md";
-import { ImageUpload } from "@/components/imageUpload";
 import { SignInButton, useUser } from "@clerk/nextjs";
 import { SignIn } from "@clerk/nextjs";
 
@@ -155,19 +154,6 @@ export const CreateForum = () => {
                       placeholder="Description"
                       className="input input-bordered input-error lg:w-2/3  bg-white"
                     />
-                  )}
-                />
-                <Controller
-                  control={form.control}
-                  name="imageUrl"
-                  render={({ field }) => (
-                    <div className=" ">
-                      <ImageUpload
-                        endpoint="forumImage"
-                        value={field.value}
-                        onChange={field.onChange}
-                      />
-                    </div>
                   )}
                 />
               </div>

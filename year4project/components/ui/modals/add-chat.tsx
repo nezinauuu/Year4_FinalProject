@@ -8,7 +8,7 @@ import { Controller } from "react-hook-form";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import { MdOutlineForum } from "react-icons/md";
-import { ImageUpload } from "@/components/imageUpload";
+
 import { SignInButton, useUser } from "@clerk/nextjs";
 import { IoIosCloseCircle } from "react-icons/io";
 
@@ -154,19 +154,7 @@ export const CreateMessage = ({ forumId }: { forumId: string }) => {
               )}
             />
 
-            <Controller
-              control={form.control}
-              name="imageUrl"
-              render={({ field }) => (
-                <div className="border">
-                  <ImageUpload
-                    endpoint="forumImage"
-                    value={field.value}
-                    onChange={field.onChange}
-                  />
-                </div>
-              )}
-            />
+
           </div>
           <div className="flex py-2 modal-action">
             <form

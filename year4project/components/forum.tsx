@@ -21,20 +21,14 @@ export const Forum = async () => {
           >
             <div className="text-red-300 flex flex-row items-center py-2 flex-wrap gap-3 border justify-center hover:bg-red-300/30 ">
               <div className="py-1.5 bg-gray-100  rounded-xl  px-1.5 ">
-                {forum.imageUrl && (
+                {forum.creator.imageUrl && (
                   <img
                     className="h-14 w-14 rounded-xl hover:delay-500 hover:scale-[3.5]"
-                    src={forum.imageUrl}
+                    src={forum.creator.imageUrl}
                   ></img>
                 )}
-
-                {!forum.imageUrl && (
-                  <div className="h-14 w-14 rounded-xl text-5xl justify-center items-center flex text-red-200">
-                    <MdPets />
-                  </div>
-                )}
               </div>
-              <div className="">
+              <div className="hidden sm:flex">
                 <div className="px-1.5 py-1.5 bg-gray-100 rounded-xl">
                   <div className=" h-14 w-14 px-1.5 items-center justify-center flex flex-col bg-gray-100 text-gray-900">
                     <div className="text-3xl text-red-400">
@@ -44,14 +38,14 @@ export const Forum = async () => {
                   </div>
                 </div>
               </div>
-              <div className="w-3/5">
+              <div className="sm:w-3/5 w-4/5">
                 <div className="px-1.5 py-1.5 bg-gray-100 rounded-xl ">
                   <div className=" h-14 px-1.5 items-center  w-full flex bg-gray-100 text-gray-900 ">
-                    <div className="w-3/5">{forum.title}</div>
-                    <div className="w-1/5   text-red-400 justify-end flex ">
+                    <div className="md:w-3/5">{forum.title}</div>
+                    <div className="w-1/5  hidden md:flex text-red-400 justify-end  ">
                       {forum.creator.name.split(" ")[0]}
                     </div>
-                    <div className="w-1/5 justify-end flex ">
+                    <div className="w-1/5 justify-end   hidden md:flex">
                       {new Date(forum.createdAt).toLocaleString("en-US", {
                         weekday: "short",
                         month: "short",
