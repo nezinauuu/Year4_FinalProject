@@ -12,6 +12,7 @@ import { GiDogHouse } from "react-icons/gi";
 import { SiRobotframework } from "react-icons/si";
 import { ImStatsBars } from "react-icons/im";
 import { MdOutlineForum } from "react-icons/md";
+import { Nav } from "@/components/navbars/nav";
 
 const schema = Joi.object({
   content: Joi.string(),
@@ -82,41 +83,9 @@ const PetCareAssistant = () => {
 
   return (
     <div className="bg-gradient-to-br from-gray-900 to-gray-800">
+      <Nav/>
       <title>Woof Assistant</title>
-      <div className="flex py-4 px-4  bg-gray-900">
-        <div className=" w-4/12">
-          <Link href={"/"}>
-            <h1 className="flex text-3xl font-bold bg-gray-900 text-red-400 hover:text-emerald-400 duration-700">
-              WoofWoofWorld
-              <img src="/bone.png" className="w-12 px-2"></img>
-              {/* <GiDogHouse /> */}
-            </h1>
-          </Link>
-        </div>
-        <div className="gap-2 flex-row flex items-center text-red-400 text-lg font-extrabold  w-4/12 justify-center">
-          <Link href={"/openAi"}>
-            <div className="hover:text-emerald-400 duration-700 flex gap-2">
-              <p>WoofAi</p> <SiRobotframework />
-            </div>
-          </Link>
-          <div className="text-gray-600">/</div>
-          <Link href={"/statistics"}>
-            <div className="hover:text-emerald-400 duration-700 gap-2 flex">
-              <p>Statistics</p> <ImStatsBars />
-            </div>
-          </Link>
-          <div className="text-gray-600">/</div>
-          <Link href={"/forums"}>
-            <div className="hover:text-emerald-400 duration-700 gap-2 flex">
-              <p>Forums</p>
-              <MdOutlineForum />
-            </div>
-          </Link>
-        </div>
-        <div className="w-4/12  flex justify-end">
-          <UserButton />
-        </div>
-      </div>
+      
       <div className=" flex justify-center py-10 px-10 text-red-400 text-5xl font-bold">
         WoofWoofWorld Virtual Ai Assistant
       </div>

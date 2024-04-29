@@ -39,9 +39,7 @@ const Home = async () => {
         <Nav />
 
         <div className=" flex flex-col items-center   bg-[url('/backgroundblur.jpg')]   bg-cover  flex-grow p-10 drop-shadow-2xl ">
-          <h1 className=" bg-white/10 rounded-full px-4 text-4xl font-bold my-8 flex flex-row">
-
-          </h1>
+          <h1 className=" bg-white/10 rounded-full px-4 text-4xl font-bold my-8 flex flex-row"></h1>
 
           <div className="flex items-center flex-wrap justify-center gap-8">
             <div className="flex-col w-96">
@@ -109,7 +107,7 @@ const Home = async () => {
           <h1 className="text-4xl font-bold justify-center flex text-white mb-4">
             Looking to adopt a pet?
           </h1>
-          <div className="text-red-400 text-5xl py-2 flex justify-center">
+          <div className="animate-pulse text-red-400 text-6xl py-2 flex justify-center">
             <VscArrowDown />
           </div>
           <Dog />

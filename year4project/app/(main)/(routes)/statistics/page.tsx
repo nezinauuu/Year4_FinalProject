@@ -18,6 +18,7 @@ import { MdOutlineForum } from "react-icons/md";
 
 import { GiSpanner } from "react-icons/gi";
 
+
 interface AnimalDataEntry {
   animal_name: string;
   intake_date: string; // Adjust the type as necessary
@@ -123,40 +124,7 @@ const Statistics = () => {
     <main>
       <title>Animal Statistics</title>
       <div className=" min-h-screen justify-center flex-col bg-gray-900 ">
-        <div className="flex py-4 px-4  bg-gray-900">
-          <div className=" w-4/12">
-            <Link href={"/"}>
-              <h1 className="flex text-3xl font-bold bg-gray-900 text-red-400 hover:text-emerald-400 duration-700">
-                WoofWoofWorld
-                <img src="/bone.png" className="w-12 px-2"></img>
-                {/* <GiDogHouse /> */}
-              </h1>
-            </Link>
-          </div>
-          <div className="gap-2 flex-row flex items-center text-red-400 text-lg font-extrabold  w-4/12 justify-center">
-            <Link href={"/openAi"}>
-              <div className="hover:text-emerald-400 duration-700 flex gap-2">
-                <p>WoofAi</p> <SiRobotframework />
-              </div>
-            </Link>
-            <div className="text-gray-600">/</div>
-            <Link href={"/statistics"}>
-              <div className="hover:text-emerald-400 duration-700 gap-2 flex">
-                <p>Statistics</p> <ImStatsBars />
-              </div>
-            </Link>
-            <div className="text-gray-600">/</div>
-            <Link href={"/forums"}>
-              <div className="hover:text-emerald-400 duration-700 gap-2 flex">
-                <p>Forums</p>
-                <MdOutlineForum />
-              </div>
-            </Link>
-          </div>
-          <div className="w-4/12  flex justify-end">
-            <UserButton />
-          </div>
-        </div>
+        <Nav/>
 
         {isLoading ? (
           <div className="flex justify-center items-center ">
@@ -167,9 +135,9 @@ const Statistics = () => {
           <>
             {
               <div className="bg-white dark:bg-red-800  py-10 flex justify-center items-center flex-wrap border-4 border-blue-300">
-                <div className="flex bg-gradient-to-br gap-2 from-gray-200 to-gray-100 px-10 py-10 rounded-md flex-col lg:flex-row  justify-center">
-                  <div className="bg-gray-900/90 rounded px-5 py-5 lg:w-3/12 border-4 border-purple-600">
-                    <div className="bg-white px-5 py-5 ">
+                <div className="flex bg-gradient-to-br gap-1 from-gray-200 to-gray-100 px-10 py-10 rounded-md sm:flex-col lg:flex-row  justify-center">
+                  <div className="bg-gray-900/90 rounded px-5 py-5 lg:w-3/12 border-4 border-gray-600">
+                    <div className="bg-white h-full px-5 py-5 ">
                       <div className="font-extrabold">Animals in shelters</div>
                       <p>
                         Fortunately, according to the datasets gathered by
@@ -201,7 +169,7 @@ const Statistics = () => {
                       </p>
                     </div>
                   </div>
-                  <div className="px-10 lg:w-6/12 border-4 border-orange-400">
+                  <div className="px-10 lg:w-6/12">
                     <h2 className="text-base-400 py-2 flex px-10">
                       Dog, Cat & Rabbit Shelter Statistics.
                     </h2>
@@ -248,7 +216,7 @@ const Statistics = () => {
                       </table>
                     </div>
                   </div>
-                  <div className="px-10 bg-base-200  rounded-md lg:w-2/12 border-4 border-red-400">
+                  <div className="px-10 bg-base-200  rounded-md lg:w-2/12 border-4 border-gray-600">
                     <h2 className="text-error py-2 flex items-center ">
                       Last 50 Shelter Animal Outcomes in Long Beach California
                     </h2>
