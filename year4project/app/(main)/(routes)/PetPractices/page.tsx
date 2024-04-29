@@ -25,7 +25,7 @@ interface Message {
 const PetPractices = () => {
   return (
     <div>
-     <Nav/>
+      <Nav />
 
       <div className="bg-gradient-to-br from-gray-900 to-gray-800">
         {/* <Nav /> */}
@@ -125,9 +125,9 @@ const PetPractices = () => {
                   </li>
                   <li>Cats:</li>
                   <p className="px-4">
-                    For cats there is a "spot-on" option available which will
-                    work against fleas & ticks for about 1-3 months. There are
-                    also tablet options available for cats to fight
+                    For cats there is a &quot;spot-on&quot; option available
+                    which will work against fleas & ticks for about 1-3 months.
+                    There are also tablet options available for cats to fight
                     tapeworms,roundworms & mites.
                   </p>
                   <p>
@@ -217,8 +217,8 @@ const PetPractices = () => {
                     dog.
                   </li>
                   <li>
-                    Teach your pet the "quiet" command while positively
-                    reinforcing good behaviour.
+                    Teach your pet the &quot;quiet&quot; command while
+                    positively reinforcing good behaviour.
                   </li>
                   <li>
                     Socializing your dog well will greatly reduce barking at
@@ -250,7 +250,13 @@ const PetPractices = () => {
           <div className="min-h-screen lg:w-1/6 flex items-center justify-center flex-col gap-2 border border-gray-800"></div>
         </div>
         <h1 className="text-5xl justify-center flex  py-12 font-extrabold text-orange-400">
-          Have more questions? Make a forum <Link className="px-3 underline decoration-dotted hover:text-red-400" href={"/forums"}>here</Link>
+          Have more questions? Make a forum
+          <Link
+            className="px-3 underline decoration-dotted hover:text-red-400"
+            href={"/forums"}
+          >
+            here
+          </Link>
         </h1>
       </div>
     </div>
