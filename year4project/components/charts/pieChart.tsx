@@ -25,7 +25,7 @@ export const TwoPieChart = ({ data }: { data: DataItem[] }) => {
     "#eb4034",
   ];
   return (
-    <ResponsiveContainer width="100%" height="40%">
+    <ResponsiveContainer width="100%" height="40%" className={"hidden lg:flex"}>
       <PieChart
         className="bg-black/40 px-3 py-3 rounded-md border-4 border-gray-800"
         width={310}

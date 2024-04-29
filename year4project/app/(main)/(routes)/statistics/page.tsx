@@ -18,7 +18,6 @@ import { MdOutlineForum } from "react-icons/md";
 
 import { GiSpanner } from "react-icons/gi";
 
-
 interface AnimalDataEntry {
   animal_name: string;
   intake_date: string; // Adjust the type as necessary
@@ -124,7 +123,7 @@ const Statistics = () => {
     <main>
       <title>Animal Statistics</title>
       <div className=" min-h-screen justify-center flex-col bg-gray-900 ">
-        <Nav/>
+        <Nav />
 
         {isLoading ? (
           <div className="flex justify-center items-center ">
@@ -134,9 +133,9 @@ const Statistics = () => {
         ) : (
           <>
             {
-              <div className="bg-white dark:bg-red-800  py-10 flex justify-center items-center flex-wrap border-4 border-blue-300">
-                <div className="flex bg-gradient-to-br gap-1 from-gray-200 to-gray-100 px-10 py-10 rounded-md sm:flex-col lg:flex-row  justify-center">
-                  <div className="bg-gray-900/90 rounded px-5 py-5 lg:w-3/12 border-4 border-gray-600">
+              <div className="bg-white dark:bg-red-800  py-10 flex justify-center items-center flex-wrap border-4 lg:border-blue-300">
+                <div className="flex bg-gradient-to-br gap-1 from-gray-200 to-gray-100 lg:px-10 py-10 rounded-md lg:flex-row flex-col justify-center">
+                  <div className="bg-gray-900/90 rounded px-5 py-5 lg:w-[40vh] border-4 border-gray-600">
                     <div className="bg-white h-full px-5 py-5 ">
                       <div className="font-extrabold">Animals in shelters</div>
                       <p>
@@ -169,13 +168,13 @@ const Statistics = () => {
                       </p>
                     </div>
                   </div>
-                  <div className="px-10 lg:w-6/12">
+                  <div className="lg:px-5 lg:w-6/12">
                     <h2 className="text-base-400 py-2 flex px-10">
                       Dog, Cat & Rabbit Shelter Statistics.
                     </h2>
                     <StackedChart />
                     {/* <div className="py-5 max-w-lg">{reason || 0}</div> */}
-                    <div>
+                    <div className="hidden lg:flex flex-col">
                       <h2>Animal Intakes in Long Beach California</h2>
 
                       <table className="flex flex-col gap-1 ">
@@ -216,14 +215,13 @@ const Statistics = () => {
                       </table>
                     </div>
                   </div>
-                  <div className="px-10 bg-base-200  rounded-md lg:w-2/12 border-4 border-gray-600">
+                  <div className="px-10 bg-base-200  rounded-md  border-4 border-gray-600">
                     <h2 className="text-error py-2 flex items-center ">
                       Last 50 Shelter Animal Outcomes in Long Beach California
                     </h2>
-
-                    {/* <Example/>   */}
-
-                    <TwoPieChart data={outcomeData} />
+                    
+                      <TwoPieChart data={outcomeData} />
+              
                     <div>
                       <div className="py-5 text-gray-300">
                         <h1>
