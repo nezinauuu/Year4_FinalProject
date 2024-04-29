@@ -465,13 +465,7 @@ S1558787820300356?ref=pdf_download&fr=RR-2&rr=82edc03c0d0f888f"
                   straining in shelters is due to stray animals. That is why it
                   is extremely important to spay/neuter your pet and programs are
                   often promoted to address this problem.
-                  <Link
-                    className="text-blue-400 hover:text-red-400 px-1"
-                    href="https://www.sciencedirect.com/science/article/pii/
-S1558787820300356?ref=pdf_download&fr=RR-2&rr=82edc03c0d0f888f"
-                  >
-                    [2]
-                  </Link>
+
                 </p>
               </div>
             </div>
