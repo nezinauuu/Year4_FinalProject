@@ -35,7 +35,6 @@ const Home = async () => {
 
   return (
     <main>
-      <title>PetConnect - Dashboard</title>
       <div className="flex flex-col min-h-[210vh] ">
         <Nav />
 
