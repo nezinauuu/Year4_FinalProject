@@ -65,7 +65,7 @@ const PetPractices = () => {
 
           <div className="min-h-screen lg:w-4/6 flex items-center  flex-col gap-6 border-2 border-gray-800">
             <h1 className="text-7xl justify-center flex py-12 font-extrabold px-16 text-orange-400">
-              Common Pet FaQ
+              Common Pet Questions
             </h1>
 
             <div className="w-5/6 border-2 rounded-3xl bg-gray-800 border-red-400 flex justify-start px-8 text-white lg:text-3xl text-2xl py-4">
