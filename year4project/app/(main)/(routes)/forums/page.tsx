@@ -7,8 +7,9 @@ import { Nav } from "@/components/navbars/nav";
 const ForumPage = () => {
   return (
     <div className="min-h-screen ">
+      <title>Forums</title>
       <Nav />
-      
+
       <CreateForum />
       <div className="flex justify-center">
         <div

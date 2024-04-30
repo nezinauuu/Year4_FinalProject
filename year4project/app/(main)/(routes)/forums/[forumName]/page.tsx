@@ -31,6 +31,7 @@ export default async function ForumTitle({
   ) {
     return (
       <div>
+        <title>Forum</title>
         <div className="absolute w-full">
           <Nav />
         </div>
@@ -51,6 +52,7 @@ export default async function ForumTitle({
 
   return (
     <div>
+      <title>Forum</title>
       <Nav />
       <div className="py-10 px-10 min-h-screen bg-gray-200">
         <div className="justify-center flex">

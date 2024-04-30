@@ -35,6 +35,7 @@ const Home = async () => {
 
   return (
     <main>
+      <title>PetConnect - Dashboard</title>
       <div className="flex flex-col min-h-[210vh] ">
         <Nav />
 
@@ -58,7 +59,7 @@ const Home = async () => {
                     <button className="w-full h-32 font-bold block border-2 border-gray-950 mt-4 text-center text-white  bg-red-400 hover:text-gray-950 px-4 py-2 rounded-lg shadow-lg">
                       <h1 className="text-3xl">Have a quick question?</h1>
                       <p className="text-md">
-                        Talk to our virtual ai assistant!
+                        Talk to our virtual assistant!
                       </p>
                     </button>
                   </Link>
@@ -66,7 +67,7 @@ const Home = async () => {
                 {!profile && (
                   <Link href={`/sign-in`}>
                     <button className="w-full h-32 font-bold block border-2 border-gray-950 mt-4 text-center text-white  bg-red-400 hover:text-gray-950 px-4 py-2 rounded-lg shadow-lg">
-                      <h1 className="text-3xl">Ai assistant</h1>
+                      <h1 className="text-3xl">Talk to our assistant</h1>
                       <p className="text-md">
                         You must login to use this feature.
                       </p>
